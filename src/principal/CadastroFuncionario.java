@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Principal;
+package Princital;
 
 /**
  *
@@ -57,47 +57,47 @@ public class CadastroFuncionario extends javax.swing.JFrame {
 
         jLabel2.setText("Cadastro de funcionario");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(136, 91, 123, 14);
+        jLabel2.setBounds(136, 91, 140, 14);
 
         jLabel3.setText("Codigo");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(50, 140, 40, 30);
+        jLabel3.setBounds(20, 140, 40, 30);
 
         jLabel4.setText("CPF");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(50, 200, 30, 30);
+        jLabel4.setBounds(520, 140, 30, 30);
 
         jLabel5.setText("RG");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(50, 240, 30, 30);
+        jLabel5.setBounds(20, 190, 30, 30);
 
         jLabel6.setText("Nome");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(250, 140, 50, 30);
+        jLabel6.setBounds(120, 140, 40, 30);
 
         jLabel7.setText("Data de nascimento");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(250, 240, 110, 30);
+        jLabel7.setBounds(20, 230, 120, 30);
 
         jLabel8.setText("Endereço");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(250, 190, 60, 30);
+        jLabel8.setBounds(230, 190, 60, 30);
 
         jLabel9.setText("Função");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(50, 280, 40, 30);
+        jLabel9.setBounds(20, 280, 50, 30);
         jPanel1.add(tfCodFuncionario);
-        tfCodFuncionario.setBounds(90, 140, 40, 30);
+        tfCodFuncionario.setBounds(60, 140, 40, 30);
         jPanel1.add(tfCpfFuncionario);
-        tfCpfFuncionario.setBounds(90, 196, 150, 30);
+        tfCpfFuncionario.setBounds(550, 140, 150, 30);
         jPanel1.add(tfRgFuncionario);
-        tfRgFuncionario.setBounds(90, 240, 150, 30);
+        tfRgFuncionario.setBounds(60, 190, 150, 30);
         jPanel1.add(tfNomeFuncionario);
-        tfNomeFuncionario.setBounds(310, 140, 400, 30);
+        tfNomeFuncionario.setBounds(160, 140, 350, 30);
         jPanel1.add(tfEnderecoFuncionario);
-        tfEnderecoFuncionario.setBounds(310, 190, 400, 30);
+        tfEnderecoFuncionario.setBounds(290, 190, 410, 30);
         jPanel1.add(tfFuncaoFuncionario);
-        tfFuncaoFuncionario.setBounds(90, 280, 150, 30);
+        tfFuncaoFuncionario.setBounds(70, 280, 150, 30);
 
         try {
             tfDataNascimentoFuncionario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -105,25 +105,25 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         jPanel1.add(tfDataNascimentoFuncionario);
-        tfDataNascimentoFuncionario.setBounds(380, 240, 130, 30);
+        tfDataNascimentoFuncionario.setBounds(140, 230, 130, 30);
 
         jbOkFuncionario.setText("Ok");
         jPanel1.add(jbOkFuncionario);
-        jbOkFuncionario.setBounds(220, 350, 80, 30);
+        jbOkFuncionario.setBounds(270, 350, 80, 30);
 
         btCancelarFuncionario.setText("Cancelar");
         jPanel1.add(btCancelarFuncionario);
-        btCancelarFuncionario.setBounds(340, 350, 80, 30);
+        btCancelarFuncionario.setBounds(370, 350, 80, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 728, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
         );
 
         pack();

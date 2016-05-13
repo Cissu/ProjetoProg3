@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Principal;
+package Princital;
 
 /**
  *
@@ -42,6 +42,7 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
 
@@ -54,6 +55,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jbPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icone_paciente1 (1).png"))); // NOI18N
+        jbPacientes.setName(""); // NOI18N
         jbPacientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbPacientesActionPerformed(evt);
@@ -64,6 +66,11 @@ public class Principal extends javax.swing.JFrame {
 
         jbAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/agenda.png"))); // NOI18N
         jbAgenda.setText("jButton2");
+        jbAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAgendaActionPerformed(evt);
+            }
+        });
         jPanel1.add(jbAgenda);
         jbAgenda.setBounds(270, 10, 100, 110);
 
@@ -76,7 +83,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(jbFuncionarios);
         jbFuncionarios.setBounds(140, 10, 100, 110);
 
-        jButton4.setText("jButton4");
+        jButton4.setText("Fluxo caixa");
         jPanel1.add(jButton4);
         jButton4.setBounds(390, 10, 100, 110);
 
@@ -121,6 +128,9 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem4.setText("jMenuItem4");
         jMenu2.add(jMenuItem4);
 
+        jMenuItem5.setText("jMenuItem5");
+        jMenu2.add(jMenuItem5);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Financeiro");
@@ -158,6 +168,12 @@ public class Principal extends javax.swing.JFrame {
         FormFuncionario c = new FormFuncionario();
         c.setVisible(true);
     }//GEN-LAST:event_jbFuncionariosActionPerformed
+
+    private void jbAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgendaActionPerformed
+        // TODO add your handling code here:
+        Agenda a = new Agenda();
+        a.setVisible(true);
+    }//GEN-LAST:event_jbAgendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,6 +223,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbAgenda;
