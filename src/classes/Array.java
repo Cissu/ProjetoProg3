@@ -9,6 +9,6 @@ package classes;
  *
  * @author Ewerton
  */
-public class Teste {
-    
+public class Array {
+    private int b = 10;
 }
