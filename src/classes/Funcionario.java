@@ -10,15 +10,15 @@ public class Funcionario {
   private double salario;
   private Endereco endereco;
 
-  public Funcionario(int id, String nome, String rg, String cpf, String funcao, double salario, Endereco endereco) {
-    this.id = id;
-    this.nome = nome;
-    this.rg = rg;
-    this.cpf = cpf;
-    this.funcao = funcao;
-    this.salario = salario;
-    this.endereco = endereco;
-  }
+//  public Funcionario(int id, String nome, String rg, String cpf, String funcao, double salario, Endereco endereco) {
+//    this.id = id;
+//    this.nome = nome;
+//    this.rg = rg;
+//    this.cpf = cpf;
+//    this.funcao = funcao;
+//    this.salario = salario;
+//    this.endereco = endereco;
+//  }
 
   public int getId() {
     return id;
