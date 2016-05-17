@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Principal;
+package Princital;
 
 /**
  *
@@ -58,11 +58,6 @@ public class Agenda extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField1ActionPerformed(evt);
-            }
-        });
         jPanel1.add(jFormattedTextField1);
         jFormattedTextField1.setBounds(50, 100, 85, 20);
 
@@ -78,7 +73,7 @@ public class Agenda extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(224, 35, 57, 24);
 
-        jLabel4.setText("Hor·rio");
+        jLabel4.setText("Hor√°rio");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(10, 140, 35, 14);
 
@@ -87,11 +82,6 @@ public class Agenda extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField2ActionPerformed(evt);
-            }
-        });
         jPanel1.add(jFormattedTextField2);
         jFormattedTextField2.setBounds(60, 140, 40, 20);
         jPanel1.add(jTextField1);
@@ -118,7 +108,7 @@ public class Agenda extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Procedimento", "Dentista", "Data", "Hor·rio"
+                "Nome", "Procedimento", "Dentista", "Data", "Hor√°rio"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -154,14 +144,6 @@ public class Agenda extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
-
-    private void jFormattedTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField2ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -187,9 +169,6 @@ public class Agenda extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Agenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
