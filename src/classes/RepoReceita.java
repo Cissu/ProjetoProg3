@@ -1,4 +1,4 @@
-package repositorio;
+package classes;
 
 import classes.DespesaGanho;
 import java.util.ArrayList;
