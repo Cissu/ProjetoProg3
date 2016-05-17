@@ -56,4 +56,11 @@ public class Clinica {
     this.endereco = endereco;
   }
 
+    @Override
+    public String toString() {
+        return "Clinica" + "\nNome: " + nome + "\nRazaoSocial: " + razaoSocial + "\nTelefone: " + telefone + "\nCNPJ: " + cnpj + 
+                "\nEndereço: " + endereco + "\n###########\n";
+    }
+  
+  
 }
