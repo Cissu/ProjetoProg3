@@ -79,11 +79,11 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         jPanel1.add(jLabel7);
         jLabel7.setBounds(20, 230, 120, 30);
 
-        jLabel8.setText("EndereÃ§o");
+        jLabel8.setText("Endereço");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(230, 190, 60, 30);
 
-        jLabel9.setText("FunÃ§Ã£o");
+        jLabel9.setText("Função");
         jPanel1.add(jLabel9);
         jLabel9.setBounds(20, 280, 50, 30);
         jPanel1.add(tfCodFuncionario);
