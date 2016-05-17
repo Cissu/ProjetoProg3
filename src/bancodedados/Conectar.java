@@ -1,8 +1,14 @@
 //Classe de conexão com o BD
 package bancodedados;
 
-import com.mysql.jdbc.Connection;
+import java.sql.Connection;
+//import com.sun.istack.internal.logging.Logger;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -10,36 +16,68 @@ import java.sql.DriverManager;
  */
 public class Conectar {
 
-    private static Connection conn;
-    private static final String driver = "com.mysql.jdbc.Driver";
-    private static final String user = "root";
-    private static final String password = "";
-    private static final String url = "jdbc:mysql://localhost:3306/clinica";
+    //private static Connection conn;
+    private static final String DRIVER = "com.mysql.jdbc.Driver";
+    private static final String USER = "root";
+    private static final String PASSWORD = "";
+    private static final String URL = "jdbc:mysql://localhost:3306/clinica";
 
-    public Conectar() {
-        conn = null;
+    public static Connection getConnection() {
         try {
-            Class.forName(driver);
-            conn = (Connection) DriverManager.getConnection(url, user, password);
-            if (conn != null) {
-                System.out.println("Conexão estabelecida");
-            }
-        } catch (Exception e) {
-            System.out.println("Error ao conectar" + e);
+            Class.forName(DRIVER);
+            return DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new RuntimeException("Erro na conexão: ", ex);
         }
 
     }
     //Esse método retorna a conexão
-    public Connection getConnection(){
-        return conn;
-    }
+  //  public static Connection getfConnection(){
+  //      return conn;
+ //   }
     
     //Método para desconectar do BD
-    public void desconectar(){
-        conn =null;
-        if(conn==null){
-            System.out.println("Desconectado");
+    public static void closeConnection(Connection conn){
+        
+        try {
+            if(conn !=null){
+                conn.close();
+            }
+        } catch (SQLException e) {
+                Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, e);
         }
+ 
+    }
+    
+    
+    public static void closeConnection(Connection conn, PreparedStatement stmt){
+        closeConnection(conn);
+        
+        if(stmt!=null){
+            try {
+                stmt.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    public static void closeConnection(Connection con, PreparedStatement stmt, ResultSet rs){
+        
+        closeConnection(con, stmt);
+        
+            
+            try {
+                if(rs!=null){
+                rs.close();
+                }
+            } catch (SQLException ex) {
+                java.util.logging.Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            
+            
+        
     }
 
 }
