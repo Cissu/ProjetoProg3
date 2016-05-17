@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Princital;
+package Principal;
 
 /**
  *
@@ -47,7 +47,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("CÃ³digo");
+        jLabel1.setText("Código");
 
         jLabel2.setText("Nome");
 
@@ -59,7 +59,13 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
         jLabel6.setText("Cadastro de paciente");
 
-        jLabel8.setText("EndereÃ§o");
+        jLabel8.setText("Endereço");
+
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
 
         try {
             jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -166,6 +172,10 @@ public class CadastroPaciente extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        
+    }//GEN-LAST:event_jTextField6ActionPerformed
 
     /**
      * @param args the command line arguments
