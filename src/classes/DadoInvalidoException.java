@@ -7,9 +7,11 @@ package classes;
 
 /**
  *
- * @author Bruno Cavalcante
+ * @author Ewerton
  */
-public class teste {
-    int d=0;
+public class DadoInvalidoException extends Exception {
     
+    DadoInvalidoException(String msg) {
+        super("Campo em branco ou invlálido");
+    }
 }

@@ -27,4 +27,9 @@ public class Dentista extends Funcionario {
     this.especialidade = especialidade;
   }
 
+    @Override
+    public String toString() {
+        return "Dentista" + "\nNome: " + super.getNome() + "\nCRO: " + cro + "\nEspecialidade: " + especialidade + "\nID: " + super.getId() + "" + "\n###########\n";
+    }
+    
 }

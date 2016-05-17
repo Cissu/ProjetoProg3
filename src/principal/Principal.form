@@ -110,6 +110,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagens/icone_paciente1 (1).png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Pacientes"/>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>
           <Events>
@@ -127,6 +128,7 @@
               <Image iconType="3" name="/Imagens/agenda.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton2"/>
+            <Property name="toolTipText" type="java.lang.String" value="Agenda"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbAgendaActionPerformed"/>
@@ -142,6 +144,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagens/icones_funcionarios.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Funcion&#xe1;rios"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbFuncionariosActionPerformed"/>
@@ -154,8 +157,14 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Fluxo caixa"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagens/Fluxo-de-caixa3.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Fluxo de caixa"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="390" y="10" width="100" height="110"/>

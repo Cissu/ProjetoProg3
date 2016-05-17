@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Princital;
+package Principal;
+
+import principal.FormFluxoCaixa;
 
 /**
  *
@@ -47,7 +49,7 @@ public class Principal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Clinica OdontolÃ³gia");
+        setTitle("Clinica Odontológia");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setAutoscrolls(true);
@@ -55,6 +57,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jbPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icone_paciente1 (1).png"))); // NOI18N
+        jbPacientes.setToolTipText("Pacientes");
         jbPacientes.setName(""); // NOI18N
         jbPacientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +69,7 @@ public class Principal extends javax.swing.JFrame {
 
         jbAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/agenda.png"))); // NOI18N
         jbAgenda.setText("jButton2");
+        jbAgenda.setToolTipText("Agenda");
         jbAgenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbAgendaActionPerformed(evt);
@@ -75,6 +79,7 @@ public class Principal extends javax.swing.JFrame {
         jbAgenda.setBounds(270, 10, 100, 110);
 
         jbFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icones_funcionarios.png"))); // NOI18N
+        jbFuncionarios.setToolTipText("Funcionários");
         jbFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbFuncionariosActionPerformed(evt);
@@ -83,7 +88,13 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(jbFuncionarios);
         jbFuncionarios.setBounds(140, 10, 100, 110);
 
-        jButton4.setText("Fluxo caixa");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fluxo-de-caixa3.png"))); // NOI18N
+        jButton4.setToolTipText("Fluxo de caixa");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton4);
         jButton4.setBounds(390, 10, 100, 110);
 
@@ -174,6 +185,12 @@ public class Principal extends javax.swing.JFrame {
         Agenda a = new Agenda();
         a.setVisible(true);
     }//GEN-LAST:event_jbAgendaActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        FormFluxoCaixa f = new FormFluxoCaixa();
+        f.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
