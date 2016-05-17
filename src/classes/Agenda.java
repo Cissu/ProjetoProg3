@@ -68,7 +68,7 @@ public class Agenda {
 
     public void setData(String data) throws DadoInvalidoException {
         if (data.isEmpty() || data == null) {
-            throw new DadoInvalidoException("Dada inválida");
+            throw new DadoInvalidoException("Dada em branco ou inválida");
         } else {
             this.data = data;
         }
