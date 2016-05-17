@@ -44,4 +44,31 @@ public class FuncionarioDAO {
         }
      
     }
+    
+    
+        public void update (Funcionario f){
+    Connection con = Conectar.getConnection();
+        PreparedStatement stmt = null;
+       
+        try {
+            stmt = con.prepareStatement("update funcionario set nome=?, rg=?, cpf=?, funcao=? where id = ?");
+            //stmt.setInt(1, f.getId());
+            stmt.setString(1, f.getNome());
+            stmt.setString(2, f.getRg());
+            stmt.setString(3, f.getCpf());
+            stmt.setString(4, f.getFuncao());
+            //stmt.setDouble(6, f.getSalario());
+            //stmt.setObject(7, f.getEndereco());
+            stmt.setInt(5, f.getId());
+            
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao Atualizar " + ex);
+        }finally{
+            Conectar.closeConnection(con, stmt);
+        }
+     
+    }
 }

@@ -41,5 +41,30 @@ public class PacienteDAO {
         }
 
     }
+    
+        public void update(Paciente p) {
+        Connection con = Conectar.getConnection();
+        PreparedStatement stmt = null;
+
+        try {
+            stmt = con.prepareStatement("update paciente set nome=?, rg=?, cpf=?, dataNasc=?, endereco=? where id=?");
+            //stmt.setInt(1, p.getId());
+            stmt.setString(1, p.getNome());
+            stmt.setString(2, p.getRg());
+            stmt.setString(3, p.getCpf());
+            stmt.setString(4, p.getDataNasc());
+            stmt.setObject(5, p.getEndereco());
+            stmt.setInt(6, p.getId());
+
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar " + e);
+        } finally {
+            Conectar.closeConnection(con, stmt);
+
+        }
+
+    }
 
 }
