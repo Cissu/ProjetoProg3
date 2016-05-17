@@ -2,7 +2,6 @@
 package bancodedados;
 
 import java.sql.Connection;
-//import com.sun.istack.internal.logging.Logger;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,6 +21,7 @@ public class Conectar {
     private static final String PASSWORD = "";
     private static final String URL = "jdbc:mysql://localhost:3306/clinica";
 
+    //abrir a conexão
     public static Connection getConnection() {
         try {
             Class.forName(DRIVER);
@@ -31,29 +31,25 @@ public class Conectar {
         }
 
     }
-    //Esse método retorna a conexão
-  //  public static Connection getfConnection(){
-  //      return conn;
- //   }
-    
-    //Método para desconectar do BD
-    public static void closeConnection(Connection conn){
-        
+
+    //Método para fechar a conexao
+    public static void closeConnection(Connection conn) {
+
         try {
-            if(conn !=null){
+            if (conn != null) {
                 conn.close();
             }
         } catch (SQLException e) {
-                Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, e);
         }
- 
+
     }
-    
-    
-    public static void closeConnection(Connection conn, PreparedStatement stmt){
+
+    //sobrecarga
+    public static void closeConnection(Connection conn, PreparedStatement stmt) {
         closeConnection(conn);
-        
-        if(stmt!=null){
+
+        if (stmt != null) {
             try {
                 stmt.close();
             } catch (SQLException ex) {
@@ -61,23 +57,19 @@ public class Conectar {
             }
         }
     }
-    
-    public static void closeConnection(Connection con, PreparedStatement stmt, ResultSet rs){
-        
+
+    public static void closeConnection(Connection con, PreparedStatement stmt, ResultSet rs) {
+
         closeConnection(con, stmt);
-        
-            
-            try {
-                if(rs!=null){
+
+        try {
+            if (rs != null) {
                 rs.close();
-                }
-            } catch (SQLException ex) {
-                java.util.logging.Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            
-            
-        
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
 }
