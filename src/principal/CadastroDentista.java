@@ -9,12 +9,12 @@ package principal;
  *
  * @author Vanessa Macena
  */
-public class CadastroFuncionario extends javax.swing.JFrame {
+public class CadastroDentista extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroFuncionario
      */
-    public CadastroFuncionario() {
+    public CadastroDentista() {
         initComponents();
     }
 
@@ -36,15 +36,19 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        tfCodFuncionario = new javax.swing.JTextField();
-        tfCpfFuncionario = new javax.swing.JTextField();
-        tfRgFuncionario = new javax.swing.JTextField();
-        tfNomeFuncionario = new javax.swing.JTextField();
-        tfFuncaoFuncionario = new javax.swing.JTextField();
+        tfCodDentista = new javax.swing.JTextField();
+        tfCpfDentista = new javax.swing.JTextField();
+        tfRgDentista = new javax.swing.JTextField();
+        tfNomeDentista = new javax.swing.JTextField();
+        tfFuncaoDentista = new javax.swing.JTextField();
         jbOkFuncionario = new javax.swing.JButton();
         btCancelarFuncionario = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        tfSalarioFuncionario = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        tfCroDentista = new javax.swing.JTextField();
+        tfEspecialidadeDentista = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        tfSalarioDentista = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -54,7 +58,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(26, 11, 100, 111);
 
-        jLabel2.setText("Cadastro de funcionário");
+        jLabel2.setText("Cadastro de Dentista");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(136, 91, 140, 14);
 
@@ -76,21 +80,21 @@ public class CadastroFuncionario extends javax.swing.JFrame {
 
         jLabel7.setText("Salário");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(550, 190, 50, 30);
+        jLabel7.setBounds(540, 190, 50, 30);
 
         jLabel9.setText("Função");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(250, 190, 50, 30);
-        jPanel1.add(tfCodFuncionario);
-        tfCodFuncionario.setBounds(60, 140, 40, 30);
-        jPanel1.add(tfCpfFuncionario);
-        tfCpfFuncionario.setBounds(550, 140, 150, 30);
-        jPanel1.add(tfRgFuncionario);
-        tfRgFuncionario.setBounds(60, 190, 150, 30);
-        jPanel1.add(tfNomeFuncionario);
-        tfNomeFuncionario.setBounds(160, 140, 350, 30);
-        jPanel1.add(tfFuncaoFuncionario);
-        tfFuncaoFuncionario.setBounds(300, 190, 210, 30);
+        jLabel9.setBounds(240, 190, 50, 30);
+        jPanel1.add(tfCodDentista);
+        tfCodDentista.setBounds(60, 140, 40, 30);
+        jPanel1.add(tfCpfDentista);
+        tfCpfDentista.setBounds(550, 140, 150, 30);
+        jPanel1.add(tfRgDentista);
+        tfRgDentista.setBounds(70, 190, 150, 30);
+        jPanel1.add(tfNomeDentista);
+        tfNomeDentista.setBounds(160, 140, 350, 30);
+        jPanel1.add(tfFuncaoDentista);
+        tfFuncaoDentista.setBounds(320, 190, 160, 30);
 
         jbOkFuncionario.setText("Ok");
         jPanel1.add(jbOkFuncionario);
@@ -107,9 +111,21 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(20, 260, 90, 30);
-        jPanel1.add(tfSalarioFuncionario);
-        tfSalarioFuncionario.setBounds(610, 190, 90, 30);
+        jButton1.setBounds(10, 290, 90, 30);
+
+        jLabel8.setText("CRO");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(20, 250, 30, 14);
+        jPanel1.add(tfCroDentista);
+        tfCroDentista.setBounds(70, 240, 150, 30);
+        jPanel1.add(tfEspecialidadeDentista);
+        tfEspecialidadeDentista.setBounds(330, 240, 150, 30);
+
+        jLabel10.setText("Especialidade");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(240, 250, 80, 14);
+        jPanel1.add(tfSalarioDentista);
+        tfSalarioDentista.setBounds(610, 190, 90, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,20 +157,24 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton btCancelarFuncionario;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbOkFuncionario;
-    private javax.swing.JTextField tfCodFuncionario;
-    private javax.swing.JTextField tfCpfFuncionario;
-    private javax.swing.JTextField tfFuncaoFuncionario;
-    private javax.swing.JTextField tfNomeFuncionario;
-    private javax.swing.JTextField tfRgFuncionario;
-    private javax.swing.JTextField tfSalarioFuncionario;
+    private javax.swing.JTextField tfCodDentista;
+    private javax.swing.JTextField tfCpfDentista;
+    private javax.swing.JTextField tfCroDentista;
+    private javax.swing.JTextField tfEspecialidadeDentista;
+    private javax.swing.JTextField tfFuncaoDentista;
+    private javax.swing.JTextField tfNomeDentista;
+    private javax.swing.JTextField tfRgDentista;
+    private javax.swing.JTextField tfSalarioDentista;
     // End of variables declaration//GEN-END:variables
 }
