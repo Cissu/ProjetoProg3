@@ -68,7 +68,7 @@ public class Agenda {
 
     public void setData(String data) throws DadoInvalidoException {
         if (data.isEmpty() || data == null) {
-            throw new DadoInvalidoException("Dada inválida");
+            throw new DadoInvalidoException("Campo Dada em branco");
         } else {
             this.data = data;
         }
@@ -80,7 +80,7 @@ public class Agenda {
 
     public void setProcedimento(String procedimento) throws DadoInvalidoException {
         if (procedimento.isEmpty() || data == null) {
-            throw new DadoInvalidoException("Procedimento em branco ou inválido");
+            throw new DadoInvalidoException("Campo Procedimento em branco");
         } else {
             this.procedimento = procedimento;
         }
@@ -92,7 +92,7 @@ public class Agenda {
 
     public void setHorario(String horario) throws DadoInvalidoException {
         if (horario.isEmpty() || data == null) {
-            throw new DadoInvalidoException("Horário em branco ou inválido");
+            throw new DadoInvalidoException("Campo Horário em branco");
         } else {
             this.horario = horario;
         }
