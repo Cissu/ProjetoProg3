@@ -16,7 +16,6 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
      */
     public FormFluxoCaixa() {
         initComponents();
-        setLocationRelativeTo(null);
     }
 
     /**
@@ -71,8 +70,9 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jtFluxoCaixa);
         if (jtFluxoCaixa.getColumnModel().getColumnCount() > 0) {
-            jtFluxoCaixa.getColumnModel().getColumn(0).setMinWidth(100);
-            jtFluxoCaixa.getColumnModel().getColumn(0).setMaxWidth(100);
+            jtFluxoCaixa.getColumnModel().getColumn(0).setMinWidth(110);
+            jtFluxoCaixa.getColumnModel().getColumn(0).setPreferredWidth(50);
+            jtFluxoCaixa.getColumnModel().getColumn(0).setMaxWidth(110);
             jtFluxoCaixa.getColumnModel().getColumn(2).setMinWidth(100);
             jtFluxoCaixa.getColumnModel().getColumn(2).setMaxWidth(100);
         }
@@ -150,6 +150,10 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * @param args the command line arguments
+     */
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox jComboBoxfluxoCaixa;
