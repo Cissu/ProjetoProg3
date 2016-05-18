@@ -175,28 +175,30 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         FormPaciente f = new FormPaciente();
         f.setVisible(true);
+        f.setLocation(329, 330);
     
     }//GEN-LAST:event_jbPacientesActionPerformed
 
     private void jbFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFuncionariosActionPerformed
         // TODO add your handling code here:
         FormFuncionario c = new FormFuncionario();
-        c.setVisible(true);
+        c.setVisible(true);   
+        c.setLocation(329, 330);
     }//GEN-LAST:event_jbFuncionariosActionPerformed
 
     private void jbAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgendaActionPerformed
         
         principal.Agenda a = new principal.Agenda();
         a.setVisible(true);
-                    
-               
-        
+        a.setLocation(329, 330);
+
     }//GEN-LAST:event_jbAgendaActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         FormFluxoCaixa f = new FormFluxoCaixa();
         f.setVisible(true);
+        f.setLocation(329, 330);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
