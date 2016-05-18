@@ -20,7 +20,7 @@ public class RepoReceita {
     }
     return v;
   }
-  
+
   //Exibi o gasto total
   public double exibirTotal() {
     double v = 0;
@@ -29,7 +29,7 @@ public class RepoReceita {
     }
     return v;
   }
-  
+
   //Exibi o gasto de cada paciente
   public double exibirPaciente(int idPaciente) {
     double v = 0;

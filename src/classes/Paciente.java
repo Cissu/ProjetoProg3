@@ -2,93 +2,93 @@ package classes;
 
 public class Paciente {
 
-    private int id;
-    private String nome;
-    private String rg;
-    private String cpf;
-    private String dataNasc;
-    private Endereco endereco;
+  private int id;
+  private String nome;
+  private String rg;
+  private String cpf;
+  private String dataNasc;
+  private Endereco endereco;
 
-    public Paciente(int id, String nome, String rg, String cpf, String dataNasc, Endereco endereco) throws DadoInvalidoException {
-        this.id = id;
-        this.setNome(nome);
-        this.setRg(rg);
-        this.setCpf(cpf);
-        this.setDataNasc(dataNasc);
-        this.setEndereco(endereco);
-    }
+  public Paciente(int id, String nome, String rg, String cpf, String dataNasc, Endereco endereco) throws DadoInvalidoException {
+    this.id = id;
+    this.setNome(nome);
+    this.setRg(rg);
+    this.setCpf(cpf);
+    this.setDataNasc(dataNasc);
+    this.setEndereco(endereco);
+  }
 
-    public int getId() {
-        return id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public String getNome() {
-        return nome;
-    }
+  public String getNome() {
+    return nome;
+  }
 
-    public void setNome(String nome) throws DadoInvalidoException {
-        if (nome.isEmpty() || nome == null) {
-            throw new DadoInvalidoException("Campo nome em branco");
-        } else {
-            this.nome = nome;
-        }
+  public void setNome(String nome) throws DadoInvalidoException {
+    if (nome.isEmpty() || nome == null) {
+      throw new DadoInvalidoException("Campo nome em branco");
+    } else {
+      this.nome = nome;
     }
+  }
 
-    public String getRg() {
-        return rg;
-    }
+  public String getRg() {
+    return rg;
+  }
 
-    public void setRg(String rg) throws DadoInvalidoException {
-        if (rg.isEmpty() || rg == null) {
-            throw new DadoInvalidoException("Campo RG em branco");
-        } else {
-            this.rg = rg;
-        }
+  public void setRg(String rg) throws DadoInvalidoException {
+    if (rg.isEmpty() || rg == null) {
+      throw new DadoInvalidoException("Campo RG em branco");
+    } else {
+      this.rg = rg;
     }
+  }
 
-    public String getCpf() {
-        return cpf;
-    }
+  public String getCpf() {
+    return cpf;
+  }
 
-    public void setCpf(String cpf) throws DadoInvalidoException {
-        if (cpf.isEmpty() || cpf == null) {
-            throw new DadoInvalidoException("Campo CPF em branco");
-        } else {
-            this.cpf = cpf;
-        }
+  public void setCpf(String cpf) throws DadoInvalidoException {
+    if (cpf.isEmpty() || cpf == null) {
+      throw new DadoInvalidoException("Campo CPF em branco");
+    } else {
+      this.cpf = cpf;
     }
+  }
 
-    public String getDataNasc() {
-        return dataNasc;
-    }
+  public String getDataNasc() {
+    return dataNasc;
+  }
 
-    public void setDataNasc(String dataNasc) throws DadoInvalidoException {
-        if (dataNasc.isEmpty() || dataNasc == null) {
-            throw new DadoInvalidoException("Campo Data de Nascimento em branco");
-        } else {
-            this.dataNasc = dataNasc;
-        }
+  public void setDataNasc(String dataNasc) throws DadoInvalidoException {
+    if (dataNasc.isEmpty() || dataNasc == null) {
+      throw new DadoInvalidoException("Campo Data de Nascimento em branco");
+    } else {
+      this.dataNasc = dataNasc;
     }
+  }
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
+  public Endereco getEndereco() {
+    return endereco;
+  }
 
-    public void setEndereco(Endereco endereco) throws DadoInvalidoException {
-        if (endereco == null) {
-            throw new DadoInvalidoException("Por favor preencha os campos do endereço!");
-        } else {
-            this.endereco = endereco;
-        }
+  public void setEndereco(Endereco endereco) throws DadoInvalidoException {
+    if (endereco == null) {
+      throw new DadoInvalidoException("Por favor preencha os campos do endereço!");
+    } else {
+      this.endereco = endereco;
     }
+  }
 
-    @Override
-    public String toString() {
-        return "Paciente" + "\nNome: " + nome + "\nId: " + id + "\nRg: " + rg + "\nCPF: " + cpf + "\nData de Nascimento: " + dataNasc
-                + "\nEndereco: " + endereco;
-    }
+  @Override
+  public String toString() {
+    return "Paciente" + "\nNome: " + nome + "\nId: " + id + "\nRg: " + rg + "\nCPF: " + cpf + "\nData de Nascimento: " + dataNasc
+            + "\nEndereco: " + endereco;
+  }
 }

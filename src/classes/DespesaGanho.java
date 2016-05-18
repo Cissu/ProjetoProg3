@@ -55,5 +55,4 @@ public class DespesaGanho {
   public void setValor(double valor) {
     this.valor = valor;
   }
-    
 }
