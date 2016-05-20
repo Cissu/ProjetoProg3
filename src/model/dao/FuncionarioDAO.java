@@ -25,14 +25,17 @@ public class FuncionarioDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("insert into funcionario (id, nome, rg, cpf, funcao) values (?,?,?,?,?)");
-            stmt.setInt(1, f.getId());
-            stmt.setString(2, f.getNome());
-            stmt.setString(3, f.getRg());
-            stmt.setString(4, f.getCpf());
-            stmt.setString(5, f.getFuncao());
-            //stmt.setDouble(6, f.getSalario());
-            //stmt.setObject(7, f.getEndereco());
+            stmt = con.prepareStatement("insert into funcionario (nome, rg, cpf, funcao, salario, rua, numero, bairro, cep, cidade) values (?,?,?,?,?,?,?,?,?,?)");
+            stmt.setString(1, f.getNome());
+            stmt.setString(2, f.getRg());
+            stmt.setString(3, f.getCpf());
+            stmt.setString(4, f.getFuncao());
+            stmt.setDouble(5, f.getSalario());
+            stmt.setObject(6, f.getEndereco().getRua());
+            stmt.setObject(7, f.getEndereco().getNumero());
+            stmt.setObject(8, f.getEndereco().getBairro());
+            stmt.setObject(9, f.getEndereco().getCep());
+            stmt.setObject(10, f.getEndereco().getCidade());
 
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Inserido com sucesso!");
@@ -50,15 +53,20 @@ public class FuncionarioDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("update funcionario set nome=?, rg=?, cpf=?, funcao=? where id = ?");
+            stmt = con.prepareStatement("update funcionario set nome=?, rg=?, cpf=?, funcao=?, salario=?, rua=?, numero=?, bairro=?, cep=? cidade=? where id = ?");
             //stmt.setInt(1, f.getId());
             stmt.setString(1, f.getNome());
             stmt.setString(2, f.getRg());
             stmt.setString(3, f.getCpf());
             stmt.setString(4, f.getFuncao());
-            //stmt.setDouble(6, f.getSalario());
-            //stmt.setObject(7, f.getEndereco());
-            stmt.setInt(5, f.getId());
+            stmt.setDouble(5, f.getSalario());
+            stmt.setObject(6, f.getEndereco().getRua());
+            stmt.setObject(7, f.getEndereco().getNumero());
+            stmt.setObject(8, f.getEndereco().getBairro());
+            stmt.setObject(9, f.getEndereco().getCep());
+            stmt.setObject(10, f.getEndereco().getCidade());
+
+            stmt.setInt(11, f.getId());
 
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
