@@ -7,6 +7,9 @@ package Principal;
 
 
 import classes.DadoInvalidoException;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import principal.FormFluxoCaixa;
@@ -38,7 +41,6 @@ public class Principal extends javax.swing.JFrame {
         jbAgenda = new javax.swing.JButton();
         jbFuncionarios = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -101,10 +103,6 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel1.add(jButton4);
         jButton4.setBounds(390, 10, 100, 110);
-
-        jButton5.setText("jButton5");
-        jPanel1.add(jButton5);
-        jButton5.setBounds(520, 10, 100, 110);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -175,28 +173,39 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         FormPaciente f = new FormPaciente();
         f.setVisible(true);
+        f.setLocationRelativeTo(null);
+        f.setLocation(327, 333);
+        f.setSize(1265, 640);
     
     }//GEN-LAST:event_jbPacientesActionPerformed
 
     private void jbFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFuncionariosActionPerformed
         // TODO add your handling code here:
         FormFuncionario c = new FormFuncionario();
-        c.setVisible(true);
+        c.setVisible(true);   
+        c.setLocationRelativeTo(null);
+        c.setLocation(327, 333);
+        c.setSize(1265, 640);
     }//GEN-LAST:event_jbFuncionariosActionPerformed
 
     private void jbAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgendaActionPerformed
-        
         principal.Agenda a = new principal.Agenda();
         a.setVisible(true);
-                    
-               
-        
+        a.setLocationRelativeTo(null);
+        a.setLocation(327, 333);
+        a.setSize(1265, 640);
+
     }//GEN-LAST:event_jbAgendaActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         FormFluxoCaixa f = new FormFluxoCaixa();
         f.setVisible(true);
+        //Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
+        f.setLocationRelativeTo(null);
+        f.setLocation(327, 333);
+        f.setSize(1265, 640);
+        //f.setLocation(tela.width-this.getSize().width,(tela.height-this.getSize().height));
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
@@ -230,13 +239,13 @@ public class Principal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Principal().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
