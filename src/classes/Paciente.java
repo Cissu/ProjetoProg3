@@ -1,29 +1,18 @@
 package classes;
 
 public class Paciente {
-
-    private int id;
     private String nome;
     private String rg;
     private String cpf;
     private String dataNasc;
     private Endereco endereco;
 
-    public Paciente(int id, String nome, String rg, String cpf, String dataNasc, Endereco endereco) throws DadoInvalidoException {
-        this.id = id;
+    public Paciente(String nome, String rg, String cpf, String dataNasc, Endereco endereco) throws DadoInvalidoException {
         this.setNome(nome);
         this.setRg(rg);
         this.setCpf(cpf);
         this.setDataNasc(dataNasc);
         this.setEndereco(endereco);
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNome() {
@@ -88,7 +77,7 @@ public class Paciente {
 
     @Override
     public String toString() {
-        return "Paciente" + "\nNome: " + nome + "\nId: " + id + "\nRg: " + rg + "\nCPF: " + cpf + "\nData de Nascimento: " + dataNasc
+        return "Paciente" + "\nNome: " + nome + rg + "\nCPF: " + cpf + "\nData de Nascimento: " + dataNasc
                 + "\nEndereco: " + endereco;
     }
 }

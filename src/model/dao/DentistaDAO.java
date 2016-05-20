@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  * @author Snowgal
  */
 public class DentistaDAO {
-
+   
     public void create(Dentista d) {
         Connection con = Conectar.getConnection();
         PreparedStatement stmt = null;
@@ -89,6 +89,5 @@ public class DentistaDAO {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao excluir " + ex);
         }
-        
     }
 }

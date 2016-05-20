@@ -5,12 +5,12 @@ public class Dentista extends Funcionario {
     private String cro;
     private String especialidade;
 
-    public Dentista(int id, String cro, String especialidade, String nome, String rg, String cpf, String funcao, double salario, Endereco endereco) throws DadoInvalidoException {
-        super(id, nome, rg, cpf, funcao, salario, endereco);
+    public Dentista(String cro, String especialidade, String nome, String rg, String cpf, String funcao, double salario, Endereco endereco) throws DadoInvalidoException {
+        super(nome, rg, cpf, funcao, salario, endereco);
         this.setCro(cro);
         this.setEspecialidade(especialidade);
     }
-
+    
     public String getCro() {
         return cro;
     }
@@ -37,7 +37,7 @@ public class Dentista extends Funcionario {
 
     @Override
     public String toString() {
-        return "Dentista" + "\nNome: " + super.getNome() + "\nCRO: " + cro + "\nEspecialidade: " + especialidade + "\nID: " + super.getId() + "" + "\n###########\n";
+        return "Dentista" + "\nNome: " + super.getNome() + "\nCRO: " + cro + "\nEspecialidade: " + especialidade + "\n###########\n";
     }
 
 }

@@ -5,6 +5,12 @@
  */
 package principal;
 
+import classes.DadoInvalidoException;
+import classes.Dentista;
+import classes.Endereco;
+import javax.swing.JOptionPane;
+import model.dao.DentistaDAO;
+
 /**
  *
  * @author Vanessa Macena
@@ -28,7 +34,6 @@ public class CadastroDentista extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -43,110 +48,193 @@ public class CadastroDentista extends javax.swing.JFrame {
         tfFuncaoDentista = new javax.swing.JTextField();
         jbOkFuncionario = new javax.swing.JButton();
         btCancelarFuncionario = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         tfCroDentista = new javax.swing.JTextField();
         tfEspecialidadeDentista = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         tfSalarioDentista = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        tfBairro = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        tfCidade = new javax.swing.JTextField();
+        tfNumero = new javax.swing.JTextField();
+        tfRua = new javax.swing.JTextField();
+        tfCep = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icones_funcionarios.png"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(26, 11, 100, 111);
-
         jLabel2.setText("Cadastro de Dentista");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(136, 91, 140, 14);
+        jLabel2.setBounds(140, 80, 140, 14);
 
-        jLabel3.setText("Codigo");
+        jLabel3.setText("Codigo:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 140, 40, 30);
+        jLabel3.setBounds(130, 120, 50, 30);
 
-        jLabel4.setText("CPF");
+        jLabel4.setText("CPF:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(520, 140, 30, 30);
+        jLabel4.setBounds(650, 130, 30, 20);
 
-        jLabel5.setText("RG");
+        jLabel5.setText("RG:");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 190, 30, 30);
+        jLabel5.setBounds(140, 160, 30, 30);
 
-        jLabel6.setText("Nome");
+        jLabel6.setText("Nome:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(120, 140, 40, 30);
+        jLabel6.setBounds(240, 120, 40, 30);
 
-        jLabel7.setText("Salário");
+        jLabel7.setText("Salário:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(540, 190, 50, 30);
+        jLabel7.setBounds(640, 170, 50, 30);
 
-        jLabel9.setText("Função");
+        jLabel9.setText("Função:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(240, 190, 50, 30);
+        jLabel9.setBounds(350, 160, 50, 20);
         jPanel1.add(tfCodDentista);
-        tfCodDentista.setBounds(60, 140, 40, 30);
+        tfCodDentista.setBounds(180, 120, 40, 30);
         jPanel1.add(tfCpfDentista);
-        tfCpfDentista.setBounds(550, 140, 150, 30);
+        tfCpfDentista.setBounds(690, 120, 150, 30);
         jPanel1.add(tfRgDentista);
-        tfRgDentista.setBounds(70, 190, 150, 30);
+        tfRgDentista.setBounds(180, 160, 150, 30);
         jPanel1.add(tfNomeDentista);
-        tfNomeDentista.setBounds(160, 140, 350, 30);
+        tfNomeDentista.setBounds(280, 120, 350, 30);
         jPanel1.add(tfFuncaoDentista);
-        tfFuncaoDentista.setBounds(320, 190, 160, 30);
+        tfFuncaoDentista.setBounds(410, 160, 160, 30);
 
         jbOkFuncionario.setText("Ok");
-        jPanel1.add(jbOkFuncionario);
-        jbOkFuncionario.setBounds(270, 350, 80, 30);
-
-        btCancelarFuncionario.setText("Cancelar");
-        jPanel1.add(btCancelarFuncionario);
-        btCancelarFuncionario.setBounds(370, 350, 80, 30);
-
-        jButton1.setText("Endereço");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbOkFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbOkFuncionarioActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(10, 290, 90, 30);
+        jPanel1.add(jbOkFuncionario);
+        jbOkFuncionario.setBounds(260, 550, 80, 30);
 
-        jLabel8.setText("CRO");
+        btCancelarFuncionario.setText("Cancelar");
+        btCancelarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarFuncionarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btCancelarFuncionario);
+        btCancelarFuncionario.setBounds(380, 550, 80, 30);
+
+        jLabel8.setText("CRO:");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(20, 250, 30, 14);
+        jLabel8.setBounds(140, 210, 30, 14);
         jPanel1.add(tfCroDentista);
-        tfCroDentista.setBounds(70, 240, 150, 30);
+        tfCroDentista.setBounds(180, 210, 150, 30);
         jPanel1.add(tfEspecialidadeDentista);
-        tfEspecialidadeDentista.setBounds(330, 240, 150, 30);
+        tfEspecialidadeDentista.setBounds(440, 200, 150, 30);
 
-        jLabel10.setText("Especialidade");
+        jLabel10.setText("Especialidade:");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(240, 250, 80, 14);
+        jLabel10.setBounds(350, 210, 90, 20);
+
+        tfSalarioDentista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfSalarioDentistaActionPerformed(evt);
+            }
+        });
         jPanel1.add(tfSalarioDentista);
-        tfSalarioDentista.setBounds(610, 190, 90, 30);
+        tfSalarioDentista.setBounds(690, 170, 90, 30);
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icones_funcionarios.png"))); // NOI18N
+        jPanel1.add(jLabel19);
+        jLabel19.setBounds(26, 11, 100, 111);
+
+        jLabel14.setText("Rua:");
+        jPanel1.add(jLabel14);
+        jLabel14.setBounds(150, 400, 30, 30);
+        jPanel1.add(tfBairro);
+        tfBairro.setBounds(200, 450, 210, 30);
+
+        jLabel15.setText("Número:");
+        jPanel1.add(jLabel15);
+        jLabel15.setBounds(430, 410, 50, 20);
+
+        jLabel16.setText("CEP:");
+        jPanel1.add(jLabel16);
+        jLabel16.setBounds(440, 450, 30, 30);
+
+        jLabel17.setText("Bairro:");
+        jPanel1.add(jLabel17);
+        jLabel17.setBounds(150, 450, 40, 14);
+
+        jLabel18.setText("Cidade:");
+        jPanel1.add(jLabel18);
+        jLabel18.setBounds(150, 500, 50, 30);
+        jPanel1.add(tfCidade);
+        tfCidade.setBounds(200, 500, 210, 30);
+        jPanel1.add(tfNumero);
+        tfNumero.setBounds(480, 400, 110, 30);
+
+        tfRua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfRuaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tfRua);
+        tfRua.setBounds(200, 400, 210, 30);
+        jPanel1.add(tfCep);
+        tfCep.setBounds(480, 450, 120, 30);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icones_funcionarios.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(30, 280, 100, 111);
+
+        jLabel13.setText("Endereço");
+        jPanel1.add(jLabel13);
+        jLabel13.setBounds(140, 340, 140, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 856, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbOkFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkFuncionarioActionPerformed
+        try {
+            Endereco c = new Endereco(this.tfRua.getText(), this.tfNumero.getText(), this.tfBairro.getText(), this.tfCep.getText(), this.tfCidade.getText());
+            Dentista a = new Dentista(this.tfNomeDentista.getText(), this.tfCroDentista.getText(), this.tfEspecialidadeDentista.getText(), this.tfFuncaoDentista.getText(),
+                    this.tfRgDentista.getText(), this.tfCpfDentista.getText(), Double.parseDouble(tfSalarioDentista.getText()), c);
+            DentistaDAO b = new DentistaDAO();
+            b.create(a);
+            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+        } catch (DadoInvalidoException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        
+    }//GEN-LAST:event_jbOkFuncionarioActionPerformed
+
+    private void tfRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfRuaActionPerformed
         // TODO add your handling code here:
-        EndereçoFuncionario ef = new EndereçoFuncionario();
-        ef.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_tfRuaActionPerformed
+
+    private void tfSalarioDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSalarioDentistaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfSalarioDentistaActionPerformed
+
+    private void btCancelarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarFuncionarioActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btCancelarFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,9 +243,15 @@ public class CadastroDentista extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCancelarFuncionario;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -168,13 +262,18 @@ public class CadastroDentista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbOkFuncionario;
+    private javax.swing.JTextField tfBairro;
+    private javax.swing.JTextField tfCep;
+    private javax.swing.JTextField tfCidade;
     private javax.swing.JTextField tfCodDentista;
     private javax.swing.JTextField tfCpfDentista;
     private javax.swing.JTextField tfCroDentista;
     private javax.swing.JTextField tfEspecialidadeDentista;
     private javax.swing.JTextField tfFuncaoDentista;
     private javax.swing.JTextField tfNomeDentista;
+    private javax.swing.JTextField tfNumero;
     private javax.swing.JTextField tfRgDentista;
+    private javax.swing.JTextField tfRua;
     private javax.swing.JTextField tfSalarioDentista;
     // End of variables declaration//GEN-END:variables
 }
