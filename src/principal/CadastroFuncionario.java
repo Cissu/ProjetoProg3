@@ -5,6 +5,11 @@
  */
 package principal;
 
+import classes.DadoInvalidoException;
+import classes.Endereco;
+import classes.Funcionario;
+import javax.swing.JOptionPane;
+import model.dao.FuncionarioDAO;
 /**
  *
  * @author Vanessa Macena
@@ -43,8 +48,18 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         tfFuncaoFuncionario = new javax.swing.JTextField();
         jbOkFuncionario = new javax.swing.JButton();
         btCancelarFuncionario = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         tfSalarioFuncionario = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        tfBairro = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        tfCidade = new javax.swing.JTextField();
+        tfNumero = new javax.swing.JTextField();
+        tfRua = new javax.swing.JTextField();
+        tfCep = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -93,23 +108,64 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         tfFuncaoFuncionario.setBounds(300, 190, 210, 30);
 
         jbOkFuncionario.setText("Ok");
-        jPanel1.add(jbOkFuncionario);
-        jbOkFuncionario.setBounds(270, 350, 80, 30);
-
-        btCancelarFuncionario.setText("Cancelar");
-        jPanel1.add(btCancelarFuncionario);
-        btCancelarFuncionario.setBounds(370, 350, 80, 30);
-
-        jButton1.setText("Endereço");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbOkFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbOkFuncionarioActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(20, 260, 90, 30);
+        jPanel1.add(jbOkFuncionario);
+        jbOkFuncionario.setBounds(260, 550, 80, 30);
+
+        btCancelarFuncionario.setText("Cancelar");
+        btCancelarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarFuncionarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btCancelarFuncionario);
+        btCancelarFuncionario.setBounds(360, 550, 80, 30);
         jPanel1.add(tfSalarioFuncionario);
         tfSalarioFuncionario.setBounds(610, 190, 90, 30);
+
+        jLabel14.setText("Rua:");
+        jPanel1.add(jLabel14);
+        jLabel14.setBounds(30, 350, 30, 30);
+        jPanel1.add(tfBairro);
+        tfBairro.setBounds(80, 400, 210, 30);
+
+        jLabel15.setText("Número:");
+        jPanel1.add(jLabel15);
+        jLabel15.setBounds(310, 360, 50, 20);
+
+        jLabel16.setText("CEP:");
+        jPanel1.add(jLabel16);
+        jLabel16.setBounds(320, 400, 30, 30);
+
+        jLabel17.setText("Bairro:");
+        jPanel1.add(jLabel17);
+        jLabel17.setBounds(30, 400, 40, 14);
+
+        jLabel18.setText("Cidade:");
+        jPanel1.add(jLabel18);
+        jLabel18.setBounds(30, 450, 50, 30);
+        jPanel1.add(tfCidade);
+        tfCidade.setBounds(80, 450, 210, 30);
+        jPanel1.add(tfNumero);
+        tfNumero.setBounds(360, 350, 110, 30);
+
+        tfRua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfRuaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tfRua);
+        tfRua.setBounds(80, 350, 210, 30);
+        jPanel1.add(tfCep);
+        tfCep.setBounds(360, 400, 120, 30);
+
+        jLabel13.setText("Endereço");
+        jPanel1.add(jLabel13);
+        jLabel13.setBounds(20, 290, 140, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,18 +175,35 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void tfRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfRuaActionPerformed
         // TODO add your handling code here:
-        EndereçoFuncionario ef = new EndereçoFuncionario();
-        ef.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_tfRuaActionPerformed
+
+    private void jbOkFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkFuncionarioActionPerformed
+        try {
+            Endereco c = new Endereco(this.tfRua.getText(), this.tfNumero.getText(), this.tfBairro.getText(), this.tfCep.getText(), this.tfCidade.getText());
+            Funcionario f = new Funcionario(this.tfNomeFuncionario.getText(), this.tfRgFuncionario.getText(), this.tfCpfFuncionario.getText(), this.tfFuncaoFuncionario.getText(),
+            Double.parseDouble(this.tfSalarioFuncionario.getText()), c);
+            FuncionarioDAO b = new FuncionarioDAO();
+            b.create(f);
+            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+        } catch (DadoInvalidoException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+    }//GEN-LAST:event_jbOkFuncionarioActionPerformed
+
+    private void btCancelarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarFuncionarioActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btCancelarFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,8 +212,13 @@ public class CadastroFuncionario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCancelarFuncionario;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -150,11 +228,16 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbOkFuncionario;
+    private javax.swing.JTextField tfBairro;
+    private javax.swing.JTextField tfCep;
+    private javax.swing.JTextField tfCidade;
     private javax.swing.JTextField tfCodFuncionario;
     private javax.swing.JTextField tfCpfFuncionario;
     private javax.swing.JTextField tfFuncaoFuncionario;
     private javax.swing.JTextField tfNomeFuncionario;
+    private javax.swing.JTextField tfNumero;
     private javax.swing.JTextField tfRgFuncionario;
+    private javax.swing.JTextField tfRua;
     private javax.swing.JTextField tfSalarioFuncionario;
     // End of variables declaration//GEN-END:variables
 }

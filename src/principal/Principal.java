@@ -173,9 +173,7 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         FormPaciente f = new FormPaciente();
         f.setVisible(true);
-        f.setLocationRelativeTo(null);
-        f.setLocation(327, 333);
-        f.setSize(1265, 640);
+       
     
     }//GEN-LAST:event_jbPacientesActionPerformed
 
@@ -184,16 +182,14 @@ public class Principal extends javax.swing.JFrame {
         FormFuncionario c = new FormFuncionario();
         c.setVisible(true);   
         c.setLocationRelativeTo(null);
-        c.setLocation(327, 333);
-        c.setSize(1265, 640);
+
     }//GEN-LAST:event_jbFuncionariosActionPerformed
 
     private void jbAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgendaActionPerformed
         principal.Agenda a = new principal.Agenda();
         a.setVisible(true);
         a.setLocationRelativeTo(null);
-        a.setLocation(327, 333);
-        a.setSize(1265, 640);
+
 
     }//GEN-LAST:event_jbAgendaActionPerformed
 
@@ -203,8 +199,7 @@ public class Principal extends javax.swing.JFrame {
         f.setVisible(true);
         //Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
         f.setLocationRelativeTo(null);
-        f.setLocation(327, 333);
-        f.setSize(1265, 640);
+
         //f.setLocation(tela.width-this.getSize().width,(tela.height-this.getSize().height));
     }//GEN-LAST:event_jButton4ActionPerformed
 
