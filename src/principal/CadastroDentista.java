@@ -35,37 +35,39 @@ public class CadastroDentista extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        tfCodDentista = new javax.swing.JTextField();
-        tfCpfDentista = new javax.swing.JTextField();
-        tfRgDentista = new javax.swing.JTextField();
-        tfNomeDentista = new javax.swing.JTextField();
-        tfFuncaoDentista = new javax.swing.JTextField();
         jbOkFuncionario = new javax.swing.JButton();
         btCancelarFuncionario = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        tfCroDentista = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        tfCodDentista = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        tfNomeDentista = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        tfRgDentista = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        tfFuncaoDentista = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        tfSalarioDentista = new javax.swing.JTextField();
         tfEspecialidadeDentista = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        tfSalarioDentista = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        tfCroDentista = new javax.swing.JTextField();
+        tfCpfDentista = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        tfBairro = new javax.swing.JTextField();
+        tfRua = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
+        tfNumero = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
+        tfCep = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        tfBairro = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         tfCidade = new javax.swing.JTextField();
-        tfNumero = new javax.swing.JTextField();
-        tfRua = new javax.swing.JTextField();
-        tfCep = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -74,40 +76,6 @@ public class CadastroDentista extends javax.swing.JFrame {
         jLabel2.setText("Cadastro de Dentista");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(140, 80, 140, 14);
-
-        jLabel3.setText("Codigo:");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(130, 120, 50, 30);
-
-        jLabel4.setText("CPF:");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(650, 130, 30, 20);
-
-        jLabel5.setText("RG:");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(140, 160, 30, 30);
-
-        jLabel6.setText("Nome:");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(240, 120, 40, 30);
-
-        jLabel7.setText("Salário:");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(640, 170, 50, 30);
-
-        jLabel9.setText("Função:");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(350, 160, 50, 20);
-        jPanel1.add(tfCodDentista);
-        tfCodDentista.setBounds(180, 120, 40, 30);
-        jPanel1.add(tfCpfDentista);
-        tfCpfDentista.setBounds(690, 120, 150, 30);
-        jPanel1.add(tfRgDentista);
-        tfRgDentista.setBounds(180, 160, 150, 30);
-        jPanel1.add(tfNomeDentista);
-        tfNomeDentista.setBounds(280, 120, 350, 30);
-        jPanel1.add(tfFuncaoDentista);
-        tfFuncaoDentista.setBounds(410, 160, 160, 30);
 
         jbOkFuncionario.setText("Ok");
         jbOkFuncionario.addActionListener(new java.awt.event.ActionListener() {
@@ -127,73 +95,257 @@ public class CadastroDentista extends javax.swing.JFrame {
         jPanel1.add(btCancelarFuncionario);
         btCancelarFuncionario.setBounds(380, 550, 80, 30);
 
-        jLabel8.setText("CRO:");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(140, 210, 30, 14);
-        jPanel1.add(tfCroDentista);
-        tfCroDentista.setBounds(180, 210, 150, 30);
-        jPanel1.add(tfEspecialidadeDentista);
-        tfEspecialidadeDentista.setBounds(440, 200, 150, 30);
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/DENTISTA.png"))); // NOI18N
+        jPanel1.add(jLabel19);
+        jLabel19.setBounds(26, 11, 100, 111);
 
-        jLabel10.setText("Especialidade:");
-        jPanel1.add(jLabel10);
-        jLabel10.setBounds(350, 210, 90, 20);
+        jLabel13.setText("Endereço:");
+        jPanel1.add(jLabel13);
+        jLabel13.setBounds(10, 330, 140, 20);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel3.setText("Codigo:");
+
+        tfCodDentista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCodDentistaActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Nome:");
+
+        tfNomeDentista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNomeDentistaActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("CPF:");
+
+        jLabel5.setText("RG:");
+
+        tfRgDentista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfRgDentistaActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Função:");
+
+        tfFuncaoDentista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfFuncaoDentistaActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Salário:");
 
         tfSalarioDentista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfSalarioDentistaActionPerformed(evt);
             }
         });
-        jPanel1.add(tfSalarioDentista);
-        tfSalarioDentista.setBounds(690, 170, 90, 30);
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icones_funcionarios.png"))); // NOI18N
-        jPanel1.add(jLabel19);
-        jLabel19.setBounds(26, 11, 100, 111);
+        tfEspecialidadeDentista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfEspecialidadeDentistaActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Especialidade:");
+
+        jLabel8.setText("CRO:");
+
+        tfCroDentista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCroDentistaActionPerformed(evt);
+            }
+        });
+
+        tfCpfDentista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCpfDentistaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(tfCodDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfNomeDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfCpfDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(tfRgDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfFuncaoDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(62, 62, 62)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfEspecialidadeDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(tfCroDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfSalarioDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(400, 400, 400))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfCodDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfNomeDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfCpfDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfRgDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfFuncaoDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfEspecialidadeDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(tfCroDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfSalarioDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(10, 140, 840, 180);
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel14.setText("Rua:");
-        jPanel1.add(jLabel14);
-        jLabel14.setBounds(150, 400, 30, 30);
-        jPanel1.add(tfBairro);
-        tfBairro.setBounds(200, 450, 210, 30);
-
-        jLabel15.setText("Número:");
-        jPanel1.add(jLabel15);
-        jLabel15.setBounds(430, 410, 50, 20);
-
-        jLabel16.setText("CEP:");
-        jPanel1.add(jLabel16);
-        jLabel16.setBounds(440, 450, 30, 30);
-
-        jLabel17.setText("Bairro:");
-        jPanel1.add(jLabel17);
-        jLabel17.setBounds(150, 450, 40, 14);
-
-        jLabel18.setText("Cidade:");
-        jPanel1.add(jLabel18);
-        jLabel18.setBounds(150, 500, 50, 30);
-        jPanel1.add(tfCidade);
-        tfCidade.setBounds(200, 500, 210, 30);
-        jPanel1.add(tfNumero);
-        tfNumero.setBounds(480, 400, 110, 30);
 
         tfRua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfRuaActionPerformed(evt);
             }
         });
-        jPanel1.add(tfRua);
-        tfRua.setBounds(200, 400, 210, 30);
-        jPanel1.add(tfCep);
-        tfCep.setBounds(480, 450, 120, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icones_funcionarios.png"))); // NOI18N
+        jLabel15.setText("Número:");
+
+        tfNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNumeroActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setText("CEP:");
+
+        tfCep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCepActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Bairro:");
+
+        tfBairro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfBairroActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setText("Cidade:");
+
+        tfCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCidadeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfRua))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tfBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfCep, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfRua, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfCep, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(tfBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(86, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(10, 350, 830, 190);
+
+        jLabel1.setText("Dados Pessoais:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(30, 280, 100, 111);
-
-        jLabel13.setText("Endereço");
-        jPanel1.add(jLabel13);
-        jLabel13.setBounds(140, 340, 140, 20);
+        jLabel1.setBounds(10, 120, 100, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -226,15 +378,72 @@ public class CadastroDentista extends javax.swing.JFrame {
 
     private void tfRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfRuaActionPerformed
         // TODO add your handling code here:
+        tfNumero.requestFocus();
     }//GEN-LAST:event_tfRuaActionPerformed
 
     private void tfSalarioDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSalarioDentistaActionPerformed
         // TODO add your handling code here:
+        tfRua.requestFocus();
     }//GEN-LAST:event_tfSalarioDentistaActionPerformed
 
     private void btCancelarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarFuncionarioActionPerformed
         this.dispose();
     }//GEN-LAST:event_btCancelarFuncionarioActionPerformed
+
+    private void tfNomeDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomeDentistaActionPerformed
+        // TODO add your handling code here:
+        tfCpfDentista.requestFocus();
+    }//GEN-LAST:event_tfNomeDentistaActionPerformed
+
+    private void tfCpfDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCpfDentistaActionPerformed
+        // TODO add your handling code here:
+        tfRgDentista.requestFocus();
+    }//GEN-LAST:event_tfCpfDentistaActionPerformed
+
+    private void tfRgDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfRgDentistaActionPerformed
+        // TODO add your handling code here:
+        tfFuncaoDentista.requestFocus();
+    }//GEN-LAST:event_tfRgDentistaActionPerformed
+
+    private void tfFuncaoDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFuncaoDentistaActionPerformed
+        // TODO add your handling code here:
+        tfEspecialidadeDentista.requestFocus();
+    }//GEN-LAST:event_tfFuncaoDentistaActionPerformed
+
+    private void tfEspecialidadeDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfEspecialidadeDentistaActionPerformed
+        // TODO add your handling code here:
+        tfCroDentista.requestFocus();
+    }//GEN-LAST:event_tfEspecialidadeDentistaActionPerformed
+
+    private void tfCroDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCroDentistaActionPerformed
+        // TODO add your handling code here:
+        tfSalarioDentista.requestFocus();
+    }//GEN-LAST:event_tfCroDentistaActionPerformed
+
+    private void tfNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNumeroActionPerformed
+        // TODO add your handling code here:
+        tfCep.requestFocus();
+    }//GEN-LAST:event_tfNumeroActionPerformed
+
+    private void tfCepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCepActionPerformed
+        // TODO add your handling code here:
+        tfBairro.requestFocus();
+    }//GEN-LAST:event_tfCepActionPerformed
+
+    private void tfBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfBairroActionPerformed
+        // TODO add your handling code here:
+        tfCidade.requestFocus();
+    }//GEN-LAST:event_tfBairroActionPerformed
+
+    private void tfCodDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCodDentistaActionPerformed
+        // TODO add your handling code here:
+        tfNomeDentista.requestFocus();
+    }//GEN-LAST:event_tfCodDentistaActionPerformed
+
+    private void tfCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCidadeActionPerformed
+        // TODO add your handling code here:
+        jbOkFuncionario.requestFocus();
+    }//GEN-LAST:event_tfCidadeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,6 +470,8 @@ public class CadastroDentista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JButton jbOkFuncionario;
     private javax.swing.JTextField tfBairro;
     private javax.swing.JTextField tfCep;
