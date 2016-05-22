@@ -15,6 +15,11 @@ public class Paciente {
         this.setEndereco(endereco);
     }
 
+    public Paciente() {
+    }
+    
+    
+
     public String getNome() {
         return nome;
     }
