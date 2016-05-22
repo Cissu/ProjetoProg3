@@ -5,14 +5,19 @@
  */
 package repositorio;
 
+import classes.Dentista;
+import classes.Funcionario;
+
 /**
  *
  * @author Ewerton
  */
 public interface IFclinica {
     
-    public void cadastrar();
-    public void consultar();
-    public void buscar();
+    public void create(Funcionario f);
+    public void update(Funcionario f);
+    public void consultar(Funcionario f);
+    public void delete(Funcionario f);
+    public void buscar(Funcionario f);
     
 }
