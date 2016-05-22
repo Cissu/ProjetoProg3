@@ -6,10 +6,14 @@
 package model.dao;
 
 import bancodedados.Conectar;
+import classes.DadoInvalidoException;
 import classes.Funcionario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -95,6 +99,46 @@ public class FuncionarioDAO {
         } finally {
             Conectar.closeConnection(con, stmt);
         }
+
+    }
+    
+    
+    public List<Funcionario> read() throws DadoInvalidoException {
+        Connection con = Conectar.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        List<Funcionario> funcionarios = new ArrayList<>();
+
+        try {
+            stmt = con.prepareStatement("select * from funcionario");
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+
+                Funcionario func = new Funcionario();
+                func.setID(rs.getInt("id"));
+                func.setNome(rs.getString("nome"));
+                func.setRg(rs.getString("rg"));
+                func.setCpf(rs.getString("cpf"));
+                func.setFuncao(rs.getString("Funcao"));
+                func.setSalario(rs.getDouble("salario"));
+                func.getEndereco().setRua(rs.getString("rua"));
+                func.getEndereco().setNumero(rs.getString("numero"));
+                func.getEndereco().setBairro(rs.getString("bairro"));
+                func.getEndereco().setCep(rs.getString("cep"));
+                func.getEndereco().setCidade(rs.getString("cidade"));
+                funcionarios.add(func);
+
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao listar " + ex);
+        } finally {
+            Conectar.closeConnection(con, stmt, rs);
+
+        }
+        return funcionarios;
 
     }
 }

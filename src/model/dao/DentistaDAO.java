@@ -6,10 +6,14 @@
 package model.dao;
 
 import bancodedados.Conectar;
+import classes.DadoInvalidoException;
 import classes.Dentista;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -90,4 +94,47 @@ public class DentistaDAO {
             JOptionPane.showMessageDialog(null, "Erro ao excluir " + ex);
         }
     }
+    
+    public List<Dentista> read() throws DadoInvalidoException {
+        Connection con = Conectar.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        List<Dentista> dentistas = new ArrayList<>();
+
+        try {
+            stmt = con.prepareStatement("select * from dentista");
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+
+                Dentista dent = new Dentista();
+                dent.setID(rs.getInt("id"));
+                dent.setNome(rs.getString("nome"));
+                dent.setCro(rs.getString("cro"));
+                dent.setEspecialidade(rs.getString("especialidade"));
+                dent.setFuncao(rs.getString("funcao"));
+                dent.setRg(rs.getString("rg"));
+                dent.setCpf(rs.getString("cpf"));
+                dent.setSalario(rs.getDouble("salario"));
+                dent.getEndereco().setRua(rs.getString("rua"));
+                dent.getEndereco().setNumero(rs.getString("numero"));
+                dent.getEndereco().setBairro(rs.getString("bairro"));
+                dent.getEndereco().setCep(rs.getString("cep"));
+                dent.getEndereco().setCidade(rs.getString("cidade"));
+                dentistas.add(dent);
+
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao listar " + ex);
+        } finally {
+            Conectar.closeConnection(con, stmt, rs);
+
+        }
+        return dentistas;
+
+    }
+    
+    
 }

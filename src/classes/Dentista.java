@@ -10,6 +10,10 @@ public class Dentista extends Funcionario {
         this.setCro(cro);
         this.setEspecialidade(especialidade);
     }
+
+    public Dentista() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public String getCro() {
         return cro;
