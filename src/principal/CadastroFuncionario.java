@@ -331,7 +331,18 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             Double.parseDouble(this.tfSalarioFuncionario.getText()), c);
             FuncionarioDAO b = new FuncionarioDAO();
             b.create(f);
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+           // JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+=======
+>>>>>>> refs/remotes/xewertonfilipe/master
+=======
             JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+>>>>>>> parent of 2a7c7d7... Alterações
+=======
+            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+>>>>>>> refs/remotes/xewertonfilipe/master
         } catch (DadoInvalidoException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
