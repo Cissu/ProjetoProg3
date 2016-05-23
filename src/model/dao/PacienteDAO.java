@@ -9,9 +9,12 @@ import bancodedados.Conectar;
 import classes.DadoInvalidoException;
 import classes.Paciente;
 import java.sql.Connection;
+//import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+//import java.text.ParseException;
+//import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -34,6 +37,8 @@ public class PacienteDAO {
             stmt.setString(2, p.getRg());
             stmt.setString(3, p.getCpf());
             stmt.setString(4, p.getDataNasc());
+            //stmt.setDate(4, (Date) new SimpleDateFormat("dd/MM/yyyy").parse(p.getDataNasc()));
+            //stmt.setDate(4, new java.sql.Date(p.getDataNasc().getTime()));
             stmt.setObject(5, p.getEndereco().getRua());
             stmt.setObject(6, p.getEndereco().getNumero());
             stmt.setObject(7, p.getEndereco().getBairro());
@@ -113,7 +118,7 @@ public class PacienteDAO {
             while (rs.next()) {
 
                 Paciente paciente = new Paciente();
-                paciente.setID(rs.getInt("id"));
+                paciente.setId(rs.getInt("id"));
                 paciente.setNome(rs.getString("nome"));
                 paciente.setRg(rs.getString("rg"));
                 paciente.setCpf(rs.getString("cpf"));

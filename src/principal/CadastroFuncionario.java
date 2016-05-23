@@ -8,6 +8,8 @@ package principal;
 import classes.DadoInvalidoException;
 import classes.Endereco;
 import classes.Funcionario;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.dao.FuncionarioDAO;
 /**
@@ -325,16 +327,18 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_tfRuaActionPerformed
 
     private void jbOkFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOkFuncionarioActionPerformed
-        try {
+      try {
             Endereco c = new Endereco(this.tfRua.getText(), this.tfNumero.getText(), this.tfBairro.getText(), this.tfCep.getText(), this.tfCidade.getText());
             Funcionario f = new Funcionario(this.tfNomeFuncionario.getText(), this.tfRgFuncionario.getText(), this.tfCpfFuncionario.getText(), this.tfFuncaoFuncionario.getText(),
             Double.parseDouble(this.tfSalarioFuncionario.getText()), c);
             FuncionarioDAO b = new FuncionarioDAO();
             b.create(f);
-            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+           // JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
         } catch (DadoInvalidoException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
+
+
     }//GEN-LAST:event_jbOkFuncionarioActionPerformed
 
     private void btCancelarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarFuncionarioActionPerformed
