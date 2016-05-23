@@ -109,7 +109,7 @@ public class DentistaDAO {
             while (rs.next()) {
 
                 Dentista dent = new Dentista();
-                dent.setID(rs.getInt("id"));
+                dent.setId(rs.getInt("id"));
                 dent.setNome(rs.getString("nome"));
                 dent.setCro(rs.getString("cro"));
                 dent.setEspecialidade(rs.getString("especialidade"));

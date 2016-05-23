@@ -11,7 +11,7 @@ public class Funcionario {
     private Endereco endereco;
     private int cont = 1;
 
-    public Funcionario(String nome, String rg, String cpf, String funcao, double salario, Endereco endereco) throws DadoInvalidoException {
+    public Funcionario(String nome, String rg, String cpf, String funcao, double salario, Endereco endereco) throws DadoInvalidoException, SalarioInvalidoException {
         this.setNome(nome);
         this.setRg(rg);
         this.setCpf(cpf);
@@ -20,8 +20,14 @@ public class Funcionario {
         this.setEndereco(endereco);
     }
 
-    public Funcionario() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Funcionario() {}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     public String getNome() {

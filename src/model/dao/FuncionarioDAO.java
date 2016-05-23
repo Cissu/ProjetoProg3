@@ -35,11 +35,11 @@ public class FuncionarioDAO {
             stmt.setString(3, f.getCpf());
             stmt.setString(4, f.getFuncao());
             stmt.setDouble(5, f.getSalario());
-            stmt.setObject(6, f.getEndereco().getRua());
-            stmt.setObject(7, f.getEndereco().getNumero());
-            stmt.setObject(8, f.getEndereco().getBairro());
-            stmt.setObject(9, f.getEndereco().getCep());
-            stmt.setObject(10, f.getEndereco().getCidade());
+            stmt.setString(6, f.getEndereco().getRua());
+            stmt.setString(7 ,f.getEndereco().getNumero());
+            stmt.setString(8, f.getEndereco().getBairro());
+            stmt.setString(9, f.getEndereco().getCep());
+            stmt.setString(10, f.getEndereco().getCidade());
 
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Inserido com sucesso!");
@@ -117,7 +117,7 @@ public class FuncionarioDAO {
             while (rs.next()) {
 
                 Funcionario func = new Funcionario();
-                func.setID(rs.getInt("id"));
+                func.setId(rs.getInt("id"));
                 func.setNome(rs.getString("nome"));
                 func.setRg(rs.getString("rg"));
                 func.setCpf(rs.getString("cpf"));
