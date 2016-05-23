@@ -7,15 +7,6 @@ public class Paciente {
     private String cpf;
     private String dataNasc;
     private Endereco endereco;
-    private int id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public Paciente(String nome, String rg, String cpf, String dataNasc, Endereco endereco) throws DadoInvalidoException {
         this.setNome(nome);

@@ -9,19 +9,7 @@ public class Funcionario {
     private String funcao;
     private double salario;
     private Endereco endereco;
-
-//    public Funcionario(String text, String text0, String text1, String text2, double parseDouble, Endereco c) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-    
+    private int cont = 1;
 
     public Funcionario(String nome, String rg, String cpf, String funcao, double salario, Endereco endereco) throws DadoInvalidoException, SalarioInvalidoException {
         this.setNome(nome);
