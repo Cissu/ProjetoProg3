@@ -2,54 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-<<<<<<< HEAD
         <group>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <file>file:/C:/Users/Snowgal/Documents/NetBeansProjects/ProjetoProg3/src/bancodedados/Conectar.java</file>
-=======
->>>>>>> parent of 2a7c7d7... Alterações
-            <file>file:/C:/Users/Snowgal/Documents/NetBeansProjects/ProjetoProg3/src/model/dao/FuncionarioDAO.java</file>
-            <file>file:/C:/Users/Snowgal/Documents/NetBeansProjects/ProjetoProg3/src/model/dao/DentistaDAO.java</file>
-            <file>file:/C:/Users/Snowgal/Documents/NetBeansProjects/ProjetoProg3/src/classes/Funcionario.java</file>
-            <file>file:/C:/Users/Snowgal/Documents/NetBeansProjects/ProjetoProg3/src/principal/CadastroPaciente.java</file>
-            <file>file:/C:/Users/Snowgal/Documents/NetBeansProjects/ProjetoProg3/src/model/dao/PacienteDAO.java</file>
-            <file>file:/C:/Users/Snowgal/Documents/NetBeansProjects/ProjetoProg3/src/principal/Principal.java</file>
-            <file>file:/C:/Users/Snowgal/Documents/NetBeansProjects/ProjetoProg3/src/classes/Dentista.java</file>
-            <file>file:/C:/Users/Snowgal/Documents/NetBeansProjects/ProjetoProg3/src/principal/FormFuncionario.java</file>
-<<<<<<< HEAD
-=======
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/principal/CadastroDentista.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/model/dao/PacienteDAO.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/classes/Endereco.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/bancodedados/Conectar.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/classes/Paciente.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/principal/Principal.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/model/dao/FuncionarioDAO.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/classes/Dentista.java</file>
             <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/principal/CadastroFuncionario.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/classes/Funcionario.java</file>
             <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/principal/CadastroPaciente.java</file>
             <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/model/dao/DentistaDAO.java</file>
->>>>>>> refs/remotes/xewertonfilipe/master
-=======
-            <file>file:/C:/Users/Snowgal/Documents/NetBeansProjects/ProjetoProg3/src/principal/CadastroDentista.java</file>
->>>>>>> parent of 2a7c7d7... Alterações
         </group>
-=======
-        <group/>
->>>>>>> refs/remotes/xewertonfilipe/master
-=======
-        <group>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/model/dao/PacienteDAO.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/classes/Paciente.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/model/dao/FuncionarioDAO.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/classes/Dentista.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/principal/CadastroFuncionario.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/classes/Funcionario.java</file>
-            <file>file:/F:/Meus%20documentos/Nova%20pasta/NetBeansProjects/ProjetoProg3/src/model/dao/DentistaDAO.java</file>
-        </group>
->>>>>>> refs/remotes/xewertonfilipe/master
     </open-files>
 </project-private>
