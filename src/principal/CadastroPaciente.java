@@ -40,8 +40,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        tfCodPaciente = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         tfNomePaciente = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -88,14 +86,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setText("Código");
-
-        tfCodPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCodPacienteActionPerformed(evt);
-            }
-        });
-
         jLabel2.setText("Nome");
 
         tfNomePaciente.setToolTipText("");
@@ -105,7 +95,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("CPF");
+        jLabel4.setText("CPF:");
 
         tfdata3.setText("      /   /    ");
         tfdata3.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +104,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("RG");
+        jLabel3.setText("RG:");
 
         tfRgPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +112,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Data de nascimento");
+        jLabel5.setText("Data de nascimento:");
 
         try {
             tfdata2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -149,7 +139,12 @@ public class CadastroPaciente extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(tfCodPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -177,14 +172,27 @@ public class CadastroPaciente extends javax.swing.JFrame {
                     .addContainerGap(719, Short.MAX_VALUE)
                     .addComponent(tfCpfPaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(17, 17, 17)))
+=======
+                        .addComponent(tfRgPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(74, 74, 74)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tfDataNasPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(tfNomePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(164, 164, 164)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addComponent(tfCpfPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27))))
+>>>>>>> refs/remotes/xewertonfilipe/master
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfCodPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfNomePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -369,7 +377,10 @@ public class CadastroPaciente extends javax.swing.JFrame {
                     e);
             PacienteDAO b = new PacienteDAO();
             b.create(p);
+<<<<<<< HEAD
            // JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+=======
+>>>>>>> refs/remotes/xewertonfilipe/master
         } catch (DadoInvalidoException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
@@ -389,11 +400,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
         // TODO add your handling code here:
         tfRgPaciente.requestFocus();
     }//GEN-LAST:event_tfdata3ActionPerformed
-
-    private void tfCodPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCodPacienteActionPerformed
-        // TODO add your handling code here:
-        tfNomePaciente.requestFocus();
-    }//GEN-LAST:event_tfCodPacienteActionPerformed
 
     private void tfNomePacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomePacienteActionPerformed
         // TODO add your handling code here:
@@ -441,7 +447,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -461,8 +466,13 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField tfBairro;
     private javax.swing.JTextField tfCep;
     private javax.swing.JTextField tfCidade;
+<<<<<<< HEAD
     private javax.swing.JTextField tfCodPaciente;
     private javax.swing.JTextField tfCpfPaciente1;
+=======
+    private javax.swing.JTextField tfCpfPaciente;
+    private javax.swing.JFormattedTextField tfDataNasPaciente;
+>>>>>>> refs/remotes/xewertonfilipe/master
     private javax.swing.JTextField tfNomePaciente;
     private javax.swing.JTextField tfNumero;
     private javax.swing.JTextField tfRgPaciente;
