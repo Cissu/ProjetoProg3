@@ -117,7 +117,7 @@ public class FuncionarioDAO {
             while (rs.next()) {
 
                 Funcionario func = new Funcionario();
-                func.setID(rs.getInt("id"));
+                func.setId(rs.getInt("id"));
                 func.setNome(rs.getString("nome"));
                 func.setRg(rs.getString("rg"));
                 func.setCpf(rs.getString("cpf"));
