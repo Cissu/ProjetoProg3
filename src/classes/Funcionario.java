@@ -11,7 +11,7 @@ public class Funcionario {
     private Endereco endereco;
     private int cont = 1;
 
-    public Funcionario(String nome, String rg, String cpf, String funcao, double salario, Endereco endereco) throws DadoInvalidoException, SalarioInvalidoException {
+    public Funcionario(String nome, String rg, String cpf, String funcao, double salario, Endereco endereco) throws DadoInvalidoException {
         this.setNome(nome);
         this.setRg(rg);
         this.setCpf(cpf);
