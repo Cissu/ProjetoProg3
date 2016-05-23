@@ -47,6 +47,8 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         tfFuncaoFuncionario = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         tfSalarioFuncionario = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        tfCodFuncionario = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         tfNomeFuncionario = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -114,7 +116,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel5.setText("RG:");
+        jLabel5.setText("RG");
 
         tfRgFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +124,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setText("Função:");
+        jLabel9.setText("Função");
 
         tfFuncaoFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,7 +132,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setText("Salário:");
+        jLabel7.setText("Salário");
 
         tfSalarioFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,7 +140,15 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setText("Nome:");
+        jLabel3.setText("Codigo");
+
+        tfCodFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCodFuncionarioActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Nome");
 
         tfNomeFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,7 +156,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("CPF:");
+        jLabel4.setText("CPF");
 
         tfCpfFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,13 +171,11 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfRgFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
+                        .addGap(43, 43, 43)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfFuncaoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -175,10 +183,16 @@ public class CadastroFuncionario extends javax.swing.JFrame {
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tfSalarioFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 119, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(tfNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfCodFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(tfCpfFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -189,6 +203,8 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(36, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfCodFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -315,6 +331,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             Double.parseDouble(this.tfSalarioFuncionario.getText()), c);
             FuncionarioDAO b = new FuncionarioDAO();
             b.create(f);
+            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
         } catch (DadoInvalidoException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
@@ -323,6 +340,11 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private void btCancelarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarFuncionarioActionPerformed
         this.dispose();
     }//GEN-LAST:event_btCancelarFuncionarioActionPerformed
+
+    private void tfCodFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCodFuncionarioActionPerformed
+        // TODO add your handling code here:
+        tfNomeFuncionario.requestFocus();
+    }//GEN-LAST:event_tfCodFuncionarioActionPerformed
 
     private void tfNomeFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomeFuncionarioActionPerformed
         // TODO add your handling code here:
@@ -384,6 +406,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -397,6 +420,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JTextField tfBairro;
     private javax.swing.JTextField tfCep;
     private javax.swing.JTextField tfCidade;
+    private javax.swing.JTextField tfCodFuncionario;
     private javax.swing.JTextField tfCpfFuncionario;
     private javax.swing.JTextField tfFuncaoFuncionario;
     private javax.swing.JTextField tfNomeFuncionario;

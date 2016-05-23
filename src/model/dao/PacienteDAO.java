@@ -113,7 +113,7 @@ public class PacienteDAO {
             while (rs.next()) {
 
                 Paciente paciente = new Paciente();
-                paciente.setId(rs.getInt("id"));
+                paciente.setID(rs.getInt("id"));
                 paciente.setNome(rs.getString("nome"));
                 paciente.setRg(rs.getString("rg"));
                 paciente.setCpf(rs.getString("cpf"));

@@ -36,7 +36,11 @@ public class FuncionarioDAO {
             stmt.setString(4, f.getFuncao());
             stmt.setDouble(5, f.getSalario());
             stmt.setObject(6, f.getEndereco().getRua());
+<<<<<<< HEAD
             stmt.setObject(7 ,f.getEndereco().getNumero());
+=======
+            stmt.setObject(7, f.getEndereco().getNumero());
+>>>>>>> parent of 8f73f02... Modificações
             stmt.setObject(8, f.getEndereco().getBairro());
             stmt.setObject(9, f.getEndereco().getCep());
             stmt.setObject(10, f.getEndereco().getCidade());
@@ -116,7 +120,7 @@ public class FuncionarioDAO {
             while (rs.next()) {
 
                 Funcionario func = new Funcionario();
-                func.setId(rs.getInt("id"));
+                func.setID(rs.getInt("id"));
                 func.setNome(rs.getString("nome"));
                 func.setRg(rs.getString("rg"));
                 func.setCpf(rs.getString("cpf"));

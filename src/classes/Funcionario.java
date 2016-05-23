@@ -20,14 +20,8 @@ public class Funcionario {
         this.setEndereco(endereco);
     }
 
-    public Funcionario() {}
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public Funcionario() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public String getNome() {
