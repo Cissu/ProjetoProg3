@@ -1,7 +1,6 @@
 package classes;
 
 public class Paciente {
-    private int id;
     private String nome;
     private String rg;
     private String cpf;
@@ -18,15 +17,9 @@ public class Paciente {
 
     public Paciente() {
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
     
+    
+
     public String getNome() {
         return nome;
     }
