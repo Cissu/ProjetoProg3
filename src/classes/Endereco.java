@@ -8,12 +8,16 @@ public class Endereco {
     private String bairro;
     private String cidade;
 
-    public Endereco(String rua, String numero, String cep, String bairro, String cidade) throws DadoInvalidoException {
+    public Endereco(String rua, String numero, String bairro, String cep, String cidade) throws DadoInvalidoException {
         this.setRua(rua);
         this.setNumero(numero);
         this.setCep(cep);
         this.setBairro(bairro);
         this.setCidade(cidade);
+    }
+
+    public Endereco() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getRua() {
