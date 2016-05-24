@@ -23,6 +23,7 @@ public class FormDentista extends javax.swing.JFrame {
     public FormDentista() throws DadoInvalidoException {
         initComponents();
         readDentista();
+        setLocationRelativeTo(null);
     }
 
     public void readDentista() throws DadoInvalidoException {
