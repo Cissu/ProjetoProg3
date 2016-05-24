@@ -8,6 +8,7 @@ package model.dao;
 import bancodedados.Conectar;
 import classes.DadoInvalidoException;
 import classes.Dentista;
+import classes.Endereco;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -109,6 +110,7 @@ public class DentistaDAO {
             while (rs.next()) {
 
                 Dentista dent = new Dentista();
+                //Endereco e = new Endereco();
                 dent.setId(rs.getInt("id"));
                 dent.setNome(rs.getString("nome"));
                 dent.setCro(rs.getString("cro"));
@@ -117,7 +119,8 @@ public class DentistaDAO {
                 dent.setRg(rs.getString("rg"));
                 dent.setCpf(rs.getString("cpf"));
                 dent.setSalario(rs.getDouble("salario"));
-                dent.getEndereco().setRua(rs.getString("rua"));
+                dent.setEndereco( new Endereco() );
+                dent.getEndereco().setRua(rs.getString("Rua"));
                 dent.getEndereco().setNumero(rs.getString("numero"));
                 dent.getEndereco().setBairro(rs.getString("bairro"));
                 dent.getEndereco().setCep(rs.getString("cep"));
