@@ -42,10 +42,14 @@ public class Principal extends javax.swing.JFrame {
         jbFuncionarios = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        ImgPrincipal = new javax.swing.JLabel();
+        btnListarDentista = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu5 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         CadastroFuncionario = new javax.swing.JMenuItem();
@@ -75,7 +79,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbPacientes);
-        jbPacientes.setBounds(10, 10, 100, 110);
+        jbPacientes.setBounds(30, 30, 110, 110);
 
         jbAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/agenda.png"))); // NOI18N
         jbAgenda.setText("jButton2");
@@ -86,7 +90,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbAgenda);
-        jbAgenda.setBounds(270, 10, 100, 110);
+        jbAgenda.setBounds(490, 30, 110, 110);
 
         jbFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icones_funcionarios.png"))); // NOI18N
         jbFuncionarios.setToolTipText("Funcionários");
@@ -96,7 +100,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbFuncionarios);
-        jbFuncionarios.setBounds(140, 10, 100, 110);
+        jbFuncionarios.setBounds(190, 30, 120, 110);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fluxo-de-caixa3.png"))); // NOI18N
         jButton4.setToolTipText("Fluxo de caixa");
@@ -106,39 +110,65 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(390, 10, 100, 110);
+        jButton4.setBounds(650, 30, 110, 110);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/telaPrincipal_1.jpg"))); // NOI18N
+        ImgPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/telaPrincipal_1.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ImgPrincipal)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 605, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ImgPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 614, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(10, 130, 1230, 610);
+        jPanel2.setBounds(0, 180, 1240, 560);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnListarDentista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/DENTISTA.png"))); // NOI18N
+        btnListarDentista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnListarDentistaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(540, 50, 73, 23);
+        jPanel1.add(btnListarDentista);
+        btnListarDentista.setBounds(340, 30, 110, 110);
 
-        jMenu5.setText("Inicio");
-        jMenuBar1.add(jMenu5);
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setText("Gerenciar Dentistas");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(340, 140, 110, 15);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setText("Gerenciar Paciente");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(30, 140, 110, 15);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setText("Gerenciar Funcionário");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(190, 140, 130, 15);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setText("Agenda");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(530, 140, 60, 15);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setText("Controle de gastos");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(650, 140, 110, 15);
 
         jMenu2.setText("Cadastro");
 
@@ -247,9 +277,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jbPacientesActionPerformed
 
     private void jbFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFuncionariosActionPerformed
-        // TODO add your handling code here:
-        FormFuncionario c;
         try {
+            FormFuncionario c;
             c = new FormFuncionario();
             c.setVisible(true);
             c.setLocationRelativeTo(null);
@@ -308,7 +337,7 @@ public class Principal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenu4MouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnListarDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarDentistaActionPerformed
         FormDentista fd;
         try {
             fd = new FormDentista();
@@ -317,7 +346,7 @@ public class Principal extends javax.swing.JFrame {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnListarDentistaActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         FormPaciente fp;
@@ -387,14 +416,18 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem CadastroFuncionario;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel ImgPrincipal;
+    private javax.swing.JButton btnListarDentista;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
