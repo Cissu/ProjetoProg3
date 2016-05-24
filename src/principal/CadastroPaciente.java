@@ -331,6 +331,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
                     e);
             PacienteDAO b = new PacienteDAO();
             b.create(p);
+            FormPaciente.readPaciente();
         } catch (DadoInvalidoException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }

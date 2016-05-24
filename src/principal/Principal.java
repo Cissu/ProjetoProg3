@@ -266,8 +266,14 @@ public class Principal extends javax.swing.JFrame {
     private void jbPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPacientesActionPerformed
         // TODO add your handling code here:
         FormPaciente f;
-        f = new FormPaciente();
-        f.setVisible(true);
+        try {
+            f = new FormPaciente();
+            f.setVisible(true);
+        } catch (DadoInvalidoException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_jbPacientesActionPerformed
 
     private void jbFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFuncionariosActionPerformed
@@ -278,6 +284,10 @@ public class Principal extends javax.swing.JFrame {
         } catch (DadoInvalidoException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
+        
+
     }//GEN-LAST:event_jbFuncionariosActionPerformed
 
     private void jbAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgendaActionPerformed
@@ -292,7 +302,10 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         FormFluxoCaixa f = new FormFluxoCaixa();
         f.setVisible(true);
+        //Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
         f.setLocationRelativeTo(null);
+
+        //f.setLocation(tela.width-this.getSize().width,(tela.height-this.getSize().height));
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void CadastroFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroFuncionarioActionPerformed
@@ -337,8 +350,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         FormPaciente fp;
-        fp = new FormPaciente();
-        fp.setVisible(true);
+        try {
+            fp = new FormPaciente();
+            fp.setVisible(true);
+        } catch (DadoInvalidoException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
