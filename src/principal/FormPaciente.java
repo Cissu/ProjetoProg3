@@ -45,9 +45,17 @@ public class FormPaciente extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Nome", "CPF", "RG", "Data Nascimento", "Telefone"
+                "Id", "Nome", "RG", "CPF", "Data Nascimento", "Rua", "Numero", "Bairro", "Cep", "Cidade"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(TabelaPaciente);
         if (TabelaPaciente.getColumnModel().getColumnCount() > 0) {
             TabelaPaciente.getColumnModel().getColumn(0).setPreferredWidth(20);
