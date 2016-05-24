@@ -76,9 +76,17 @@ public class FormFuncionario extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Nome", "RG", "CPF", "Função"
+                "Id", "Nome", "RG", "CPF", "Função", "Salário", "Rua", "Número", "Bairro", "CEP", "Cidade"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, false, true, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(jtFuncionarios);
         if (jtFuncionarios.getColumnModel().getColumnCount() > 0) {
             jtFuncionarios.getColumnModel().getColumn(0).setPreferredWidth(20);
