@@ -264,16 +264,12 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPacientesActionPerformed
-        // TODO add your handling code here:
-        FormPaciente f;
         try {
-            f = new FormPaciente();
+            principal.FormPaciente f = new principal.FormPaciente();
             f.setVisible(true);
         } catch (DadoInvalidoException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
     }//GEN-LAST:event_jbPacientesActionPerformed
 
     private void jbFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFuncionariosActionPerformed
@@ -284,10 +280,6 @@ public class Principal extends javax.swing.JFrame {
         } catch (DadoInvalidoException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
-
     }//GEN-LAST:event_jbFuncionariosActionPerformed
 
     private void jbAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgendaActionPerformed
@@ -302,10 +294,7 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         FormFluxoCaixa f = new FormFluxoCaixa();
         f.setVisible(true);
-        //Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
         f.setLocationRelativeTo(null);
-
-        //f.setLocation(tela.width-this.getSize().width,(tela.height-this.getSize().height));
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void CadastroFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroFuncionarioActionPerformed
@@ -338,33 +327,29 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu4MouseClicked
 
     private void btnListarDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarDentistaActionPerformed
-        FormDentista fd;
         try {
-            fd = new FormDentista();
+            FormDentista fd = new FormDentista();
             fd.setVisible(true);
         } catch (DadoInvalidoException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }//GEN-LAST:event_btnListarDentistaActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         FormPaciente fp;
-        try {
-            fp = new FormPaciente();
-            fp.setVisible(true);
-        } catch (DadoInvalidoException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        fp = new FormPaciente();
+        fp.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         try {
             FormDentista fd = new FormDentista();
             fd.setVisible(true);
-        } catch (DadoInvalidoException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        
+
+} catch (DadoInvalidoException ex) {
+            Logger.getLogger(Principal.class
+.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
@@ -388,16 +373,28 @@ public class Principal extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+                
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        
+
+} catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Principal.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        
+
+} catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Principal.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        
+
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Principal.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
