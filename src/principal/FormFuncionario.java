@@ -24,6 +24,7 @@ public class FormFuncionario extends javax.swing.JFrame {
         initComponents();
         readFuncionario();
         setLocationRelativeTo(null);
+        //teste
     }
 
     public void readFuncionario() throws DadoInvalidoException {
@@ -188,9 +189,6 @@ public class FormFuncionario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
