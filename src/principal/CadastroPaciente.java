@@ -40,12 +40,9 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        tfCodPaciente = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         tfNomePaciente = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        tfdata3 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         tfRgPaciente = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -88,15 +85,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setText("Código");
-
-        tfCodPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCodPacienteActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setText("Nome");
+        jLabel2.setText("Nome:");
 
         tfNomePaciente.setToolTipText("");
         tfNomePaciente.addActionListener(new java.awt.event.ActionListener() {
@@ -105,16 +94,9 @@ public class CadastroPaciente extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("CPF");
+        jLabel4.setText("CPF:");
 
-        tfdata3.setText("      /   /    ");
-        tfdata3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfdata3ActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("RG");
+        jLabel3.setText("RG:");
 
         tfRgPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +104,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Data de nascimento");
+        jLabel5.setText("Data de nascimento:");
 
         try {
             tfdata2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -149,45 +131,33 @@ public class CadastroPaciente extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfCodPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(tfNomePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfCpfPaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tfRgPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(74, 74, 74)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tfdata2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(27, 145, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(tfdata3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(719, Short.MAX_VALUE)
-                    .addComponent(tfCpfPaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(17, 17, 17)))
+                .addGap(179, 179, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfCodPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfNomePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfCpfPaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -195,14 +165,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
                         .addComponent(tfRgPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(tfdata2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(21, 21, 21)
-                .addComponent(tfdata3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(25, 25, 25)
-                    .addComponent(tfCpfPaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(101, Short.MAX_VALUE)))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         jLabel14.setText("Dados Pessoais:");
@@ -256,17 +219,17 @@ public class CadastroPaciente extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
+                        .addGap(31, 31, 31)
                         .addComponent(jLabel10)
                         .addGap(18, 18, 18)
                         .addComponent(tfCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tfRua, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel11)
@@ -385,19 +348,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void tfdata3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfdata3ActionPerformed
-        // TODO add your handling code here:
-        tfRgPaciente.requestFocus();
-    }//GEN-LAST:event_tfdata3ActionPerformed
-
-    private void tfCodPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCodPacienteActionPerformed
-        // TODO add your handling code here:
-        tfNomePaciente.requestFocus();
-    }//GEN-LAST:event_tfCodPacienteActionPerformed
-
     private void tfNomePacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomePacienteActionPerformed
-        // TODO add your handling code here:
-        tfdata3.requestFocus();
     }//GEN-LAST:event_tfNomePacienteActionPerformed
 
     private void tfRgPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfRgPacienteActionPerformed
@@ -441,7 +392,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -461,13 +411,11 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField tfBairro;
     private javax.swing.JTextField tfCep;
     private javax.swing.JTextField tfCidade;
-    private javax.swing.JTextField tfCodPaciente;
     private javax.swing.JTextField tfCpfPaciente1;
     private javax.swing.JTextField tfNomePaciente;
     private javax.swing.JTextField tfNumero;
     private javax.swing.JTextField tfRgPaciente;
     private javax.swing.JTextField tfRua;
     private javax.swing.JFormattedTextField tfdata2;
-    private javax.swing.JTextField tfdata3;
     // End of variables declaration//GEN-END:variables
 }
