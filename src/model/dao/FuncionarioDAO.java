@@ -59,11 +59,11 @@ public class FuncionarioDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("update funcionario set nome=?, rg=?, cpf=?, funcao=?, salario=?, rua=?, numero=?, bairro=?, cep=? cidade=? where id = ?");
+            stmt = con.prepareStatement("update funcionario set nome=?, rg=?, funcao=?, salario=?, rua=?, numero=?, bairro=?, cep=? cidade=? where cpf = ?");
             //stmt.setInt(1, f.getId());
             stmt.setString(1, f.getNome());
             stmt.setString(2, f.getRg());
-            stmt.setString(3, f.getCpf());
+            //stmt.setString(3, f.getCpf());
             stmt.setString(4, f.getFuncao());
             stmt.setDouble(5, f.getSalario());
             stmt.setObject(6, f.getEndereco().getRua());
@@ -72,7 +72,7 @@ public class FuncionarioDAO {
             stmt.setObject(9, f.getEndereco().getCep());
             stmt.setObject(10, f.getEndereco().getCidade());
 
-            stmt.setInt(11, f.getId());
+            stmt.setString(11, f.getCpf());
 
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
