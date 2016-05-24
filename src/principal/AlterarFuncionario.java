@@ -115,6 +115,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         txtfuncao = new javax.swing.JTextField();
         txtSalario = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -239,6 +240,15 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         getContentPane().add(txtSalario);
         txtSalario.setBounds(120, 280, 370, 34);
 
+        jButton1.setText("Sair");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(643, 503, 80, 30);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -267,6 +277,19 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSalarioActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        try {
+            this.dispose();
+            principal.FormFuncionario ff = new principal.FormFuncionario();
+            ff.setVisible(true);
+            
+        } catch (DadoInvalidoException ex) {
+            Logger.getLogger(AlterarFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -275,6 +298,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -286,7 +310,6 @@ public class AlterarFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JFormattedTextField tfdata2;
     private javax.swing.JTextField txtBairro;
     private javax.swing.JTextField txtCep;
     private javax.swing.JTextField txtCidade;
