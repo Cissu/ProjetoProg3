@@ -30,12 +30,12 @@ public class AlterarPaciente extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtCpf = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
+        txtRg = new javax.swing.JTextField();
+        txtData = new javax.swing.JTextField();
+        txtCidade = new javax.swing.JTextField();
+        btnBuscar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -46,12 +46,12 @@ public class AlterarPaciente extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        txtRua = new javax.swing.JTextField();
+        txtNumero = new javax.swing.JTextField();
+        txtBairro = new javax.swing.JTextField();
+        txtCep = new javax.swing.JTextField();
+        btnExcluir = new javax.swing.JButton();
+        btnAlterar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -61,20 +61,20 @@ public class AlterarPaciente extends javax.swing.JFrame {
         jLabel1.setText("Alterar/Excluir Cadastros");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(293, 36, 201, 33);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(230, 100, 326, 34);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(230, 150, 326, 34);
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(230, 200, 326, 34);
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(230, 250, 326, 34);
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(230, 500, 326, 34);
+        getContentPane().add(txtCpf);
+        txtCpf.setBounds(230, 100, 326, 34);
+        getContentPane().add(txtNome);
+        txtNome.setBounds(230, 150, 326, 34);
+        getContentPane().add(txtRg);
+        txtRg.setBounds(230, 200, 326, 34);
+        getContentPane().add(txtData);
+        txtData.setBounds(230, 250, 326, 34);
+        getContentPane().add(txtCidade);
+        txtCidade.setBounds(230, 500, 326, 34);
 
-        jButton1.setText("BUSCAR");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(580, 110, 100, 23);
+        btnBuscar.setText("BUSCAR");
+        getContentPane().add(btnBuscar);
+        btnBuscar.setBounds(580, 110, 100, 23);
 
         jLabel7.setText("CPF:");
         getContentPane().add(jLabel7);
@@ -115,43 +115,43 @@ public class AlterarPaciente extends javax.swing.JFrame {
         jLabel16.setText("RG:");
         getContentPane().add(jLabel16);
         jLabel16.setBounds(120, 210, 70, 14);
-        getContentPane().add(jTextField6);
-        jTextField6.setBounds(230, 300, 326, 34);
-        getContentPane().add(jTextField7);
-        jTextField7.setBounds(230, 350, 326, 34);
-        getContentPane().add(jTextField8);
-        jTextField8.setBounds(230, 400, 326, 34);
-        getContentPane().add(jTextField9);
-        jTextField9.setBounds(230, 450, 326, 34);
+        getContentPane().add(txtRua);
+        txtRua.setBounds(230, 300, 326, 34);
+        getContentPane().add(txtNumero);
+        txtNumero.setBounds(230, 350, 326, 34);
+        getContentPane().add(txtBairro);
+        txtBairro.setBounds(230, 400, 326, 34);
+        getContentPane().add(txtCep);
+        txtCep.setBounds(230, 450, 326, 34);
 
-        jButton2.setText("EXCLUIR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnExcluir.setText("EXCLUIR");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnExcluirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(580, 210, 100, 23);
+        getContentPane().add(btnExcluir);
+        btnExcluir.setBounds(580, 210, 100, 23);
 
-        jButton3.setText("ALTERAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnAlterar.setText("ALTERAR");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnAlterarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(580, 170, 100, 23);
+        getContentPane().add(btnAlterar);
+        btnAlterar.setBounds(580, 170, 100, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnAlterarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,9 +160,9 @@ public class AlterarPaciente extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnAlterar;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -174,14 +174,14 @@ public class AlterarPaciente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField txtBairro;
+    private javax.swing.JTextField txtCep;
+    private javax.swing.JTextField txtCidade;
+    private javax.swing.JTextField txtCpf;
+    private javax.swing.JTextField txtData;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNumero;
+    private javax.swing.JTextField txtRg;
+    private javax.swing.JTextField txtRua;
     // End of variables declaration//GEN-END:variables
 }
