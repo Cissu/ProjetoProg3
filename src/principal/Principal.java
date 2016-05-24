@@ -5,7 +5,6 @@
  */
 package Principal;
 
-
 import classes.DadoInvalidoException;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -192,6 +191,11 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem4);
 
         jMenuItem6.setText("Funcionario");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem6);
 
         jMenuItem5.setText("Dentista");
@@ -238,16 +242,17 @@ public class Principal extends javax.swing.JFrame {
         } catch (DadoInvalidoException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-       
-    
+
+
     }//GEN-LAST:event_jbPacientesActionPerformed
 
     private void jbFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFuncionariosActionPerformed
         // TODO add your handling code here:
-        FormFuncionario c = new FormFuncionario();
-        c.setVisible(true);   
+        FormFuncionario c;
+        c = new FormFuncionario();
+        c.setVisible(true);
         c.setLocationRelativeTo(null);
+        
 
     }//GEN-LAST:event_jbFuncionariosActionPerformed
 
@@ -306,7 +311,7 @@ public class Principal extends javax.swing.JFrame {
         } catch (DadoInvalidoException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -317,7 +322,7 @@ public class Principal extends javax.swing.JFrame {
         } catch (DadoInvalidoException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -328,6 +333,13 @@ public class Principal extends javax.swing.JFrame {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        FormFuncionario ff;
+        ff = new FormFuncionario();
+        ff.setVisible(true);
+
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -355,12 +367,12 @@ public class Principal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-    
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Principal().setVisible(true);
-                
+
             }
         });
     }
