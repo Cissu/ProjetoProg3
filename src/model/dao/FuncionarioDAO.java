@@ -59,20 +59,20 @@ public class FuncionarioDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("update funcionario set nome=?, rg=?, funcao=?, salario=?, rua=?, numero=?, bairro=?, cep=? cidade=? where cpf = ?");
+            stmt = con.prepareStatement("update funcionario set nome=?, rg=?, funcao=?, salario=?, rua=?, numero=?, bairro=?, cep=?, cidade=? where cpf = ?");
             //stmt.setInt(1, f.getId());
             stmt.setString(1, f.getNome());
             stmt.setString(2, f.getRg());
             //stmt.setString(3, f.getCpf());
-            stmt.setString(4, f.getFuncao());
-            stmt.setDouble(5, f.getSalario());
-            stmt.setObject(6, f.getEndereco().getRua());
-            stmt.setObject(7, f.getEndereco().getNumero());
-            stmt.setObject(8, f.getEndereco().getBairro());
-            stmt.setObject(9, f.getEndereco().getCep());
-            stmt.setObject(10, f.getEndereco().getCidade());
+            stmt.setString(3, f.getFuncao());
+            stmt.setDouble(4, f.getSalario());
+            stmt.setObject(5, f.getEndereco().getRua());
+            stmt.setObject(6, f.getEndereco().getNumero());
+            stmt.setObject(7, f.getEndereco().getBairro());
+            stmt.setObject(8, f.getEndereco().getCep());
+            stmt.setObject(9, f.getEndereco().getCidade());
 
-            stmt.setString(11, f.getCpf());
+            stmt.setString(10, f.getCpf());
 
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
