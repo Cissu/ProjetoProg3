@@ -7,6 +7,7 @@ package model.dao;
 
 import bancodedados.Conectar;
 import classes.DadoInvalidoException;
+import classes.Endereco;
 import classes.Funcionario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -115,7 +116,6 @@ public class FuncionarioDAO {
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-
                 Funcionario func = new Funcionario();
                 func.setId(rs.getInt("id"));
                 func.setNome(rs.getString("nome"));
@@ -123,6 +123,7 @@ public class FuncionarioDAO {
                 func.setCpf(rs.getString("cpf"));
                 func.setFuncao(rs.getString("Funcao"));
                 func.setSalario(rs.getDouble("salario"));
+                func.setEndereco(new Endereco());
                 func.getEndereco().setRua(rs.getString("rua"));
                 func.getEndereco().setNumero(rs.getString("numero"));
                 func.getEndereco().setBairro(rs.getString("bairro"));
