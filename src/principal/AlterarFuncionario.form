@@ -45,6 +45,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNome">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="120" y="160" width="370" height="34"/>
@@ -52,6 +55,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtRg">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="120" y="200" width="370" height="34"/>
@@ -59,6 +65,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCidade">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="260" y="430" width="322" height="34"/>
@@ -169,6 +178,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtRua">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="120" y="350" width="320" height="34"/>
@@ -176,6 +188,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNumero">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="520" y="350" width="55" height="34"/>
@@ -183,6 +198,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtBairro">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="120" y="390" width="322" height="34"/>
@@ -190,6 +208,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCep">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="120" y="430" width="60" height="34"/>
@@ -233,6 +254,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtfuncao">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtfuncaoActionPerformed"/>
       </Events>
@@ -243,6 +267,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSalario">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSalarioActionPerformed"/>
       </Events>

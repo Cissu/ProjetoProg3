@@ -34,6 +34,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         } else {
             txtNome.enable();
             txtRg.enable();
+            txtfuncao.enable();
             txtSalario.enable();
             //txtData.enable();
             txtRua.enable();
@@ -124,10 +125,16 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         jLabel1.setBounds(170, 60, 324, 33);
         getContentPane().add(txtCpf);
         txtCpf.setBounds(120, 120, 370, 34);
+
+        txtNome.setEnabled(false);
         getContentPane().add(txtNome);
         txtNome.setBounds(120, 160, 370, 34);
+
+        txtRg.setEnabled(false);
         getContentPane().add(txtRg);
         txtRg.setBounds(120, 200, 370, 34);
+
+        txtCidade.setEnabled(false);
         getContentPane().add(txtCidade);
         txtCidade.setBounds(260, 430, 322, 34);
 
@@ -175,12 +182,20 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         jLabel16.setText("RG:");
         getContentPane().add(jLabel16);
         jLabel16.setBounds(10, 210, 70, 14);
+
+        txtRua.setEnabled(false);
         getContentPane().add(txtRua);
         txtRua.setBounds(120, 350, 320, 34);
+
+        txtNumero.setEnabled(false);
         getContentPane().add(txtNumero);
         txtNumero.setBounds(520, 350, 55, 34);
+
+        txtBairro.setEnabled(false);
         getContentPane().add(txtBairro);
         txtBairro.setBounds(120, 390, 322, 34);
+
+        txtCep.setEnabled(false);
         getContentPane().add(txtCep);
         txtCep.setBounds(120, 430, 60, 34);
 
@@ -206,6 +221,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         getContentPane().add(jLabel18);
         jLabel18.setBounds(10, 290, 110, 20);
 
+        txtfuncao.setEnabled(false);
         txtfuncao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtfuncaoActionPerformed(evt);
@@ -214,6 +230,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         getContentPane().add(txtfuncao);
         txtfuncao.setBounds(120, 240, 370, 34);
 
+        txtSalario.setEnabled(false);
         txtSalario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSalarioActionPerformed(evt);

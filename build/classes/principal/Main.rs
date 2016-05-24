@@ -1,2 +1,0 @@
-Principal.Main
-Princital.Main
