@@ -7,6 +7,7 @@ package model.dao;
 
 import bancodedados.Conectar;
 import classes.DadoInvalidoException;
+import classes.Endereco;
 import classes.Paciente;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -118,6 +119,7 @@ public class PacienteDAO {
                 paciente.setRg(rs.getString("rg"));
                 paciente.setCpf(rs.getString("cpf"));
                 paciente.setDataNasc(rs.getString("dataNasc"));
+                paciente.setEndereco( new Endereco() );
                 paciente.getEndereco().setRua(rs.getString("rua"));
                 paciente.getEndereco().setNumero(rs.getString("numero"));
                 paciente.getEndereco().setBairro(rs.getString("bairro"));
