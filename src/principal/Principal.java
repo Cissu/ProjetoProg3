@@ -278,13 +278,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void jbFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFuncionariosActionPerformed
         try {
-            FormFuncionario c;
-            c = new FormFuncionario();
-            c.setVisible(true);
-            c.setLocationRelativeTo(null);
+            principal.FormFuncionario ff = new principal.FormFuncionario();
+            ff.setVisible(true);
+            ff.setLocationRelativeTo(null);
         } catch (DadoInvalidoException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         
         
 
@@ -370,12 +370,8 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         FormFuncionario ff;
-        try {
-            ff = new FormFuncionario();
-            ff.setVisible(true);
-        } catch (DadoInvalidoException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        ff = new FormFuncionario();
+        ff.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
