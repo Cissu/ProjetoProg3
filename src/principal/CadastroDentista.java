@@ -351,7 +351,6 @@ public class CadastroDentista extends javax.swing.JFrame {
                     this.tfRgDentista.getText(), this.tfCpfDentista.getText(), Double.parseDouble(tfSalarioDentista.getText()), c);
             DentistaDAO b = new DentistaDAO();
             b.create(a);
-            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
         } catch (DadoInvalidoException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
