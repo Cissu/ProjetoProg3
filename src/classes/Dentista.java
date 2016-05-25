@@ -40,7 +40,7 @@ public class Dentista extends Funcionario {
 
     @Override
     public String toString() {
-        return "Dentista" + "\nNome: " + super.getNome() + "\nCRO: " + cro + "\nEspecialidade: " + especialidade + "\n###########\n";
+        return super.getNome();
     }
 
 }

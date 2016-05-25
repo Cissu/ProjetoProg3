@@ -6,6 +6,10 @@
 package principal;
 
 import classes.Dentista;
+import java.awt.Component;
+import java.awt.PopupMenu;
+import java.util.List;
+import model.dao.AgendamentoDAO;
 
 /**
  *
@@ -19,7 +23,7 @@ public class AgendamentoGui extends javax.swing.JFrame {
         initComponents();
     }
 
-    d.Buscar(jComboBox1);
+   
     
     
     @SuppressWarnings("unchecked")
@@ -38,6 +42,7 @@ public class AgendamentoGui extends javax.swing.JFrame {
         txtHora = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        pesquisar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -110,6 +115,15 @@ public class AgendamentoGui extends javax.swing.JFrame {
         getContentPane().add(jComboBox1);
         jComboBox1.setBounds(470, 300, 56, 20);
 
+        pesquisar.setText("jButton1");
+        pesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesquisarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pesquisar);
+        pesquisar.setBounds(550, 300, 73, 23);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -120,6 +134,14 @@ public class AgendamentoGui extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarActionPerformed
+        AgendamentoDAO ad = new AgendamentoDAO();
+        String filtro = (String) jComboBox1.getSelectedItem();
+        List<Dentista> dentistas = ad.buscarNome(filtro);
+        jComboBox1.removeAll();
+        jComboBox1.add(dentistas);
+    }//GEN-LAST:event_pesquisarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,6 +187,7 @@ public class AgendamentoGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton pesquisar;
     private javax.swing.JFormattedTextField txtData;
     private javax.swing.JTextField txtDentista;
     private javax.swing.JFormattedTextField txtHora;
