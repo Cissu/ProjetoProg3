@@ -9,10 +9,21 @@ public class Funcionario {
     private String funcao;
     private double salario;
     private Endereco endereco;
-    private int cont = 1;
 
-    public Funcionario(int id, String nome, String rg, String cpf, String funcao, double salario, Endereco endereco) throws DadoInvalidoException {
-        this.setId(id);
+//    public Funcionario(String text, String text0, String text1, String text2, double parseDouble, Endereco c) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+
+    public Funcionario(String nome, String rg, String cpf, String funcao, double salario, Endereco endereco) throws DadoInvalidoException {
         this.setNome(nome);
         this.setRg(rg);
         this.setCpf(cpf);
@@ -20,13 +31,9 @@ public class Funcionario {
         this.setSalario(salario);
         this.setEndereco(endereco);
     }
-    
-    public int getId() {
-        return id;
-    }
-    
-    public void setId(int id)  {
-        this.id = id;
+
+    public Funcionario() {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public String getNome() {
@@ -82,7 +89,7 @@ public class Funcionario {
     }
 
     public void setSalario(double salario) throws DadoInvalidoException {
-        if (salario <= 0) {
+        if (salario < 0) {
             throw new DadoInvalidoException("Campo Salário em branco");
         } else {
             this.salario = salario;
