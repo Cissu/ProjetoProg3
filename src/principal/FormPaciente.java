@@ -45,7 +45,6 @@ public class FormPaciente extends javax.swing.JFrame {
                 p.getEndereco().getCidade()
             });
         }
-
     }
 
     @SuppressWarnings("unchecked")
