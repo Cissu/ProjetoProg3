@@ -51,7 +51,6 @@ public class FormDentista extends javax.swing.JFrame {
                 d.getEndereco().getCidade()
             });
         }
-
     }
 
     @SuppressWarnings("unchecked")
@@ -90,6 +89,12 @@ public class FormDentista extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(TabelaPaciente);
+        if (TabelaPaciente.getColumnModel().getColumnCount() > 0) {
+            TabelaPaciente.getColumnModel().getColumn(0).setPreferredWidth(40);
+            TabelaPaciente.getColumnModel().getColumn(1).setPreferredWidth(350);
+            TabelaPaciente.getColumnModel().getColumn(2).setPreferredWidth(100);
+            TabelaPaciente.getColumnModel().getColumn(3).setPreferredWidth(200);
+        }
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 153));
