@@ -121,6 +121,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Alterar/Excluir Funcionário");
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -281,7 +282,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Untitled-1.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 770, 550);
+        jLabel2.setBounds(0, 0, 810, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
