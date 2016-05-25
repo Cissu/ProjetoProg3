@@ -57,20 +57,20 @@ public class DentistaDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("update paciente set nome=?, cro=?, especialidade=?, funcao=?, rg=?, cpf=?, salario=?, rua=?, numero=?, bairro=?, cep=? cidade=? where id = ?");
+            stmt = con.prepareStatement("update dentista set nome=?, cro=?, especialidade=?, funcao=?, rg=?, salario=?, rua=?, numero=?, bairro=?, cep=?, cidade=? where cpf=?");
             stmt.setString(1, d.getNome());
             stmt.setString(2, d.getCro());
             stmt.setString(3, d.getEspecialidade());
             stmt.setString(4, d.getFuncao());
             stmt.setString(5, d.getRg());
-            stmt.setString(6, d.getCpf());
-            stmt.setDouble(7, d.getSalario());
-            stmt.setObject(8, d.getEndereco().getRua());
-            stmt.setObject(9, d.getEndereco().getNumero());
-            stmt.setObject(10, d.getEndereco().getBairro());
-            stmt.setObject(11, d.getEndereco().getCep());
-            stmt.setObject(12, d.getEndereco().getCidade());
-            stmt.setInt(13, d.getId());
+           // stmt.setString(6, d.getCpf());
+            stmt.setDouble(6, d.getSalario());
+            stmt.setObject(7, d.getEndereco().getRua());
+            stmt.setObject(8, d.getEndereco().getNumero());
+            stmt.setObject(9, d.getEndereco().getBairro());
+            stmt.setObject(10, d.getEndereco().getCep());
+            stmt.setObject(11, d.getEndereco().getCidade());
+            stmt.setString(12, d.getCpf());
 
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
@@ -85,8 +85,8 @@ public class DentistaDAO {
         PreparedStatement stmt = null;
         
         try {
-            stmt = con.prepareStatement("delete from dentista where id=?");
-            stmt.setInt(1, d.getId());
+            stmt = con.prepareStatement("delete from dentista where cpf=?");
+            stmt.setString(1, d.getCpf());
             
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Excluido com sucesso!");
