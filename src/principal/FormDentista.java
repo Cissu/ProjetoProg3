@@ -5,64 +5,72 @@
  */
 package principal;
 
+import bancodedados.Conectar;
 import classes.DadoInvalidoException;
 import classes.Dentista;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
-import model.dao.DentistaDAO;
+import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
  * @author Snowgal
  */
 public class FormDentista extends javax.swing.JFrame {
-
-    /**
-     * Creates new form FormDentista
-     */
+    
+    Connection conecta;
+    PreparedStatement pst;
+    ResultSet rs;
+    
     public FormDentista() throws DadoInvalidoException {
         initComponents();
-        readDentista();
+        conecta = Conectar.getConnection();
         setLocationRelativeTo(null);
+        readDentista();
     }
 
-    public void readDentista() throws DadoInvalidoException {
+    public void readDentista() {
 
-        DefaultTableModel dtm = (DefaultTableModel) TabelaPaciente.getModel();
-        dtm.setNumRows(0);
-        DentistaDAO ddao = new DentistaDAO();
-
-        for (Dentista d : ddao.read()) {
-            dtm.addRow(new Object[]{
-                d.getId(),
-                d.getNome(),
-                d.getCro(),
-                d.getEspecialidade(),
-                d.getFuncao(),
-                d.getRg(),
-                d.getCpf(),
-                d.getSalario(),
-                d.getEndereco().getRua(),
-                d.getEndereco().getNumero(),
-                d.getEndereco().getBairro(),
-                d.getEndereco().getCep(),
-                d.getEndereco().getCidade()
-            });
+        String sql = "Select * from dentista";
+        try {
+           pst = conecta.prepareStatement(sql);
+           rs = pst.executeQuery();
+           TabelaDentista.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, erro);
         }
-
     }
-
+    
+    public void pesquisarDentista() {
+        String sql = "Select * from dentista whre nome like ?";
+        
+        try {
+            
+            pst = conecta.prepareStatement(sql);
+            pst.setString(1, txtPesquisar.getText()+ "%");
+            rs = pst.executeQuery();
+            
+            TabelaDentista.setModel(DbUtils.resultSetToTableModel(rs));
+            
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, erro);
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        TabelaPaciente = new javax.swing.JTable();
+        TabelaDentista = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        txtBuscar = new javax.swing.JTextField();
+        txtPesquisar = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         lbImg = new javax.swing.JLabel();
@@ -70,10 +78,11 @@ public class FormDentista extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Gerenciamento de Dentistas");
 
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
 
-        TabelaPaciente.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaDentista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -89,11 +98,23 @@ public class FormDentista extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(TabelaPaciente);
+        jScrollPane2.setViewportView(TabelaDentista);
+        if (TabelaDentista.getColumnModel().getColumnCount() > 0) {
+            TabelaDentista.getColumnModel().getColumn(0).setPreferredWidth(40);
+            TabelaDentista.getColumnModel().getColumn(1).setPreferredWidth(350);
+            TabelaDentista.getColumnModel().getColumn(2).setPreferredWidth(100);
+            TabelaDentista.getColumnModel().getColumn(3).setPreferredWidth(200);
+        }
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 153));
         jLabel2.setText("Gerenciar Dentistas");
+
+        txtPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPesquisarKeyReleased(evt);
+            }
+        });
 
         jButton2.setText("Buscar");
 
@@ -130,7 +151,7 @@ public class FormDentista extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(227, 227, 227)
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -153,7 +174,7 @@ public class FormDentista extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -199,19 +220,19 @@ public class FormDentista extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        try {
-            readDentista();
-        } catch (DadoInvalidoException ex) {
-            Logger.getLogger(FormDentista.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        readDentista();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void txtPesquisarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisarKeyReleased
+        pesquisarDentista();
+    }//GEN-LAST:event_txtPesquisarKeyReleased
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TabelaPaciente;
+    private javax.swing.JTable TabelaDentista;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -220,6 +241,6 @@ public class FormDentista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lbImg;
-    private javax.swing.JTextField txtBuscar;
+    private javax.swing.JTextField txtPesquisar;
     // End of variables declaration//GEN-END:variables
 }

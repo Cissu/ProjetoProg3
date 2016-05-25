@@ -106,6 +106,7 @@ public class AlterarPaciente extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Alterar/Excluir Pacientes");
         setResizable(false);
         getContentPane().setLayout(null);
 

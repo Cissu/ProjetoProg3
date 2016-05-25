@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Principal;
+package principal;
 
 import classes.DadoInvalidoException;
 import java.awt.Dimension;
@@ -49,6 +49,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -60,7 +63,7 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        JLogoff = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clinica Odontológia");
@@ -82,7 +85,6 @@ public class Principal extends javax.swing.JFrame {
         jbPacientes.setBounds(30, 30, 110, 110);
 
         jbAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/agenda.png"))); // NOI18N
-        jbAgenda.setText("jButton2");
         jbAgenda.setToolTipText("Agenda");
         jbAgenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +92,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbAgenda);
-        jbAgenda.setBounds(520, 30, 110, 110);
+        jbAgenda.setBounds(670, 30, 110, 110);
 
         jbFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icones_funcionarios.png"))); // NOI18N
         jbFuncionarios.setToolTipText("Funcionários");
@@ -100,7 +102,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbFuncionarios);
-        jbFuncionarios.setBounds(190, 30, 120, 110);
+        jbFuncionarios.setBounds(190, 30, 110, 110);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fluxo-de-caixa3.png"))); // NOI18N
         jButton4.setToolTipText("Fluxo de caixa");
@@ -110,7 +112,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(680, 30, 110, 110);
+        jButton4.setBounds(830, 30, 110, 110);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -128,8 +130,8 @@ public class Principal extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ImgPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 614, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ImgPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -143,12 +145,12 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnListarDentista);
-        btnListarDentista.setBounds(360, 30, 110, 110);
+        btnListarDentista.setBounds(350, 30, 110, 110);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Gerenciar Dentistas");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(360, 140, 110, 15);
+        jLabel1.setBounds(350, 140, 110, 15);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Gerenciar Paciente");
@@ -163,15 +165,39 @@ public class Principal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Agenda");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(560, 140, 60, 15);
+        jLabel4.setBounds(710, 140, 60, 15);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Controle de gastos");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(680, 140, 110, 15);
+        jLabel5.setBounds(830, 140, 110, 15);
+
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(510, 30, 110, 110);
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fluxo-de-caixa3.png"))); // NOI18N
+        jButton5.setToolTipText("Fluxo de caixa");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5);
+        jButton5.setBounds(830, 30, 110, 110);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setText("Agendamento");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(530, 140, 90, 15);
 
         jMenu2.setText("Cadastro");
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setText("Pacientes");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,6 +206,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem1);
 
+        CadastroFuncionario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
         CadastroFuncionario.setText("Funcionários");
         CadastroFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,6 +215,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu2.add(CadastroFuncionario);
 
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem3.setText("Dentistas");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,6 +228,7 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu3.setText("Financeiro");
 
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem2.setText("Fluxo Caixa");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,6 +241,7 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu1.setText("Buscar");
 
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem4.setText("Paciente");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,6 +250,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem4);
 
+        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem6.setText("Funcionario");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,6 +259,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem6);
 
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem5.setText("Dentista");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,13 +270,13 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu4.setText("Sair");
-        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+        JLogoff.setText("Logoff");
+        JLogoff.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu4MouseClicked(evt);
+                JLogoffMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(JLogoff);
 
         setJMenuBar(jMenuBar1);
 
@@ -321,10 +353,11 @@ public class Principal extends javax.swing.JFrame {
         f.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_jMenu4MouseClicked
+    private void JLogoffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLogoffMouseClicked
+        this.dispose();
+        Login login = new Login();
+        login.setVisible(true);
+    }//GEN-LAST:event_JLogoffMouseClicked
 
     private void btnListarDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarDentistaActionPerformed
         try {
@@ -336,91 +369,67 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnListarDentistaActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        FormPaciente fp;
-        fp = new FormPaciente();
-        fp.setVisible(true);
+        try {
+            FormPaciente fp = new FormPaciente();
+            fp.setVisible(true);
+        } catch (DadoInvalidoException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         try {
             FormDentista fd = new FormDentista();
             fd.setVisible(true);
-        
 
-} catch (DadoInvalidoException ex) {
+        } catch (DadoInvalidoException ex) {
             Logger.getLogger(Principal.class
-.getName()).log(Level.SEVERE, null, ex);
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        FormFuncionario ff;
-        ff = new FormFuncionario();
-        ff.setVisible(true);
+        try {
+            FormFuncionario ff = new FormFuncionario();
+            ff.setVisible(true);
+        } catch (DadoInvalidoException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                
-
-}
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
-
-} catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
-
-} catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
-
-} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            AgendamentoGui a = new AgendamentoGui();
+            a.setVisible(true);
+            a.setSize(900, 700);
+            a.setLocationRelativeTo(null);
+        } catch (DadoInvalidoException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //</editor-fold>
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem CadastroFuncionario;
     private javax.swing.JLabel ImgPrincipal;
+    private javax.swing.JMenu JLogoff;
     private javax.swing.JButton btnListarDentista;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
