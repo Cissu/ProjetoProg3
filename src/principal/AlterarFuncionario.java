@@ -6,6 +6,7 @@
 package principal;
 
 import classes.DadoInvalidoException;
+import classes.Endereco;
 import classes.Funcionario;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,6 +27,8 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
     }
+    Funcionario f = new Funcionario();
+    FuncionarioDAO ddao = new FuncionarioDAO();
 
     public void alterar() throws DadoInvalidoException {
         int g = 0;
@@ -42,17 +45,16 @@ public class AlterarFuncionario extends javax.swing.JFrame {
             txtCep.enable();
             txtCidade.enable();
             txtNumero.enable();
+
             
-            FuncionarioDAO ddao = new FuncionarioDAO();
             for (Funcionario f : ddao.read()) {
-                
-                
+
                 if (f.getCpf().equals(txtCpf.getText())) {
-                    
+
                     double a = f.getSalario();
                     String b;
-                    b=String.valueOf(a);
-                    
+                    b = String.valueOf(a);
+
                     txtNome.setText(f.getNome());
                     txtRg.setText(f.getRg());
                     txtfuncao.setText(f.getFuncao());
@@ -257,7 +259,60 @@ public class AlterarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        // TODO add your handling code here:
+
+        if (txtNome.getText().isEmpty() || txtNome.getText() == null
+                || txtRg.getText().isEmpty() || txtRg.getText() == null
+                || txtfuncao.getText().isEmpty() || txtfuncao.getText() == null
+                || txtSalario.getText().isEmpty() || txtSalario.getText() == null
+                || txtRua.getText().isEmpty() || txtRua.getText() == null
+                || txtNumero.getText().isEmpty() || txtNumero.getText() == null
+                || txtBairro.getText().isEmpty() || txtBairro.getText() == null
+                || txtCep.getText().isEmpty() || txtCep.getText() == null
+                || txtCidade.getText().isEmpty() || txtCidade.getText() == null) {
+
+            JOptionPane.showMessageDialog(null, "Algum campo está vazio");
+        } else {
+            try {
+                f.setNome(txtNome.getText());
+                f.setRg(txtRg.getText());
+                f.setFuncao(txtfuncao.getText());
+                f.setSalario(Double.parseDouble(txtSalario.getText()));
+                f.setEndereco(new Endereco());
+                f.getEndereco().setRua(txtRua.getText());;
+                f.getEndereco().setNumero(txtNumero.getText());
+                f.getEndereco().setBairro(txtBairro.getText());
+                f.getEndereco().setCep(txtCep.getText());
+                f.getEndereco().setCidade(txtCidade.getText());
+                
+                f.setCpf(txtCpf.getText());
+            } catch (DadoInvalidoException ex) {
+                JOptionPane.showConfirmDialog(null, ex.getMessage());
+            }
+        }
+        try {
+            ddao.update(f);
+            txtNome.setText("");
+            txtRg.setText("");
+            txtCpf.setText("");
+            txtfuncao.setText("");
+            txtSalario.setText("");
+            txtRua.setText("");
+            txtNumero.setText("");
+            txtBairro.setText("");
+            txtCep.setText("");
+            txtCidade.setText("");
+            txtNome.enable(false);
+            txtRg.enable(false);
+            txtfuncao.enable(false);
+            txtSalario.enable(false);
+            txtRua.enable(false);
+            txtBairro.enable(false);
+            txtCep.enable(false);
+            txtCidade.enable(false);
+            txtNumero.enable(false);
+        } catch (Exception ex) {
+            JOptionPane.showConfirmDialog(null, ex.getMessage());
+        }
     }//GEN-LAST:event_btnAlterarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -278,16 +333,16 @@ public class AlterarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSalarioActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
         try {
             this.dispose();
             principal.FormFuncionario ff = new principal.FormFuncionario();
             ff.setVisible(true);
-            
+
         } catch (DadoInvalidoException ex) {
             Logger.getLogger(AlterarFuncionario.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
