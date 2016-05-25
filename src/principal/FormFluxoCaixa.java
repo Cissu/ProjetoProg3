@@ -40,6 +40,7 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
         jtFluxoCaixa = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Fluxo de Caixa");
         setPreferredSize(new java.awt.Dimension(988, 526));
 
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));

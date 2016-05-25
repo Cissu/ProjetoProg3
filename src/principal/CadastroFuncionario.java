@@ -63,6 +63,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de Funcionários");
 
         jPanel1.setLayout(null);
 
