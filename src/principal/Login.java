@@ -142,9 +142,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1KeyPressed
 
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
-        if (evt.getKeyCode() == 10) {
-           
-        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_txtSenhaActionPerformed
 
     public static void main(String args[]) {
