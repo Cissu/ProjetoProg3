@@ -62,6 +62,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
         tfRua = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de Paciente");
 
         jLabel6.setText("Cadastro de paciente");
 

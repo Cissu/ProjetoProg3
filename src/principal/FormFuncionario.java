@@ -5,14 +5,21 @@
  */
 package principal;
 
+import bancodedados.Conectar;
 import classes.DadoInvalidoException;
 import classes.Funcionario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.dao.FuncionarioDAO;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -20,38 +27,44 @@ import model.dao.FuncionarioDAO;
  */
 public class FormFuncionario extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FormFuncionario
-     */
+    Connection conecta;
+    PreparedStatement pst;
+    ResultSet rs;
+
     public FormFuncionario() throws DadoInvalidoException {
         initComponents();
-        readFuncionario();
         setLocationRelativeTo(null);
+        conecta = Conectar.getConnection();
+        readFuncionario();
     }
 
-    public void readFuncionario() throws DadoInvalidoException {
+    public void readFuncionario() {
 
-        DefaultTableModel dtm = (DefaultTableModel) TabelaFuncionarios.getModel();
-        dtm.setNumRows(0);
-        FuncionarioDAO ddao = new FuncionarioDAO();
-
-        for (Funcionario d : ddao.read()) {
-            dtm.addRow(new Object[]{
-                d.getId(),
-                d.getNome(),
-                d.getRg(),
-                d.getCpf(),
-                d.getFuncao(),
-                d.getSalario(),
-                d.getEndereco().getRua(),
-                d.getEndereco().getNumero(),
-                d.getEndereco().getBairro(),
-                d.getEndereco().getCep(),
-                d.getEndereco().getCidade()
-            });
+        String sql = "Select * from funcionario";
+        try {
+            pst = conecta.prepareStatement(sql);
+            rs = pst.executeQuery();
+            TabelaFuncionarios.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException error) {
+            JOptionPane.showMessageDialog(null, error);
         }
     }
-
+    
+    public void pesquisarFuncionario() {
+        String sql = "select * from funcionario where nome like ?";
+        
+        try {
+         pst = conecta.prepareStatement(sql);
+         pst.setString(1, txtPesquisar.getText() + "%");
+         rs = pst.executeQuery();
+         
+         TabelaFuncionarios.setModel(DbUtils.resultSetToTableModel(rs));
+         
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, erro);
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -61,13 +74,14 @@ public class FormFuncionario extends javax.swing.JFrame {
         jpFuncionario = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtPesquisar = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         TabelaFuncionarios = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -83,6 +97,7 @@ public class FormFuncionario extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Gerencimento de Funcionários");
         setPreferredSize(new java.awt.Dimension(988, 526));
 
         jpFuncionario.setBorder(new javax.swing.border.MatteBorder(null));
@@ -93,12 +108,23 @@ public class FormFuncionario extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 153));
         jLabel2.setText("Gerenciar Funcionários");
 
+        txtPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPesquisarKeyReleased(evt);
+            }
+        });
+
         jButton2.setText("Buscar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jScrollPane2.setViewportBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jScrollPane2.setAlignmentX(10.0F);
+        jScrollPane2.setAlignmentY(10.0F);
 
         TabelaFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -142,35 +168,46 @@ public class FormFuncionario extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setText("Limpar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpFuncionarioLayout = new javax.swing.GroupLayout(jpFuncionario);
         jpFuncionario.setLayout(jpFuncionarioLayout);
         jpFuncionarioLayout.setHorizontalGroup(
             jpFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2)
             .addGroup(jpFuncionarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
                 .addGroup(jpFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
                     .addGroup(jpFuncionarioLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
+                        .addGap(248, 248, 248)
+                        .addComponent(txtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(jpFuncionarioLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                        .addComponent(jButton4)
+                        .addGap(14, 14, 14)
                         .addGroup(jpFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpFuncionarioLayout.createSequentialGroup()
-                                .addGap(250, 250, 250)
-                                .addGroup(jpFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jpFuncionarioLayout.createSequentialGroup()
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jpFuncionarioLayout.createSequentialGroup()
-                                        .addComponent(jButton4)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButton3)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jpFuncionarioLayout.createSequentialGroup()
-                                .addGap(342, 342, 342)
-                                .addComponent(jLabel2)))
-                        .addGap(0, 519, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addGap(21, 21, 21)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(43, 43, 43)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(147, 147, 147))
+                            .addGroup(jpFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jpFuncionarioLayout.createSequentialGroup()
+                                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jpFuncionarioLayout.createSequentialGroup()
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
+                                    .addGap(106, 106, 106)))))))
         );
         jpFuncionarioLayout.setVerticalGroup(
             jpFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,18 +218,20 @@ public class FormFuncionario extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE))
                     .addGroup(jpFuncionarioLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(25, 25, 25)
                         .addGroup(jpFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jpFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
                             .addComponent(jButton3)
                             .addComponent(jButton4))
-                        .addGap(26, 26, 26)))
+                        .addGap(18, 18, 18)))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
@@ -232,12 +271,17 @@ public class FormFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        try {
-            readFuncionario();
-        } catch (DadoInvalidoException ex) {
-            Logger.getLogger(FormFuncionario.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        readFuncionario();
+
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void txtPesquisarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisarKeyReleased
+        pesquisarFuncionario();
+    }//GEN-LAST:event_txtPesquisarKeyReleased
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       
+    }//GEN-LAST:event_jButton5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -246,12 +290,13 @@ public class FormFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel jpFuncionario;
+    private javax.swing.JTextField txtPesquisar;
     // End of variables declaration//GEN-END:variables
 }

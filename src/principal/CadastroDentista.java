@@ -68,6 +68,7 @@ public class CadastroDentista extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de Dentistas");
 
         jPanel1.setLayout(null);
 

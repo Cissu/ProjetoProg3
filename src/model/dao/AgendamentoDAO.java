@@ -26,10 +26,11 @@ import javax.swing.JComboBox;
  */
 public class AgendamentoDAO {
     
-    public List <Dentista> buscarNome(String nome){
-
-        PreparedStatement stmt = null;
+    public void buscarTodos(JComboBox cmbBox) {
+        
         ResultSet rs = null;
+        PreparedStatement stmt = null;
+        
         //String sql = "select nome from dentista";
         
         Connection con = Conectar.getConnection();
@@ -41,18 +42,19 @@ public class AgendamentoDAO {
         } catch (SQLException ex) {
             Logger.getLogger(AgendamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        List<Dentista> dentistas = new ArrayList<>();
-        
+        cmbBox.removeAllItems();
+        cmbBox.addItem("nome");
+        DefaultComboBoxModel comboBox = (DefaultComboBoxModel) cmbBox.getModel();
         try {
             while(rs.next()){
-                dentistas.add(BuscarObjeto(rs));
-                con.close();
+                String nome = rs.getString("nome");
+                cmbBox.addItem(nome);
             }
         } catch (SQLException e) {
-            
+            e.printStackTrace();
+        } finally {
+            Conectar.closeConnection(con, stmt, rs);
         }
-        return dentistas;
     }
     
     private Dentista BuscarObjeto(ResultSet rs) throws SQLException{
