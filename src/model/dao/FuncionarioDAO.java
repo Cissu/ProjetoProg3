@@ -82,7 +82,6 @@ public class FuncionarioDAO {
         } finally {
             Conectar.closeConnection(con, stmt);
         }
-
     }
 
     public void delete(Funcionario f) {
@@ -101,7 +100,6 @@ public class FuncionarioDAO {
         } finally {
             Conectar.closeConnection(con, stmt);
         }
-
     }
     
     public List<Funcionario> read() throws DadoInvalidoException {
@@ -130,7 +128,6 @@ public class FuncionarioDAO {
                 func.getEndereco().setCep(rs.getString("cep"));
                 func.getEndereco().setCidade(rs.getString("cidade"));
                 funcionarios.add(func);
-
             }
 
         } catch (SQLException ex) {
