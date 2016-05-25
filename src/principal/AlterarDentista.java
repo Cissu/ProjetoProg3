@@ -154,7 +154,7 @@ public class AlterarDentista extends javax.swing.JFrame {
 
         txtCidade.setEnabled(false);
         getContentPane().add(txtCidade);
-        txtCidade.setBounds(350, 490, 270, 34);
+        txtCidade.setBounds(300, 490, 320, 34);
 
         txtEspecialidade.setEnabled(false);
         getContentPane().add(txtEspecialidade);
@@ -196,7 +196,7 @@ public class AlterarDentista extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(680, 550, 90, 30);
+        jButton1.setBounds(670, 510, 90, 30);
 
         txtFuncao.setEnabled(false);
         txtFuncao.addActionListener(new java.awt.event.ActionListener() {
