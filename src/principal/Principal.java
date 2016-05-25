@@ -90,7 +90,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbAgenda);
-        jbAgenda.setBounds(490, 30, 110, 110);
+        jbAgenda.setBounds(520, 30, 110, 110);
 
         jbFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icones_funcionarios.png"))); // NOI18N
         jbFuncionarios.setToolTipText("Funcionários");
@@ -110,7 +110,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(650, 30, 110, 110);
+        jButton4.setBounds(680, 30, 110, 110);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -143,12 +143,12 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnListarDentista);
-        btnListarDentista.setBounds(340, 30, 110, 110);
+        btnListarDentista.setBounds(360, 30, 110, 110);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Gerenciar Dentistas");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(340, 140, 110, 15);
+        jLabel1.setBounds(360, 140, 110, 15);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Gerenciar Paciente");
@@ -163,12 +163,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Agenda");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(530, 140, 60, 15);
+        jLabel4.setBounds(560, 140, 60, 15);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Controle de gastos");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(650, 140, 110, 15);
+        jLabel5.setBounds(680, 140, 110, 15);
 
         jMenu2.setText("Cadastro");
 
