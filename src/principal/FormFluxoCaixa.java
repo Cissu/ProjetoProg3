@@ -16,6 +16,7 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
      */
     public FormFluxoCaixa() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
