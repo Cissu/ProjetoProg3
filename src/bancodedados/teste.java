@@ -11,7 +11,7 @@ package bancodedados;
  */
 public class teste {
   public static void main(String[] args) {
-    String nome = "Vinícius";
+    String nome = "Vinï¿½cius";
   }
   
 }
