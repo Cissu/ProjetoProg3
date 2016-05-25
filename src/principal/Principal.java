@@ -348,8 +348,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void JLogoffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLogoffMouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
+        this.dispose();
+        Login login = new Login();
+        login.setVisible(true);
     }//GEN-LAST:event_JLogoffMouseClicked
 
     private void btnListarDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarDentistaActionPerformed
