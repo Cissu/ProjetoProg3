@@ -386,16 +386,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSalarioActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        try {
             this.dispose();
-            principal.FormFuncionario ff = new principal.FormFuncionario();
-            ff.setVisible(true);
-
-        } catch (DadoInvalidoException ex) {
-            Logger.getLogger(AlterarFuncionario.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
