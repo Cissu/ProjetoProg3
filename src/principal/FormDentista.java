@@ -47,7 +47,7 @@ public class FormDentista extends javax.swing.JFrame {
     }
     
     public void pesquisarDentista() {
-        String sql = "Select * from dentista whre nome like ?";
+        String sql = "Select * from dentista where nome like ?";
         
         try {
             

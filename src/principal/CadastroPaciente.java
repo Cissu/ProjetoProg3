@@ -346,19 +346,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void tfNomePacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomePacienteActionPerformed
-    }//GEN-LAST:event_tfNomePacienteActionPerformed
-
-    private void tfRgPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfRgPacienteActionPerformed
-        // TODO add your handling code here:
-        tfdata2.requestFocus();
-    }//GEN-LAST:event_tfRgPacienteActionPerformed
-
-    private void tfdata2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfdata2ActionPerformed
-        // TODO add your handling code here:
-        tfRua.requestFocus();
-    }//GEN-LAST:event_tfdata2ActionPerformed
-
     private void tfRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfRuaActionPerformed
         // TODO add your handling code here:
         tfNumero.requestFocus();
@@ -382,6 +369,20 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private void tfCpfPaciente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCpfPaciente1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfCpfPaciente1ActionPerformed
+
+    private void tfRgPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfRgPacienteActionPerformed
+        // TODO add your handling code here:
+        tfdata2.requestFocus();
+    }//GEN-LAST:event_tfRgPacienteActionPerformed
+
+    private void tfNomePacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomePacienteActionPerformed
+
+    }//GEN-LAST:event_tfNomePacienteActionPerformed
+
+    private void tfdata2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfdata2ActionPerformed
+        // TODO add your handling code here:
+        tfRua.requestFocus();
+    }//GEN-LAST:event_tfdata2ActionPerformed
 
     /**
      * @param args the command line arguments
