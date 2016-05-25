@@ -6,10 +6,15 @@
 package model.dao;
 
 import bancodedados.Conectar;
+import classes.DadoInvalidoException;
+import classes.Dentista;
+import com.sun.javafx.scene.control.skin.VirtualFlow;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
@@ -21,8 +26,8 @@ import javax.swing.JComboBox;
  */
 public class AgendamentoDAO {
     
-    public void buscar(JComboBox cmbBox){
-        
+    public List <Dentista> buscarNome(String nome){
+
         PreparedStatement stmt = null;
         ResultSet rs = null;
         //String sql = "select nome from dentista";
@@ -31,23 +36,32 @@ public class AgendamentoDAO {
         
         try {
             stmt = con.prepareStatement("select nome from dentista");        
-            con.close();
+            //con.close();
+            rs = stmt.executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(AgendamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        cmbBox.removeAllItems();
-        cmbBox.addItem("nome");
-        DefaultComboBoxModel comboBoxMode = (DefaultComboBoxModel) cmbBox.getModel();
+        List<Dentista> dentistas = new ArrayList<>();
+        
         try {
             while(rs.next()){
-                String nome = rs.getString("nome");
-                
-                cmbBox.addItem(nome);
+                dentistas.add(BuscarObjeto(rs));
+                con.close();
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            
         }
+        return dentistas;
+    }
+    
+    private Dentista BuscarObjeto(ResultSet rs) throws SQLException{
+        Dentista dentista = new Dentista();
+        try {
+            dentista.setNome(rs.getString("nome"));
+        } catch (DadoInvalidoException ex) {
+            Logger.getLogger(AgendamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }return dentista;
     }
     
 }
