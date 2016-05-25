@@ -255,7 +255,28 @@ public class AlterarFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        // TODO add your handling code here:
+        //Funcionario p = new Funcionario();
+        //FuncionarioDAO fundao = new FuncionarioDAO();
+        
+        if(txtCpf.getText().isEmpty() || txtCpf.getText()==null){
+            JOptionPane.showMessageDialog(null, "Digite um Cpf válido", "Aviso", JOptionPane.WARNING_MESSAGE);
+        }else{
+            try {
+                f.setCpf(txtCpf.getText());
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage());
+            }
+            
+            try {
+                int op =JOptionPane.showConfirmDialog(null, "Deseja Realmente excluir o registro " + txtCpf.getText() + "?" , "Aviso", JOptionPane.WARNING_MESSAGE);
+                if (op ==0)
+                    ddao.delete(f);
+                JOptionPane.showMessageDialog(null, "Registro excluido com sucesso!");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage());
+            }
+        }
+              
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed

@@ -49,6 +49,7 @@ public class FormFuncionario extends javax.swing.JFrame {
             });
         }
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -204,7 +205,7 @@ public class FormFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        principal.CadastroFuncionario  f = new principal.CadastroFuncionario();
+        principal.CadastroFuncionario f = new principal.CadastroFuncionario();
         f.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -214,7 +215,6 @@ public class FormFuncionario extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TabelaFuncionarios;

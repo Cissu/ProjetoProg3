@@ -90,8 +90,8 @@ public class FuncionarioDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("delete from funcionario where id = ?");           
-            stmt.setInt(1, f.getId());
+            stmt = con.prepareStatement("delete from funcionario where cpf = ?");           
+            stmt.setString(1, f.getCpf());
 
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Excluido com sucesso!");
