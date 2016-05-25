@@ -118,29 +118,32 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         txtfuncao = new javax.swing.JTextField();
         txtSalario = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Alterar/Excluir Cadastros de Funcionários");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(170, 60, 324, 33);
+        jLabel1.setBounds(130, 40, 520, 33);
         getContentPane().add(txtCpf);
-        txtCpf.setBounds(120, 120, 370, 34);
+        txtCpf.setBounds(90, 120, 460, 34);
 
         txtNome.setEnabled(false);
         getContentPane().add(txtNome);
-        txtNome.setBounds(120, 160, 370, 34);
+        txtNome.setBounds(90, 160, 460, 34);
 
         txtRg.setEnabled(false);
         getContentPane().add(txtRg);
-        txtRg.setBounds(120, 200, 370, 34);
+        txtRg.setBounds(90, 200, 460, 34);
 
         txtCidade.setEnabled(false);
         getContentPane().add(txtCidade);
-        txtCidade.setBounds(260, 430, 322, 34);
+        txtCidade.setBounds(230, 430, 322, 34);
 
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/menor.png"))); // NOI18N
         btnBuscar.setText("BUSCAR");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,60 +151,79 @@ public class AlterarFuncionario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnBuscar);
-        btnBuscar.setBounds(500, 130, 100, 23);
+        btnBuscar.setBounds(580, 120, 110, 30);
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("CPF:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(10, 130, 70, 14);
+        jLabel7.setBounds(20, 130, 70, 15);
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Nome:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(10, 170, 70, 14);
+        jLabel8.setBounds(20, 170, 70, 15);
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Funcao:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(10, 250, 110, 14);
+        jLabel10.setBounds(20, 250, 110, 15);
 
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Numero:");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(470, 360, 70, 14);
+        jLabel11.setBounds(440, 360, 70, 15);
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Bairro:");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(10, 400, 70, 14);
+        jLabel12.setBounds(20, 400, 70, 15);
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("CEP:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(10, 440, 70, 14);
+        jLabel13.setBounds(20, 440, 70, 15);
 
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Cidade:");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(200, 440, 70, 14);
+        jLabel14.setBounds(170, 440, 70, 15);
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Rua:");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(10, 360, 70, 14);
+        jLabel15.setBounds(20, 360, 70, 15);
 
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("RG:");
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(10, 210, 70, 14);
+        jLabel16.setBounds(20, 210, 70, 15);
 
         txtRua.setEnabled(false);
         getContentPane().add(txtRua);
-        txtRua.setBounds(120, 350, 320, 34);
+        txtRua.setBounds(90, 350, 340, 34);
 
         txtNumero.setEnabled(false);
         getContentPane().add(txtNumero);
-        txtNumero.setBounds(520, 350, 55, 34);
+        txtNumero.setBounds(500, 350, 50, 34);
 
         txtBairro.setEnabled(false);
         getContentPane().add(txtBairro);
-        txtBairro.setBounds(120, 390, 322, 34);
+        txtBairro.setBounds(90, 390, 340, 34);
 
         txtCep.setEnabled(false);
         getContentPane().add(txtCep);
-        txtCep.setBounds(120, 430, 60, 34);
+        txtCep.setBounds(90, 430, 60, 34);
 
+        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/delete.png"))); // NOI18N
         btnExcluir.setText("EXCLUIR");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,8 +231,9 @@ public class AlterarFuncionario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnExcluir);
-        btnExcluir.setBounds(500, 220, 100, 23);
+        btnExcluir.setBounds(580, 220, 110, 30);
 
+        btnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/update.png"))); // NOI18N
         btnAlterar.setText("ALTERAR");
         btnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,11 +241,13 @@ public class AlterarFuncionario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnAlterar);
-        btnAlterar.setBounds(500, 180, 100, 23);
+        btnAlterar.setBounds(580, 180, 110, 30);
 
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Salário:");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(10, 290, 110, 20);
+        jLabel18.setBounds(20, 290, 110, 20);
 
         txtfuncao.setEnabled(false);
         txtfuncao.addActionListener(new java.awt.event.ActionListener() {
@@ -231,7 +256,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfuncao);
-        txtfuncao.setBounds(120, 240, 370, 34);
+        txtfuncao.setBounds(90, 240, 460, 34);
 
         txtSalario.setEnabled(false);
         txtSalario.addActionListener(new java.awt.event.ActionListener() {
@@ -240,22 +265,49 @@ public class AlterarFuncionario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtSalario);
-        txtSalario.setBounds(120, 280, 370, 34);
+        txtSalario.setBounds(90, 280, 460, 34);
 
-        jButton1.setText("Sair");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/back.png"))); // NOI18N
+        jButton1.setText("Voltar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(643, 503, 80, 30);
+        jButton1.setBounds(650, 500, 100, 30);
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Untitled-1.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 770, 550);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        // TODO add your handling code here:
+        //Funcionario p = new Funcionario();
+        //FuncionarioDAO fundao = new FuncionarioDAO();
+        
+        if(txtCpf.getText().isEmpty() || txtCpf.getText()==null){
+            JOptionPane.showMessageDialog(null, "Digite um Cpf válido", "Aviso", JOptionPane.WARNING_MESSAGE);
+        }else{
+            try {
+                f.setCpf(txtCpf.getText());
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage());
+            }
+            
+            try {
+                int op =JOptionPane.showConfirmDialog(null, "Deseja Realmente excluir o registro " + txtCpf.getText() + "?" , "Aviso", JOptionPane.WARNING_MESSAGE);
+                if (op ==0)
+                    ddao.delete(f);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage());
+            }
+        }
+              
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
@@ -363,6 +415,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField txtBairro;
