@@ -7,11 +7,17 @@ package model.dao;
 
 import bancodedados.Conectar;
 import classes.Agendamento;
+import classes.DadoInvalidoException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import principal.Agenda;
 
 /**
  *
@@ -40,6 +46,37 @@ public class AgendamentoDAO {
         } catch (SQLException e) {
              JOptionPane.showMessageDialog(null, "Erro ao salvar, " + e);
         }
+    }
+    
+     public List<Agendamento> read() throws DadoInvalidoException {
+        Connection con = Conectar.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        List<Agendamento> agendaList = new ArrayList<>();
+
+        try {
+            stmt = con.prepareStatement("select * from agendamento");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                
+                Agendamento agendas = new Agendamento();
+                agendas.setId(rs.getInt("id"));
+                agendas.setNome(rs.getString("nome"));
+                agendas.setProcedimento(rs.getString("procedimento"));
+                agendas.setDentista(rs.getString("dentista"));
+                agendas.setEspecialidade(rs.getString("especialidade"));
+                agendas.setData(rs.getString("data"));
+                agendas.setHora(rs.getString("hora"));
+                
+                agendaList.add(agendas);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AgendamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            Conectar.closeConnection(con, stmt, rs);
+        }
+        return agendaList;
     }
     
 }

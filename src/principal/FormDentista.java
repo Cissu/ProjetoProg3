@@ -31,7 +31,7 @@ public class FormDentista extends javax.swing.JFrame {
         initComponents();
         conecta = Conectar.getConnection();
         readDentista();
-        setSize(1000, 800);
+        setSize(1200, 800);
         setLocationRelativeTo(null);
     }
 
@@ -103,29 +103,31 @@ public class FormDentista extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(TabelaDentista);
         if (TabelaDentista.getColumnModel().getColumnCount() > 0) {
-            TabelaDentista.getColumnModel().getColumn(0).setPreferredWidth(30);
-            TabelaDentista.getColumnModel().getColumn(1).setPreferredWidth(350);
-            TabelaDentista.getColumnModel().getColumn(2).setPreferredWidth(100);
-            TabelaDentista.getColumnModel().getColumn(3).setPreferredWidth(200);
-            TabelaDentista.getColumnModel().getColumn(4).setPreferredWidth(100);
-            TabelaDentista.getColumnModel().getColumn(5).setPreferredWidth(100);
-            TabelaDentista.getColumnModel().getColumn(6).setPreferredWidth(150);
+            TabelaDentista.getColumnModel().getColumn(0).setPreferredWidth(25);
+            TabelaDentista.getColumnModel().getColumn(1).setMinWidth(200);
+            TabelaDentista.getColumnModel().getColumn(1).setPreferredWidth(200);
+            TabelaDentista.getColumnModel().getColumn(1).setMaxWidth(200);
+            TabelaDentista.getColumnModel().getColumn(2).setPreferredWidth(50);
+            TabelaDentista.getColumnModel().getColumn(3).setPreferredWidth(150);
+            TabelaDentista.getColumnModel().getColumn(4).setPreferredWidth(50);
+            TabelaDentista.getColumnModel().getColumn(5).setPreferredWidth(50);
+            TabelaDentista.getColumnModel().getColumn(6).setPreferredWidth(130);
             TabelaDentista.getColumnModel().getColumn(7).setPreferredWidth(100);
-            TabelaDentista.getColumnModel().getColumn(8).setPreferredWidth(150);
-            TabelaDentista.getColumnModel().getColumn(9).setPreferredWidth(100);
-            TabelaDentista.getColumnModel().getColumn(10).setPreferredWidth(100);
+            TabelaDentista.getColumnModel().getColumn(8).setPreferredWidth(100);
+            TabelaDentista.getColumnModel().getColumn(9).setPreferredWidth(40);
+            TabelaDentista.getColumnModel().getColumn(10).setPreferredWidth(70);
             TabelaDentista.getColumnModel().getColumn(11).setPreferredWidth(50);
-            TabelaDentista.getColumnModel().getColumn(12).setPreferredWidth(150);
+            TabelaDentista.getColumnModel().getColumn(12).setPreferredWidth(100);
         }
 
         jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(1, 152, 968, 400);
+        jScrollPane2.setBounds(10, 150, 1210, 460);
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 153));
         jLabel2.setText("Gerenciar Dentistas");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(370, 80, 142, 22);
+        jLabel2.setBounds(550, 80, 142, 22);
 
         txtLimpar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -133,7 +135,7 @@ public class FormDentista extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtLimpar);
-        txtLimpar.setBounds(330, 10, 220, 30);
+        txtLimpar.setBounds(510, 10, 220, 30);
 
         jButton3.setText("Alterar/Excluir");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +144,7 @@ public class FormDentista extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(500, 120, 121, 23);
+        jButton3.setBounds(680, 110, 121, 30);
 
         lbImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/DENTISTA.png"))); // NOI18N
         jPanel1.add(lbImg);
@@ -155,7 +157,7 @@ public class FormDentista extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(400, 120, 81, 23);
+        jButton1.setBounds(570, 110, 90, 30);
 
         jButton4.setText("Atualizar Tabela");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +166,7 @@ public class FormDentista extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(270, 120, 109, 23);
+        jButton4.setBounds(420, 110, 130, 30);
 
         btnLimpar.setText("Limpar");
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -173,12 +175,12 @@ public class FormDentista extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnLimpar);
-        btnLimpar.setBounds(400, 50, 80, 23);
+        btnLimpar.setBounds(580, 50, 80, 23);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Buscar:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(270, 20, 60, 15);
+        jLabel1.setBounds(450, 20, 60, 15);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -186,14 +188,14 @@ public class FormDentista extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1180, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 602, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

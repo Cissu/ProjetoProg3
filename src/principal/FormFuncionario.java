@@ -108,6 +108,11 @@ public class FormFuncionario extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 153));
         jLabel2.setText("Gerenciar Funcionários");
 
+        txtPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPesquisarActionPerformed(evt);
+            }
+        });
         txtPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPesquisarKeyReleased(evt);
@@ -276,6 +281,10 @@ public class FormFuncionario extends javax.swing.JFrame {
        txtPesquisar.setText("");
        readFuncionario();
     }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void txtPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPesquisarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
