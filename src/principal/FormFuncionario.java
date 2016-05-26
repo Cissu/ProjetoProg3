@@ -222,6 +222,7 @@ public class FormFuncionario extends javax.swing.JFrame {
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
        txtPesquisar.setText("");
        readFuncionario();
+       txtPesquisar.grabFocus();
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void txtPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisarActionPerformed

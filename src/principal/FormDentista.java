@@ -227,6 +227,7 @@ public class FormDentista extends javax.swing.JFrame {
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         txtLimpar.setText("");
         readDentista();
+        txtLimpar.grabFocus();
     }//GEN-LAST:event_btnLimparActionPerformed
 
     /**

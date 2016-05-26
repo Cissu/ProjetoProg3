@@ -49,7 +49,7 @@ public class FormPaciente extends javax.swing.JFrame {
     }
     
     public void pesquisarPaciente() {
-        String sql = "select * from funcionario where nome like ?";
+        String sql = "select * from paciente where nome like ?";
         
         try {
          pst = conecta.prepareStatement(sql);
@@ -260,6 +260,7 @@ public class FormPaciente extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         txtPesquisar.setText("");
         readPaciente();
+        txtPesquisar.grabFocus();
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
