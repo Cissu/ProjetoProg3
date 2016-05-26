@@ -9,6 +9,7 @@ import bancodedados.Conectar;
 import classes.DadoInvalidoException;
 import classes.Endereco;
 import classes.Funcionario;
+import com.sun.javafx.scene.control.skin.VirtualFlow;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,7 +26,8 @@ import javax.swing.JOptionPane;
  */
 public class FuncionarioDAO {
 
-    public void create(Funcionario f) {
+    public void create(Funcionario f) throws SQLException {
+
         Connection con = Conectar.getConnection();
         PreparedStatement stmt = null;
 
@@ -37,7 +39,7 @@ public class FuncionarioDAO {
             stmt.setString(4, f.getFuncao());
             stmt.setDouble(5, f.getSalario());
             stmt.setObject(6, f.getEndereco().getRua());
-            stmt.setObject(7 ,f.getEndereco().getNumero());
+            stmt.setObject(7, f.getEndereco().getNumero());
             stmt.setObject(7, f.getEndereco().getNumero());
             stmt.setObject(8, f.getEndereco().getBairro());
             stmt.setObject(9, f.getEndereco().getCep());
@@ -47,7 +49,7 @@ public class FuncionarioDAO {
             JOptionPane.showMessageDialog(null, "Inserido com sucesso!");
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao salvar " + ex);
+            JOptionPane.showMessageDialog(null, "Erro ao salvar, CPF já exitente! "); //Se for outro erro fora o duplicate entry, adc o + ex
         } finally {
             Conectar.closeConnection(con, stmt);
         }
@@ -60,10 +62,8 @@ public class FuncionarioDAO {
 
         try {
             stmt = con.prepareStatement("update funcionario set nome=?, rg=?, funcao=?, salario=?, rua=?, numero=?, bairro=?, cep=?, cidade=? where cpf = ?");
-            //stmt.setInt(1, f.getId());
             stmt.setString(1, f.getNome());
             stmt.setString(2, f.getRg());
-            //stmt.setString(3, f.getCpf());
             stmt.setString(3, f.getFuncao());
             stmt.setDouble(4, f.getSalario());
             stmt.setObject(5, f.getEndereco().getRua());
@@ -89,7 +89,7 @@ public class FuncionarioDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("delete from funcionario where cpf = ?");           
+            stmt = con.prepareStatement("delete from funcionario where cpf = ?");
             stmt.setString(1, f.getCpf());
 
             stmt.executeUpdate();
@@ -101,7 +101,7 @@ public class FuncionarioDAO {
             Conectar.closeConnection(con, stmt);
         }
     }
-    
+
     public List<Funcionario> read() throws DadoInvalidoException {
         Connection con = Conectar.getConnection();
         PreparedStatement stmt = null;

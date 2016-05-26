@@ -47,7 +47,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
         tfRgPaciente = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         tfdata2 = new javax.swing.JFormattedTextField();
-        tfCpfPaciente1 = new javax.swing.JTextField();
+        tfCpfPaciente1 = new javax.swing.JFormattedTextField();
         jLabel14 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         tfNumero = new javax.swing.JTextField();
@@ -119,11 +119,11 @@ public class CadastroPaciente extends javax.swing.JFrame {
             }
         });
 
-        tfCpfPaciente1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCpfPaciente1ActionPerformed(evt);
-            }
-        });
+        try {
+            tfCpfPaciente1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -136,18 +136,19 @@ public class CadastroPaciente extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfNomePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(tfNomePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfCpfPaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(tfRgPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(74, 74, 74)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tfdata2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(46, 46, 46)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfCpfPaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(179, 179, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,10 +367,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
         tfCidade.requestFocus();
     }//GEN-LAST:event_tfBairroActionPerformed
 
-    private void tfCpfPaciente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCpfPaciente1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfCpfPaciente1ActionPerformed
-
     private void tfRgPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfRgPacienteActionPerformed
         // TODO add your handling code here:
         tfdata2.requestFocus();
@@ -410,7 +407,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField tfBairro;
     private javax.swing.JTextField tfCep;
     private javax.swing.JTextField tfCidade;
-    private javax.swing.JTextField tfCpfPaciente1;
+    private javax.swing.JFormattedTextField tfCpfPaciente1;
     private javax.swing.JTextField tfNomePaciente;
     private javax.swing.JTextField tfNumero;
     private javax.swing.JTextField tfRgPaciente;
