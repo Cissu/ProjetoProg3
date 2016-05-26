@@ -30,8 +30,9 @@ public class FormDentista extends javax.swing.JFrame {
     public FormDentista() throws DadoInvalidoException {
         initComponents();
         conecta = Conectar.getConnection();
-        setLocationRelativeTo(null);
         readDentista();
+        setSize(1000, 600);
+        setLocationRelativeTo(null);
     }
 
     public void readDentista() {
@@ -52,7 +53,7 @@ public class FormDentista extends javax.swing.JFrame {
         try {
             
             pst = conecta.prepareStatement(sql);
-            pst.setString(1, txtPesquisar.getText()+ "%");
+            pst.setString(1, txtLimpar.getText()+ "%");
             rs = pst.executeQuery();
             
             TabelaDentista.setModel(DbUtils.resultSetToTableModel(rs));
@@ -70,17 +71,19 @@ public class FormDentista extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         TabelaDentista = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        txtPesquisar = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        txtLimpar = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         lbImg = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Gerenciamento de Dentistas");
 
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel1.setLayout(null);
 
         TabelaDentista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -106,17 +109,22 @@ public class FormDentista extends javax.swing.JFrame {
             TabelaDentista.getColumnModel().getColumn(3).setPreferredWidth(200);
         }
 
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(1, 152, 968, 400);
+
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 153));
         jLabel2.setText("Gerenciar Dentistas");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(370, 80, 142, 22);
 
-        txtPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtLimpar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtPesquisarKeyReleased(evt);
+                txtLimparKeyReleased(evt);
             }
         });
-
-        jButton2.setText("Buscar");
+        jPanel1.add(txtLimpar);
+        txtLimpar.setBounds(330, 10, 220, 30);
 
         jButton3.setText("Alterar/Excluir");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -124,8 +132,12 @@ public class FormDentista extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton3);
+        jButton3.setBounds(500, 120, 121, 23);
 
         lbImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/DENTISTA.png"))); // NOI18N
+        jPanel1.add(lbImg);
+        lbImg.setBounds(11, 1, 100, 111);
 
         jButton1.setText("Cadastrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -133,6 +145,8 @@ public class FormDentista extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(400, 120, 81, 23);
 
         jButton4.setText("Atualizar Tabela");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -140,54 +154,22 @@ public class FormDentista extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton4);
+        jButton4.setBounds(270, 120, 109, 23);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbImg)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(227, 227, 227)
-                        .addComponent(txtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jButton4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(341, Short.MAX_VALUE))
-            .addComponent(jScrollPane2)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton3)
-                            .addComponent(jButton1)
-                            .addComponent(jButton4)))
-                    .addComponent(lbImg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLimpar);
+        btnLimpar.setBounds(400, 50, 80, 23);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Buscar:");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(270, 20, 60, 15);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -202,7 +184,7 @@ public class FormDentista extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 602, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -223,9 +205,14 @@ public class FormDentista extends javax.swing.JFrame {
         readDentista();
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void txtPesquisarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisarKeyReleased
+    private void txtLimparKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLimparKeyReleased
         pesquisarDentista();
-    }//GEN-LAST:event_txtPesquisarKeyReleased
+    }//GEN-LAST:event_txtLimparKeyReleased
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        txtLimpar.setText("");
+        readDentista();
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,14 +220,15 @@ public class FormDentista extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TabelaDentista;
+    private javax.swing.JButton btnLimpar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lbImg;
-    private javax.swing.JTextField txtPesquisar;
+    private javax.swing.JTextField txtLimpar;
     // End of variables declaration//GEN-END:variables
 }
