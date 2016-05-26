@@ -9,6 +9,7 @@ package principal;
 import classes.Agendamento;
 import classes.DadoInvalidoException;
 import classes.Dentista;
+import classes.Paciente;
 import java.awt.Component;
 import java.awt.PopupMenu;
 import java.text.DateFormat;
@@ -19,6 +20,7 @@ import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import model.dao.AgendamentoDAO;
 import model.dao.DentistaDAO;
+import model.dao.PacienteDAO;
 
 
 /**
@@ -33,11 +35,28 @@ public class AgendamentoGui extends javax.swing.JFrame {
     public AgendamentoGui() throws DadoInvalidoException {
         initComponents();
         readDentista();
+        readPaciente();
     }
 
+    
+    public void readPaciente() throws DadoInvalidoException{
+        DefaultTableModel dtm = (DefaultTableModel) TabelaPaciente.getModel();
+        dtm.setNumRows(0);
+        PacienteDAO pdao = new PacienteDAO();
+        
+        for (Paciente p : pdao.read()) {
+            dtm.addRow(new Object[]{
+                p.getNome(),
+              });
+           
+        }
+        
+    }
+    
+    
     public void readDentista() throws DadoInvalidoException {
 
-        DefaultTableModel dtm = (DefaultTableModel) TabelaDentista.getModel();
+        DefaultTableModel dtm = (DefaultTableModel) TabelaDentista1.getModel();
         dtm.setNumRows(0);
         DentistaDAO ddao = new DentistaDAO();
         
@@ -49,6 +68,7 @@ public class AgendamentoGui extends javax.swing.JFrame {
         }
 
     }
+    
    
     
     
@@ -67,12 +87,15 @@ public class AgendamentoGui extends javax.swing.JFrame {
         txtHora = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        TabelaDentista = new javax.swing.JTable();
+        TabelaPaciente = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         txtEspecialidade = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TabelaDentista1 = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Agendamentos");
@@ -91,23 +114,23 @@ public class AgendamentoGui extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Dentista:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(60, 170, 70, 20);
+        jLabel3.setBounds(50, 170, 70, 20);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Data:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(160, 220, 50, 20);
+        jLabel4.setBounds(230, 230, 50, 20);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Hora:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(400, 230, 50, 15);
+        jLabel5.setBounds(430, 230, 50, 15);
         getContentPane().add(txtNome);
         txtNome.setBounds(250, 60, 360, 30);
         getContentPane().add(txtProcedimento);
         txtProcedimento.setBounds(250, 110, 360, 30);
         getContentPane().add(txtDentista);
-        txtDentista.setBounds(130, 170, 360, 30);
+        txtDentista.setBounds(120, 160, 290, 30);
 
         try {
             txtHora.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##:##:##")));
@@ -115,55 +138,55 @@ public class AgendamentoGui extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         getContentPane().add(txtHora);
-        txtHora.setBounds(450, 220, 110, 30);
+        txtHora.setBounds(470, 220, 110, 30);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Agendamento");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(360, -10, 160, 60);
 
-        TabelaDentista.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaPaciente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Nome", "Especialidade"
+                "Pacientes"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        TabelaDentista.addMouseListener(new java.awt.event.MouseAdapter() {
+        TabelaPaciente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TabelaDentistaMouseClicked(evt);
+                TabelaPacienteMouseClicked(evt);
             }
         });
-        TabelaDentista.addKeyListener(new java.awt.event.KeyAdapter() {
+        TabelaPaciente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                TabelaDentistaKeyReleased(evt);
+                TabelaPacienteKeyReleased(evt);
             }
         });
-        jScrollPane2.setViewportView(TabelaDentista);
+        jScrollPane2.setViewportView(TabelaPaciente);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(0, 320, 850, 250);
+        jScrollPane2.setBounds(0, 320, 410, 250);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setText("Dentistas");
+        jLabel7.setText("Lista de Dentistas");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(380, 280, 100, 30);
+        jLabel7.setBounds(540, 280, 200, 30);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Especialidade:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(520, 180, 100, 15);
+        jLabel8.setBounds(420, 170, 100, 15);
         getContentPane().add(txtEspecialidade);
-        txtEspecialidade.setBounds(610, 170, 230, 30);
+        txtEspecialidade.setBounds(520, 160, 300, 30);
 
         jButton1.setText("Cadastrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -174,22 +197,59 @@ public class AgendamentoGui extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(380, 590, 90, 23);
         getContentPane().add(jDateChooser1);
-        jDateChooser1.setBounds(207, 220, 120, 30);
+        jDateChooser1.setBounds(270, 220, 120, 30);
+
+        TabelaDentista1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Dentista", "Especialidade"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        TabelaDentista1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TabelaDentista1MouseClicked(evt);
+            }
+        });
+        TabelaDentista1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TabelaDentista1KeyReleased(evt);
+            }
+        });
+        jScrollPane3.setViewportView(TabelaDentista1);
+        if (TabelaDentista1.getColumnModel().getColumnCount() > 0) {
+            TabelaDentista1.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        getContentPane().add(jScrollPane3);
+        jScrollPane3.setBounds(420, 320, 430, 250);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel9.setText("Lista de Pacientes");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(130, 280, 190, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TabelaDentistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaDentistaMouseClicked
-        int linha = TabelaDentista.getSelectedRow();
-        txtDentista.setText(TabelaDentista.getValueAt(linha, 0).toString());
-        txtEspecialidade.setText(TabelaDentista.getValueAt(linha, 1).toString());
-    }//GEN-LAST:event_TabelaDentistaMouseClicked
+    private void TabelaPacienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaPacienteMouseClicked
+        int linha = TabelaPaciente.getSelectedRow();
+        txtNome.setText(TabelaPaciente.getValueAt(linha, 0).toString());
+    }//GEN-LAST:event_TabelaPacienteMouseClicked
 
-    private void TabelaDentistaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TabelaDentistaKeyReleased
-        int linha = TabelaDentista.getSelectedRow();
-        txtDentista.setText(TabelaDentista.getValueAt(linha, 0).toString());
-        txtEspecialidade.setText(TabelaDentista.getValueAt(linha, 1).toString());
-    }//GEN-LAST:event_TabelaDentistaKeyReleased
+    private void TabelaPacienteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TabelaPacienteKeyReleased
+        int linha = TabelaPaciente.getSelectedRow();
+        txtNome.setText(TabelaPaciente.getValueAt(linha, 0).toString());
+    }//GEN-LAST:event_TabelaPacienteKeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        DateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
@@ -207,6 +267,18 @@ public class AgendamentoGui extends javax.swing.JFrame {
        ad.create(a);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void TabelaDentista1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaDentista1MouseClicked
+        int linha = TabelaDentista1.getSelectedRow();
+        txtDentista.setText(TabelaDentista1.getValueAt(linha, 0).toString());
+        txtEspecialidade.setText(TabelaDentista1.getValueAt(linha, 1).toString());
+    }//GEN-LAST:event_TabelaDentista1MouseClicked
+
+    private void TabelaDentista1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TabelaDentista1KeyReleased
+        int linha = TabelaDentista1.getSelectedRow();
+        txtDentista.setText(TabelaDentista1.getValueAt(linha, 0).toString());
+        txtEspecialidade.setText(TabelaDentista1.getValueAt(linha, 1).toString());
+    }//GEN-LAST:event_TabelaDentista1KeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -214,7 +286,8 @@ public class AgendamentoGui extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TabelaDentista;
+    private javax.swing.JTable TabelaDentista1;
+    private javax.swing.JTable TabelaPaciente;
     private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
@@ -225,7 +298,9 @@ public class AgendamentoGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField txtDentista;
     private javax.swing.JTextField txtEspecialidade;
     private javax.swing.JFormattedTextField txtHora;

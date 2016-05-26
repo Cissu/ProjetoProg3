@@ -31,7 +31,7 @@ public class FormDentista extends javax.swing.JFrame {
         initComponents();
         conecta = Conectar.getConnection();
         readDentista();
-        setSize(1000, 600);
+        setSize(1000, 800);
         setLocationRelativeTo(null);
     }
 
@@ -103,10 +103,19 @@ public class FormDentista extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(TabelaDentista);
         if (TabelaDentista.getColumnModel().getColumnCount() > 0) {
-            TabelaDentista.getColumnModel().getColumn(0).setPreferredWidth(40);
+            TabelaDentista.getColumnModel().getColumn(0).setPreferredWidth(30);
             TabelaDentista.getColumnModel().getColumn(1).setPreferredWidth(350);
             TabelaDentista.getColumnModel().getColumn(2).setPreferredWidth(100);
             TabelaDentista.getColumnModel().getColumn(3).setPreferredWidth(200);
+            TabelaDentista.getColumnModel().getColumn(4).setPreferredWidth(100);
+            TabelaDentista.getColumnModel().getColumn(5).setPreferredWidth(100);
+            TabelaDentista.getColumnModel().getColumn(6).setPreferredWidth(150);
+            TabelaDentista.getColumnModel().getColumn(7).setPreferredWidth(100);
+            TabelaDentista.getColumnModel().getColumn(8).setPreferredWidth(150);
+            TabelaDentista.getColumnModel().getColumn(9).setPreferredWidth(100);
+            TabelaDentista.getColumnModel().getColumn(10).setPreferredWidth(100);
+            TabelaDentista.getColumnModel().getColumn(11).setPreferredWidth(50);
+            TabelaDentista.getColumnModel().getColumn(12).setPreferredWidth(150);
         }
 
         jPanel1.add(jScrollPane2);
