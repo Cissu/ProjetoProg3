@@ -320,6 +320,21 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             Double.parseDouble(this.tfSalarioFuncionario.getText()), c);
             FuncionarioDAO b = new FuncionarioDAO();
             b.create(f);
+            
+            tfNomeFuncionario.setText("");
+            tfRgFuncionario.setText("");
+            tfCpfFuncionario.setText("");
+            tfFuncaoFuncionario.setText("");
+            tfSalarioFuncionario.setText("");
+            //data
+            tfRua.setText("");
+            tfNumero.setText("");
+            tfBairro.setText("");
+            tfCep.setText("");
+            tfCidade.setText("");
+            
+            
+            
         } catch (DadoInvalidoException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         } catch (SQLException ex) {

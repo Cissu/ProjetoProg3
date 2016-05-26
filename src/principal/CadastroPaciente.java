@@ -311,7 +311,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");  
+        DateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
         String data = fmt.format(jDateChooser1.getDate());
         try {
             Endereco e = new Endereco(this.tfRua.getText(), this.tfNumero.getText(), this.tfBairro.getText(), this.tfCep.getText(), this.tfCidade.getText());
@@ -319,9 +319,21 @@ public class CadastroPaciente extends javax.swing.JFrame {
                     e);
             PacienteDAO b = new PacienteDAO();
             b.create(p);
+
+            tfNomePaciente.setText("");
+            tfRgPaciente.setText("");
+            tfCpfPaciente1.setText("");
+            //data
+            tfRua.setText("");
+            tfNumero.setText("");
+            tfBairro.setText("");
+            tfCep.setText("");
+            tfCidade.setText("");
         } catch (DadoInvalidoException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tfCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCidadeActionPerformed

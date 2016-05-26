@@ -7,10 +7,13 @@ package principal;
 
 import classes.DadoInvalidoException;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
+import java.net.URL;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import principal.FormFluxoCaixa;
 import principal.FormDentista;
 
@@ -24,7 +27,12 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form Principal
      */
     public Principal() {
+        URL url = this.getClass().getResource("/imagens/tooth.png");
+        Image imagemTitulo = Toolkit.getDefaultToolkit().getImage(url);
+        this.setIconImage(imagemTitulo);
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+       
     }
 
     /**
@@ -41,8 +49,6 @@ public class Principal extends javax.swing.JFrame {
         jbAgenda = new javax.swing.JButton();
         jbFuncionarios = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        ImgPrincipal = new javax.swing.JLabel();
         btnListarDentista = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -52,6 +58,8 @@ public class Principal extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        ImgPrincipal = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -73,7 +81,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(700, 300));
         jPanel1.setLayout(null);
 
-        jbPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icone_paciente1 (1).png"))); // NOI18N
+        jbPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/1464262149_user_male.png"))); // NOI18N
         jbPacientes.setToolTipText("Pacientes");
         jbPacientes.setName(""); // NOI18N
         jbPacientes.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +102,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(jbAgenda);
         jbAgenda.setBounds(670, 30, 110, 110);
 
-        jbFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icones_funcionarios.png"))); // NOI18N
+        jbFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/1464262141_Login Manager.png"))); // NOI18N
         jbFuncionarios.setToolTipText("Funcionários");
         jbFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,30 +121,6 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel1.add(jButton4);
         jButton4.setBounds(830, 30, 110, 110);
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        ImgPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/telaPrincipal_1.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ImgPrincipal)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ImgPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 180, 1240, 560);
 
         btnListarDentista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/DENTISTA.png"))); // NOI18N
         btnListarDentista.addActionListener(new java.awt.event.ActionListener() {
@@ -195,6 +179,15 @@ public class Principal extends javax.swing.JFrame {
         jLabel6.setText("Agendamento");
         jPanel1.add(jLabel6);
         jLabel6.setBounds(530, 140, 90, 15);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setText("Agendamento");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(530, 140, 90, 15);
+
+        ImgPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo.png"))); // NOI18N
+        jPanel1.add(ImgPrincipal);
+        ImgPrincipal.setBounds(0, 0, 1920, 1080);
 
         jMenu2.setText("Cadastro");
 
@@ -285,11 +278,11 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1248, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1246, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)
         );
 
         pack();
@@ -432,6 +425,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -443,7 +437,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbAgenda;
     private javax.swing.JButton jbFuncionarios;
     private javax.swing.JButton jbPacientes;

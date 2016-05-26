@@ -44,7 +44,7 @@ public class PacienteDAO {
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Inserido com sucesso!");
         } catch (SQLException e) {
-             JOptionPane.showMessageDialog(null, "Erro ao salvar, CPF já exitente! " + e); //Se for outro erro fora o duplicate entry, adc o + e
+             JOptionPane.showMessageDialog(null, "Erro ao salvar, CPF já exitente! "); //Se for outro erro fora o duplicate entry, adc o + e
         } finally {
             Conectar.closeConnection(con, stmt);
         }
