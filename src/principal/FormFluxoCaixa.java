@@ -5,6 +5,16 @@
  */
 package principal;
 
+import bancodedados.Conectar;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
+
 /**
  *
  * @author Bruno Cavalcante
@@ -14,9 +24,28 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
     /**
      * Creates new form FluxoCaixa
      */
+    
+    Connection conecta;
+    PreparedStatement pst;
+    ResultSet rs;
     public FormFluxoCaixa() {
         initComponents();
         setLocationRelativeTo(null);
+        conecta = Conectar.getConnection();
+        readFluxo();
+    }
+    
+      public void readFluxo(){
+        String sql = "select * from despesaganho";
+        try {
+            pst = conecta.prepareStatement(sql);
+            rs = pst.executeQuery();
+            jTableFluxo.setModel(DbUtils.resultSetToTableModel(rs));
+            System.out.println("CHEGOU");
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, erro);
+        }
+        
     }
 
     /**
@@ -37,8 +66,8 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
         tfDescrição = new javax.swing.JTextField();
         tfValor = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtFluxoCaixa = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableFluxo = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Fluxo de Caixa");
@@ -64,23 +93,18 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 153));
         jLabel5.setText("Valor:");
 
-        jtFluxoCaixa.setModel(new javax.swing.table.DefaultTableModel(
+        jTableFluxo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Ganho/Despesa", "Descrição", "Valor"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jtFluxoCaixa.setPreferredSize(new java.awt.Dimension(640, 0));
-        jScrollPane1.setViewportView(jtFluxoCaixa);
-        if (jtFluxoCaixa.getColumnModel().getColumnCount() > 0) {
-            jtFluxoCaixa.getColumnModel().getColumn(0).setMinWidth(110);
-            jtFluxoCaixa.getColumnModel().getColumn(0).setPreferredWidth(50);
-            jtFluxoCaixa.getColumnModel().getColumn(0).setMaxWidth(110);
-            jtFluxoCaixa.getColumnModel().getColumn(2).setMinWidth(100);
-            jtFluxoCaixa.getColumnModel().getColumn(2).setMaxWidth(100);
-        }
+        jScrollPane2.setViewportView(jTableFluxo);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -98,17 +122,18 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfDescrição, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(101, 101, 101)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(90, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 683, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfDescrição, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(101, 101, 101)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 80, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,9 +157,9 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
                         .addComponent(tfDescrição, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(tfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jComboBoxfluxoCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -156,7 +181,7 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox jComboBoxfluxoCaixa;
@@ -166,8 +191,8 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jtFluxoCaixa;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTableFluxo;
     private javax.swing.JTextField tfDescrição;
     private javax.swing.JTextField tfValor;
     // End of variables declaration//GEN-END:variables

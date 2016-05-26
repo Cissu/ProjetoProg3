@@ -5,12 +5,17 @@
  */
 package principal;
 
+import bancodedados.Conectar;
 import classes.Agendamento;
 import classes.DadoInvalidoException;
 import classes.Dentista;
+import classes.DespesaGanho;
 import classes.Paciente;
 import java.awt.Component;
 import java.awt.PopupMenu;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -20,6 +25,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.dao.AgendamentoDAO;
 import model.dao.DentistaDAO;
+import model.dao.DespesaGanhoDAO;
 import model.dao.PacienteDAO;
 
 /**
@@ -29,12 +35,28 @@ import model.dao.PacienteDAO;
 public class AgendamentoGui extends javax.swing.JFrame {
 
     AgendamentoDAO aa = new AgendamentoDAO();
+    
+   
 
     public AgendamentoGui() throws DadoInvalidoException {
         initComponents();
         readDentista();
         readPaciente();
     }
+    
+//    public void inserirGanho(DespesaGanho dp){
+//        Connection con = Conectar.getConnection();
+//        PreparedStatement stmt = null;
+//        
+//        try {
+//            stmt = con.prepareStatement("insert into despesaganho (tipo, descricao, valor) values (Ganho, ?, ?)");
+//            stmt.setString(1, dp.getTipo());
+//            stmt.setDouble(2, dp.getValor());
+//            stmt.executeUpdate();
+//            con.close();
+//        } catch (Exception e) {
+//        }
+//    }
 
     public void readPaciente() throws DadoInvalidoException {
         DefaultTableModel dtm = (DefaultTableModel) TabelaPaciente.getModel();
@@ -85,6 +107,8 @@ public class AgendamentoGui extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         TabelaDentista1 = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
+        txtValor = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Agendamentos");
@@ -98,7 +122,7 @@ public class AgendamentoGui extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Procedimento:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(150, 110, 110, 20);
+        jLabel2.setBounds(90, 110, 110, 20);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Dentista:");
@@ -117,7 +141,7 @@ public class AgendamentoGui extends javax.swing.JFrame {
         getContentPane().add(txtNome);
         txtNome.setBounds(250, 60, 360, 30);
         getContentPane().add(txtProcedimento);
-        txtProcedimento.setBounds(250, 110, 360, 30);
+        txtProcedimento.setBounds(190, 110, 360, 30);
         getContentPane().add(txtDentista);
         txtDentista.setBounds(120, 160, 290, 30);
 
@@ -226,6 +250,12 @@ public class AgendamentoGui extends javax.swing.JFrame {
         jLabel9.setText("Lista de Pacientes");
         getContentPane().add(jLabel9);
         jLabel9.setBounds(130, 280, 190, 30);
+        getContentPane().add(txtValor);
+        txtValor.setBounds(620, 110, 70, 30);
+
+        jLabel10.setText("Valor");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(580, 120, 40, 14);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -256,10 +286,22 @@ public class AgendamentoGui extends javax.swing.JFrame {
                 a.setData(data);
                 a.setHora(txtHora.getText());
 
+                
+                DespesaGanho d = new DespesaGanho();
+                DespesaGanhoDAO dpdao = new DespesaGanhoDAO();
+                d.setDescricao(txtProcedimento.getText());
+                d.setValor(Double.parseDouble(txtValor.getText()));
+                d.setData(data);
+                
                 ad.create(a);
+                
+                
+                dpdao.inserirGanho(d);
             } catch (DadoInvalidoException ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage());
             }
+            
+//           
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -285,6 +327,7 @@ public class AgendamentoGui extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -300,5 +343,6 @@ public class AgendamentoGui extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtHora;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtProcedimento;
+    private javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
 }

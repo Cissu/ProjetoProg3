@@ -68,6 +68,7 @@ public class AgendamentoDAO {
                 agendas.setEspecialidade(rs.getString("especialidade"));
                 agendas.setData(rs.getString("data"));
                 agendas.setHora(rs.getString("hora"));
+                agendas.setValor(rs.getDouble("valor"));
                 
                 agendaList.add(agendas);
             }

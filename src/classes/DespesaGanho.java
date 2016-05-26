@@ -2,42 +2,38 @@ package classes;
 
 public class DespesaGanho {
 
-  private int id;
-  private int idPaciente;
-  private String mes;
+  private String descricao;
   private String tipo;
   private double valor;
+  private String data;
 
-  public DespesaGanho(int id, int idPaciente, String mes, String tipo, double valor) {
-    this.id = id;
-    this.idPaciente = idPaciente;
-    this.mes = mes;
+  public DespesaGanho(String descricao, String tipo, double valor) {
+
+    this.descricao = descricao;
     this.tipo = tipo;
     this.valor = valor;
   }
 
-  public int getId() {
-    return id;
+    public DespesaGanho() {
+        
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    
+    
+  public String getDescricao() {
+    return descricao;
   }
 
-  public void setId(int id) {
-    this.id = id;
-  }
-
-  public int getIdPaciente() {
-    return idPaciente;
-  }
-
-  public void setIdPaciente(int idPaciente) {
-    this.idPaciente = idPaciente;
-  }
-
-  public String getMes() {
-    return mes;
-  }
-
-  public void setMes(String mes) {
-    this.mes = mes;
+  public void setDescricao(String descricao) {
+    this.descricao = descricao;
   }
 
   public String getTipo() {
