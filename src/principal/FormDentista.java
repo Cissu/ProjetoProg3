@@ -137,6 +137,7 @@ public class FormDentista extends javax.swing.JFrame {
         jPanel1.add(txtLimpar);
         txtLimpar.setBounds(510, 10, 220, 30);
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/delete.png"))); // NOI18N
         jButton3.setText("Alterar/Excluir");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,12 +145,13 @@ public class FormDentista extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(680, 110, 121, 30);
+        jButton3.setBounds(700, 110, 140, 30);
 
         lbImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/DENTISTA.png"))); // NOI18N
         jPanel1.add(lbImg);
         lbImg.setBounds(11, 1, 100, 111);
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tooth.png"))); // NOI18N
         jButton1.setText("Cadastrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,8 +159,9 @@ public class FormDentista extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(570, 110, 90, 30);
+        jButton1.setBounds(540, 110, 140, 30);
 
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/update.png"))); // NOI18N
         jButton4.setText("Atualizar Tabela");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,8 +169,9 @@ public class FormDentista extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(420, 110, 130, 30);
+        jButton4.setBounds(370, 110, 150, 30);
 
+        btnLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/1464279786_Untitled-4.png"))); // NOI18N
         btnLimpar.setText("Limpar");
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,7 +179,7 @@ public class FormDentista extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnLimpar);
-        btnLimpar.setBounds(580, 50, 80, 23);
+        btnLimpar.setBounds(550, 50, 140, 30);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Buscar:");

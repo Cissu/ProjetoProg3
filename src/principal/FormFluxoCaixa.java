@@ -119,7 +119,7 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
 
         jComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Ganho", "Despesa" }));
         jPanel1.add(jComboBox);
-        jComboBox.setBounds(20, 160, 80, 30);
+        jComboBox.setBounds(20, 160, 110, 30);
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 153));
         jLabel4.setText("Data:");

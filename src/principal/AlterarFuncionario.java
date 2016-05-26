@@ -94,7 +94,6 @@ public class AlterarFuncionario extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txtCpf = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
         txtRg = new javax.swing.JTextField();
         txtCidade = new javax.swing.JTextField();
@@ -114,6 +113,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         txtCep = new javax.swing.JTextField();
         btnExcluir = new javax.swing.JButton();
         btnAlterar = new javax.swing.JButton();
+        txtCpf = new javax.swing.JFormattedTextField();
         jLabel18 = new javax.swing.JLabel();
         txtfuncao = new javax.swing.JTextField();
         txtSalario = new javax.swing.JTextField();
@@ -129,8 +129,6 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         jLabel1.setText("Alterar/Excluir Cadastros de Funcionários");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(130, 40, 520, 33);
-        getContentPane().add(txtCpf);
-        txtCpf.setBounds(90, 120, 460, 34);
 
         txtNome.setEnabled(false);
         getContentPane().add(txtNome);
@@ -243,6 +241,14 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         });
         getContentPane().add(btnAlterar);
         btnAlterar.setBounds(580, 180, 110, 30);
+
+        try {
+            txtCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.### - ##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        getContentPane().add(txtCpf);
+        txtCpf.setBounds(90, 120, 140, 30);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
@@ -413,7 +419,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
     private javax.swing.JTextField txtBairro;
     private javax.swing.JTextField txtCep;
     private javax.swing.JTextField txtCidade;
-    private javax.swing.JTextField txtCpf;
+    private javax.swing.JFormattedTextField txtCpf;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtRg;
