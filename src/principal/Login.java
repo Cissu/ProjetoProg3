@@ -174,6 +174,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        this.dispose();
         Principal go = new Principal();
         go.setVisible(true);
     }//GEN-LAST:event_jButton2MouseClicked
