@@ -17,6 +17,7 @@ public class Agendamento {
     private String especialidade;
     private String data;
     private String hora;
+    private double valor;
     
     public Agendamento(String nome, String procedimento, String dentista, String data, String hora) throws DadoInvalidoException {
         this.setNome(nome);
@@ -30,6 +31,16 @@ public class Agendamento {
         
     }
 
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    
+    
     public int getId() {
         return id;
     }
