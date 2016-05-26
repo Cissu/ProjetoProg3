@@ -11,6 +11,8 @@ import classes.DadoInvalidoException;
 import classes.Dentista;
 import java.awt.Component;
 import java.awt.PopupMenu;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -190,13 +192,16 @@ public class AgendamentoGui extends javax.swing.JFrame {
     }//GEN-LAST:event_TabelaDentistaKeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Agendamento a = new Agendamento();
+       DateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
+       String data = fmt.format(jDateChooser1.getDate());
+        
+        Agendamento a = new Agendamento();
        AgendamentoDAO ad = new AgendamentoDAO();
        a.setNome(txtNome.getText());
        a.setProcedimento(txtProcedimento.getText());
        a.setDentista(txtDentista.getText());
        a.setEspecialidade(txtEspecialidade.getText());
-       a.setData(jDateChooser1.getDateFormatString());
+       a.setData(data);
        a.setHora(txtHora.getText());
        
        ad.create(a);
