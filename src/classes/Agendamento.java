@@ -13,8 +13,13 @@ public class Agendamento {
     private String nome;
     private String procedimento;
     private String dentista;
+    private String especialidade;
     private String data;
     private String hora;
+
+    public Agendamento() {
+        
+    }
 
     public String getNome() {
         return nome;
@@ -40,6 +45,15 @@ public class Agendamento {
         this.dentista = dentista;
     }
 
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
+    }
+
+    
     public String getData() {
         return data;
     }
@@ -64,8 +78,7 @@ public class Agendamento {
         this.hora = hora;
     }
 
-    public Agendamento() {
-    }
+    
     
     
     

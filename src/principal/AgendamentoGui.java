@@ -6,6 +6,7 @@
 package principal;
 
 
+import classes.Agendamento;
 import classes.DadoInvalidoException;
 import classes.Dentista;
 import java.awt.Component;
@@ -189,7 +190,16 @@ public class AgendamentoGui extends javax.swing.JFrame {
     }//GEN-LAST:event_TabelaDentistaKeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       Agendamento a = new Agendamento();
+       AgendamentoDAO ad = new AgendamentoDAO();
+       a.setNome(txtNome.getText());
+       a.setProcedimento(txtProcedimento.getText());
+       a.setDentista(txtDentista.getText());
+       a.setEspecialidade(txtEspecialidade.getText());
+       a.setData(jDateChooser1.getDateFormatString());
+       a.setHora(txtHora.getText());
+       
+       ad.create(a);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
