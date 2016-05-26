@@ -8,6 +8,9 @@ package principal;
 import classes.DadoInvalidoException;
 import classes.Endereco;
 import classes.Funcionario;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.dao.FuncionarioDAO;
 /**
@@ -319,6 +322,8 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             b.create(f);
         } catch (DadoInvalidoException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jbOkFuncionarioActionPerformed
 
