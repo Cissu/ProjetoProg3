@@ -5,7 +5,6 @@
  */
 package principal;
 
-
 import classes.Agendamento;
 import classes.DadoInvalidoException;
 import classes.Dentista;
@@ -17,11 +16,11 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.dao.AgendamentoDAO;
 import model.dao.DentistaDAO;
 import model.dao.PacienteDAO;
-
 
 /**
  *
@@ -29,49 +28,39 @@ import model.dao.PacienteDAO;
  */
 public class AgendamentoGui extends javax.swing.JFrame {
 
-   AgendamentoDAO aa = new AgendamentoDAO();
-   
-    
+    AgendamentoDAO aa = new AgendamentoDAO();
+
     public AgendamentoGui() throws DadoInvalidoException {
         initComponents();
         readDentista();
         readPaciente();
     }
 
-    
-    public void readPaciente() throws DadoInvalidoException{
+    public void readPaciente() throws DadoInvalidoException {
         DefaultTableModel dtm = (DefaultTableModel) TabelaPaciente.getModel();
         dtm.setNumRows(0);
         PacienteDAO pdao = new PacienteDAO();
-        
+
         for (Paciente p : pdao.read()) {
             dtm.addRow(new Object[]{
-                p.getNome(),
-              });
-           
+                p.getNome(),});
         }
-        
     }
-    
-    
+
     public void readDentista() throws DadoInvalidoException {
 
         DefaultTableModel dtm = (DefaultTableModel) TabelaDentista1.getModel();
         dtm.setNumRows(0);
         DentistaDAO ddao = new DentistaDAO();
-        
+
         for (Dentista d : ddao.read()) {
             dtm.addRow(new Object[]{
                 d.getNome(),
-                d.getEspecialidade(),
-            });
+                d.getEspecialidade(),});
         }
 
     }
-    
-   
-    
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -252,19 +241,26 @@ public class AgendamentoGui extends javax.swing.JFrame {
     }//GEN-LAST:event_TabelaPacienteKeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       DateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
-       String data = fmt.format(jDateChooser1.getDate());
-        
-        Agendamento a = new Agendamento();
-       AgendamentoDAO ad = new AgendamentoDAO();
-       a.setNome(txtNome.getText());
-       a.setProcedimento(txtProcedimento.getText());
-       a.setDentista(txtDentista.getText());
-       a.setEspecialidade(txtEspecialidade.getText());
-       a.setData(data);
-       a.setHora(txtHora.getText());
-       
-       ad.create(a);
+        if (jDateChooser1.getDate() == null) {
+            JOptionPane.showMessageDialog(null, "Campo data em branco");
+        } else {
+            try {
+                DateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
+                String data = fmt.format(jDateChooser1.getDate());
+                Agendamento a = new Agendamento();
+                AgendamentoDAO ad = new AgendamentoDAO();
+                a.setNome(txtNome.getText());
+                a.setProcedimento(txtProcedimento.getText());
+                a.setDentista(txtDentista.getText());
+                a.setEspecialidade(txtEspecialidade.getText());
+                a.setData(data);
+                a.setHora(txtHora.getText());
+
+                ad.create(a);
+            } catch (DadoInvalidoException ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage());
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void TabelaDentista1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaDentista1MouseClicked
@@ -282,8 +278,6 @@ public class AgendamentoGui extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TabelaDentista1;

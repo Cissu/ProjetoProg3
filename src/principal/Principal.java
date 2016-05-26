@@ -316,9 +316,13 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jbFuncionariosActionPerformed
 
     private void jbAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgendaActionPerformed
-        principal.Agenda a = new principal.Agenda();
-        a.setVisible(true);
-        a.setLocationRelativeTo(null);
+        try {
+            principal.Agenda a = new principal.Agenda();
+            a.setVisible(true);
+            a.setLocationRelativeTo(null);
+        } catch (DadoInvalidoException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
 
     }//GEN-LAST:event_jbAgendaActionPerformed
