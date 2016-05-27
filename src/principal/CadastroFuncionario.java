@@ -8,6 +8,9 @@ package principal;
 import classes.DadoInvalidoException;
 import classes.Endereco;
 import classes.Funcionario;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.dao.FuncionarioDAO;
 /**
@@ -317,8 +320,25 @@ public class CadastroFuncionario extends javax.swing.JFrame {
             Double.parseDouble(this.tfSalarioFuncionario.getText()), c);
             FuncionarioDAO b = new FuncionarioDAO();
             b.create(f);
+            
+            tfNomeFuncionario.setText("");
+            tfRgFuncionario.setText("");
+            tfCpfFuncionario.setText("");
+            tfFuncaoFuncionario.setText("");
+            tfSalarioFuncionario.setText("");
+            //data
+            tfRua.setText("");
+            tfNumero.setText("");
+            tfBairro.setText("");
+            tfCep.setText("");
+            tfCidade.setText("");
+            
+            
+            
         } catch (DadoInvalidoException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroFuncionario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jbOkFuncionarioActionPerformed
 

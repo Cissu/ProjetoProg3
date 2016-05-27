@@ -100,7 +100,6 @@ public class AlterarDentista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtCPF = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         txtRg = new javax.swing.JTextField();
@@ -128,6 +127,7 @@ public class AlterarDentista extends javax.swing.JFrame {
         txtBairro = new javax.swing.JTextField();
         txtCEP = new javax.swing.JTextField();
         btnExluir = new javax.swing.JButton();
+        txtCPF = new javax.swing.JFormattedTextField();
         btnAlterar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -135,8 +135,6 @@ public class AlterarDentista extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alterar/Excluir Dentista");
         getContentPane().setLayout(null);
-        getContentPane().add(txtCPF);
-        txtCPF.setBounds(110, 100, 510, 34);
 
         txtNome.setEnabled(false);
         getContentPane().add(txtNome);
@@ -305,6 +303,14 @@ public class AlterarDentista extends javax.swing.JFrame {
         getContentPane().add(btnExluir);
         btnExluir.setBounds(640, 220, 110, 30);
 
+        try {
+            txtCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.### - ##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        getContentPane().add(txtCPF);
+        txtCPF.setBounds(110, 110, 180, 30);
+
         btnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/update.png"))); // NOI18N
         btnAlterar.setText("ALTERAR");
         btnAlterar.addActionListener(new java.awt.event.ActionListener() {
@@ -469,7 +475,7 @@ public class AlterarDentista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField txtBairro;
     private javax.swing.JTextField txtCEP;
-    private javax.swing.JTextField txtCPF;
+    private javax.swing.JFormattedTextField txtCPF;
     private javax.swing.JTextField txtCidade;
     private javax.swing.JTextField txtCro;
     private javax.swing.JTextField txtEspecialidade;

@@ -26,7 +26,7 @@ public class AlterarPaciente extends javax.swing.JFrame {
 
     public void alterar() throws DadoInvalidoException {
         int g = 0;
-        if (txtCpf.getText().isEmpty()) {
+        if (txtCpf1.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Digite um cpf válido");
         } else {
             txtNome.enable();
@@ -42,7 +42,7 @@ public class AlterarPaciente extends javax.swing.JFrame {
 
             for (Paciente p : ddao.read()) {
 
-                if (p.getCpf().equals(txtCpf.getText())) {
+                if (p.getCpf().equals(txtCpf1.getText())) {
 
 //                    double a = p.getSalario();
 //                    String b;
@@ -81,12 +81,12 @@ public class AlterarPaciente extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        txtCpf = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
         txtRg = new javax.swing.JTextField();
         txtCidade = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        txtCpf1 = new javax.swing.JFormattedTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -115,8 +115,6 @@ public class AlterarPaciente extends javax.swing.JFrame {
         jLabel2.setText("Alterar/Excluir Cadastros de Pacientes");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(130, 40, 520, 33);
-        getContentPane().add(txtCpf);
-        txtCpf.setBounds(90, 120, 460, 34);
 
         txtNome.setEnabled(false);
         getContentPane().add(txtNome);
@@ -145,6 +143,14 @@ public class AlterarPaciente extends javax.swing.JFrame {
         jLabel7.setText("CPF:");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(20, 130, 70, 15);
+
+        try {
+            txtCpf1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        getContentPane().add(txtCpf1);
+        txtCpf1.setBounds(90, 120, 460, 30);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -272,16 +278,16 @@ public class AlterarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        if (txtCpf.getText().isEmpty() || txtCpf.getText() == null) {
+        if (txtCpf1.getText().isEmpty() || txtCpf1.getText() == null) {
             JOptionPane.showMessageDialog(null, "Digite um Cpf válido", "Aviso", JOptionPane.WARNING_MESSAGE);
         } else {
             try {
-                p.setCpf(txtCpf.getText());
+                p.setCpf(txtCpf1.getText());
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage());
             }
             try {
-                int op = JOptionPane.showConfirmDialog(null, "Deseja Realmente excluir o registro " + txtCpf.getText() + "?", "Aviso", JOptionPane.WARNING_MESSAGE);
+                int op = JOptionPane.showConfirmDialog(null, "Deseja Realmente excluir o registro " + txtCpf1.getText() + "?", "Aviso", JOptionPane.WARNING_MESSAGE);
                 if (op == 0) {
                     ddao.delete(p);
                 }
@@ -317,7 +323,7 @@ public class AlterarPaciente extends javax.swing.JFrame {
                 p.getEndereco().setCep(txtCep.getText());
                 p.getEndereco().setCidade(txtCidade.getText());
 
-                p.setCpf(txtCpf.getText());
+                p.setCpf(txtCpf1.getText());
             } catch (DadoInvalidoException ex) {
                 JOptionPane.showConfirmDialog(null, ex.getMessage());
             }
@@ -326,7 +332,7 @@ public class AlterarPaciente extends javax.swing.JFrame {
             ddao.update(p);
             txtNome.setText("");
             txtRg.setText("");
-            txtCpf.setText("");
+            txtCpf1.setText("");
             txtData.setText("");
 //            txtSalario.setText("");
             txtRua.setText("");
@@ -376,7 +382,7 @@ public class AlterarPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField txtBairro;
     private javax.swing.JTextField txtCep;
     private javax.swing.JTextField txtCidade;
-    private javax.swing.JTextField txtCpf;
+    private javax.swing.JFormattedTextField txtCpf1;
     private javax.swing.JFormattedTextField txtData;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNumero;

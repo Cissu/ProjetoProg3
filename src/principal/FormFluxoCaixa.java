@@ -5,6 +5,20 @@
  */
 package principal;
 
+import bancodedados.Conectar;
+import classes.DespesaGanho;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import model.dao.DespesaGanhoDAO;
+import net.proteanit.sql.DbUtils;
+
 /**
  *
  * @author Bruno Cavalcante
@@ -14,10 +28,46 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
     /**
      * Creates new form FluxoCaixa
      */
+    Connection conecta;
+    PreparedStatement pst;
+    ResultSet rs;
+
     public FormFluxoCaixa() {
         initComponents();
         setLocationRelativeTo(null);
+        setSize(820, 647);
+        conecta = Conectar.getConnection();
+        readFluxo();
+       // totalDespesa();
     }
+
+    public void readFluxo() {
+        String sql = "select * from despesaganho";
+        try {
+            pst = conecta.prepareStatement(sql);
+            rs = pst.executeQuery();
+            jTableFluxo.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, erro);
+        }
+
+    }
+
+//    public void totalDespesa() {
+//        Connection con = Conectar.getConnection();
+//        PreparedStatement stmt = null;
+//        double total = 0;
+//        try {
+//            ResultSet rs = stmt
+//                    .executeQuery("SELECT sum(valor)AS total FROM despesaganho");
+//            while (rs.next()) {
+//                total = rs.getDouble("total");
+//            }
+//        } catch (SQLException e) {
+//        }
+//        txtTotal.setText("" + total);
+//
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,13 +82,17 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBoxfluxoCaixa = new javax.swing.JComboBox();
+        jComboBox = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
         tfDescrição = new javax.swing.JTextField();
         tfValor = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtFluxoCaixa = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableFluxo = new javax.swing.JTable();
+        btnInserir = new javax.swing.JButton();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel6 = new javax.swing.JLabel();
+        txtTotal = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Fluxo de Caixa");
@@ -46,96 +100,74 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
 
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 300));
+        jPanel1.setLayout(null);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Fluxo-de-caixa3.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(11, 12, 131, 98);
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 153));
         jLabel2.setText("Fluxo de caixa");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(148, 74, 98, 16);
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 153));
         jLabel3.setText("Ganho / Despesa:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(19, 137, 103, 27);
 
-        jComboBoxfluxoCaixa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Ganho", "Despesa" }));
+        jComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Ganho", "Despesa" }));
+        jPanel1.add(jComboBox);
+        jComboBox.setBounds(20, 160, 110, 30);
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel4.setText("Descrição:");
+        jLabel4.setText("Data:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(160, 220, 50, 20);
+        jPanel1.add(tfDescrição);
+        tfDescrição.setBounds(148, 160, 411, 30);
+        jPanel1.add(tfValor);
+        tfValor.setBounds(600, 160, 59, 30);
 
         jLabel5.setForeground(new java.awt.Color(0, 0, 153));
         jLabel5.setText("Valor:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(600, 140, 35, 14);
 
-        jtFluxoCaixa.setModel(new javax.swing.table.DefaultTableModel(
+        jTableFluxo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Ganho/Despesa", "Descrição", "Valor"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jtFluxoCaixa.setPreferredSize(new java.awt.Dimension(640, 0));
-        jScrollPane1.setViewportView(jtFluxoCaixa);
-        if (jtFluxoCaixa.getColumnModel().getColumnCount() > 0) {
-            jtFluxoCaixa.getColumnModel().getColumn(0).setMinWidth(110);
-            jtFluxoCaixa.getColumnModel().getColumn(0).setPreferredWidth(50);
-            jtFluxoCaixa.getColumnModel().getColumn(0).setMaxWidth(110);
-            jtFluxoCaixa.getColumnModel().getColumn(2).setMinWidth(100);
-            jtFluxoCaixa.getColumnModel().getColumn(2).setMaxWidth(100);
-        }
+        jScrollPane2.setViewportView(jTableFluxo);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxfluxoCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfDescrição, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(101, 101, 101)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(90, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 683, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(jLabel2)))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tfDescrição, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tfValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jComboBoxfluxoCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-        );
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(140, 260, 651, 310);
+
+        btnInserir.setText("Inserir");
+        btnInserir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInserirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnInserir);
+        btnInserir.setBounds(680, 160, 73, 30);
+        jPanel1.add(jDateChooser1);
+        jDateChooser1.setBounds(200, 210, 91, 30);
+
+        jLabel6.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel6.setText("Descrição:");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(148, 140, 65, 20);
+        jPanel1.add(txtTotal);
+        txtTotal.setBounds(610, 220, 80, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,28 +179,49 @@ public class FormFluxoCaixa extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
+        String tipo = (String) jComboBox.getSelectedItem();
+
+        DateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
+        String data = fmt.format(jDateChooser1.getDate());
+        DespesaGanho dp = new DespesaGanho();
+        DespesaGanhoDAO dpdao = new DespesaGanhoDAO();
+
+        dp.setTipo(tipo);
+        dp.setValor(Double.parseDouble(tfValor.getText()));
+        dp.setDescricao(tfDescrição.getText());
+        dp.setData(data);
+
+        dpdao.create(dp);
+        readFluxo();
+
+    }//GEN-LAST:event_btnInserirActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox jComboBoxfluxoCaixa;
+    private javax.swing.JButton btnInserir;
+    private javax.swing.JComboBox jComboBox;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jtFluxoCaixa;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTableFluxo;
     private javax.swing.JTextField tfDescrição;
     private javax.swing.JTextField tfValor;
+    private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }
